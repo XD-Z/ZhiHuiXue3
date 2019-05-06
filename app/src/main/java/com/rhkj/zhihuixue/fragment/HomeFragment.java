@@ -1,31 +1,38 @@
 package com.rhkj.zhihuixue.fragment;
 
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.rhkj.zhihuixue.R;
+import com.rhkj.zhihuixue.base.BaseFragment;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment {
-
-
-    public HomeFragment() {
-        // Required empty public constructor
-    }
+public class HomeFragment extends BaseFragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    protected View loadViewLayout(LayoutInflater inflater, ViewGroup container) {
+
         return inflater.inflate(R.layout.fragment_home, container, false);
+    }
+
+    @Override
+    protected void findViewsById(View view) {
 
     }
 
+    @Override
+    protected void onClickEvent(View v) {
+
+    }
+
+    @Override
+    protected void setListener() {
+
+    }
 }
