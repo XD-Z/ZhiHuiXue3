@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhile"
+    android:orientation="vertical"
+    tools:context="com.rhkj.zhihuixue.activity.LoginActivity">
+
+    <ImageView
+        android:layout_width="135dip"
+        android:layout_height="135dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dip"
+        android:src="@mipmap/icon_loginlogo" />
+
+    <!--手机号-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="47dip"
+        android:layout_marginLeft="38dip"
+        android:layout_marginTop="60dip"
+        android:layout_marginRight="38dip"
+        android:background="@drawable/bg_login_linearlayout"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="19dip"
+            android:layout_height="25dip"
+            android:layout_marginLeft="10dip"
+            android:src="@mipmap/icon_phone" />
+
+        <EditText
+            android:layout_width="130dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:textSize="16sp"
+            android:background="@null"
+            android:hint="请输入手机号"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:phoneNumber="true"
+            android:textColor="@color/colorLoginGrey" />
+    </LinearLayout>
+
+    <!--密码-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="47dip"
+        android:layout_marginLeft="38dip"
+        android:layout_marginTop="10dip"
+        android:layout_marginRight="38dip"
+        android:background="@drawable/bg_login_linearlayout"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="19dip"
+            android:layout_height="23dip"
+            android:layout_marginLeft="10dip"
+            android:src="@mipmap/icon_lock" />
+
+        <EditText
+            android:layout_width="130dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:textSize="16sp"
+            android:background="@null"
+            android:hint="请输入密码"
+            android:maxLines="1"
+            android:password="true"
+            android:textColor="@color/colorLoginGrey"/>
+    </LinearLayout>
+
+    <!--忘记密码-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="12dip"
+            android:layout_marginRight="38dip"
+            android:text="忘记密码?"
+            android:textColor="#595757" />
+    </RelativeLayout>
+
+    <!--登录-->
+    <TextView
+        android:layout_width="300dip"
+        android:layout_height="43dip"
+        android:layout_marginTop="34dip"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bg_tv_login"
+        android:gravity="center"
+        android:text="登录"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <!--注册-->
+    <TextView
+        android:layout_width="300dip"
+        android:layout_height="43dip"
+        android:layout_marginTop="11dip"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bg_tv_register"
+        android:gravity="center"
+        android:text="注册"
+        android:textColor="#EA5404"
+        android:textSize="20sp" />
+
+    <!--字体-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="专注未来智慧 好方法智相伴"
+            android:textColor="#9A9A9A"
+            android:textSize="12sp"
+            android:layout_marginBottom="15dip"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+
+</LinearLayout>

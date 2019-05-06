@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.rhkj.zhihuixue.activity.WelcomeActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/img_welcome"
+        android:id="@+id/spalsh_img"
+        android:scaleType="fitXY"/>
+    <TextView
+        android:id="@+id/spalsh_textview"
+        android:layout_width="60dip"
+        android:layout_height="25dip"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="30px"
+        android:alpha="0.6"
+        android:gravity="center"
+        android:background="@drawable/shape_dark_btn"
+        android:paddingBottom="8px"
+        android:paddingLeft="30px"
+        android:paddingRight="30px"
+        android:paddingTop="8px"
+        android:textSize="14sp"
+        android:text="跳过 5"
+        android:textColor="@color/colorWhile"
+        android:visibility="visible" />
+</RelativeLayout>
