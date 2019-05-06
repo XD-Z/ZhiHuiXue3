@@ -1,9 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
+    <FrameLayout
+        android:id="@+id/content_frag"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rg_tab"
+        android:background="@color/colorWhile"></FrameLayout>
 
-</android.support.constraint.ConstraintLayout>
+
+    <RadioGroup
+        android:id="@+id/rg_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorWhile"
+        android:orientation="horizontal"
+        android:paddingTop="6dip"
+        android:paddingBottom="3dip"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip"
+        android:weightSum="5">
+        <RadioButton
+            android:id="@+id/main_rb"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:button="@null"
+            android:drawableTop="@drawable/home_tab_selecter"
+            android:gravity="center"
+            android:paddingLeft="0dp"
+            android:text="首页"
+            android:textColor="@drawable/radio_selector_color"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/message_rb"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:button="@null"
+            android:drawableTop="@drawable/fuwu_tab_selecter"
+            android:gravity="center"
+            android:paddingLeft="0dp"
+            android:text="消息"
+            android:textColor="@drawable/radio_selector_color"
+            android:textSize="12sp" />
+
+        <!--</LinearLayout>-->
+        <!--给中间凸起按钮预留位置-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+        </LinearLayout>
+        <!--<LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1">-->
+        <RadioButton
+            android:id="@+id/friend_rb"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:button="@null"
+            android:drawableTop="@drawable/shop_tab_selecter"
+            android:gravity="center"
+            android:paddingLeft="0dip"
+            android:text="朋友圈"
+            android:textColor="@drawable/radio_selector_color"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/info_rb"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:button="@null"
+            android:drawableTop="@drawable/mine_tab_selecter"
+            android:gravity="center"
+            android:paddingLeft="0dip"
+            android:text="我的"
+            android:textColor="@drawable/radio_selector_color"
+            android:textSize="12sp" />
+        <!-- </LinearLayout>-->
+    </RadioGroup>
+
+    <RelativeLayout
+        android:id="@+id/send_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="60dip"
+        android:layout_above="@+id/rg_tab"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="3dip"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/send_igv"
+            android:layout_width="65dip"
+            android:layout_height="65dip"
+            android:layout_centerInParent="true"
+            android:src="@drawable/zhi_tab_selecter" />
+
+    </RelativeLayout>
+</RelativeLayout>
