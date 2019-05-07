@@ -1,7 +1,10 @@
 package com.rhkj.zhihuixue.fragment;
 
 
+
 import android.app.Fragment;
+import android.content.Intent;
+
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,8 +14,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.gyf.barlibrary.ImmersionBar;
 import com.rhkj.zhihuixue.R;
+import com.rhkj.zhihuixue.activity.CommodityDetailsActivity;
 import com.rhkj.zhihuixue.adapter.ShopAdapter;
+import com.rhkj.zhihuixue.utils.SimpleDividerItemDecoration;
 
 import java.util.ArrayList;
 
@@ -41,9 +48,11 @@ public class ShopFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
+
         recyclerView = view.findViewById(R.id.rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
+        recyclerView.addItemDecoration(new SimpleDividerItemDecoration(getActivity(),2));
         ArrayList<String> strings = new ArrayList<>();
         strings.add("");
         strings.add("");
@@ -51,6 +60,15 @@ public class ShopFragment extends Fragment {
         strings.add("");
         ShopAdapter shopAdapter = new ShopAdapter(strings);
         recyclerView.setAdapter(shopAdapter);
+
+        shopAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                startActivity(new Intent(getActivity(), CommodityDetailsActivity.class));
+            }
+        });
+
+
 
     }
 }

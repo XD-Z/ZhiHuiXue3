@@ -4,6 +4,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gyf.barlibrary.BarHide;
@@ -13,16 +17,40 @@ import com.rhkj.zhihuixue.R;
 public abstract class BaseActivity extends FragmentActivity {
     private Toast toast; // 公共的。。。。 Toast
     public static int screenW, screenH; // 全屏 宽高
+    public TextView tvTitle;
 
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
 
+
         initLayout();
+        initTitle();
         initViews();
         initData();
         addListener();
+
+
+
     }
+
+    private void initTitle() {
+        tvTitle = findViewById(R.id.tv_title);
+        ImageView ivBack = findViewById(R.id.iv_back);
+
+        if(ivBack!=null){
+            ivBack.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    finish();
+                }
+            });
+        }
+
+    }
+
+    ;
+
 
     /************************** 公共功能封装 ****************************************/
 

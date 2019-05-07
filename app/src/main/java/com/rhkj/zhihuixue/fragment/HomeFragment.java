@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.gyf.barlibrary.ImmersionBar;
 import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.base.BaseFragment;
 import com.youth.banner.Banner;
@@ -28,11 +29,6 @@ public class HomeFragment extends BaseFragment {
     protected View loadViewLayout(LayoutInflater inflater, ViewGroup container) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         unbinder = ButterKnife.bind(this, view);
-//        ImmersionBar.with(getActivity())
-//                .statusBarColor(R.color.colorWhile)     //状态栏颜色，不写默认透明色
-//                .statusBarDarkFont(true)   //状态栏字体是深色，不写默认为亮色
-//                .init();
-
 
         return view;
     }

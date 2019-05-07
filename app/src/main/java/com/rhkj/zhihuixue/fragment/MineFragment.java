@@ -3,6 +3,7 @@ package com.rhkj.zhihuixue.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.gyf.barlibrary.ImmersionBar;
 import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.adapter.MineAdapter;
 
@@ -33,17 +35,19 @@ public class MineFragment extends Fragment {
     private int[] images;
     private String[] titles;
 
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_mine, container, false);
         unbinder = ButterKnife.bind(this, view);
+
 
         initdata();
         setFragmentLogic();
 
         return view;
     }
+
 
     private void setFragmentLogic() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());

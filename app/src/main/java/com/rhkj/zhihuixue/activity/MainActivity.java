@@ -9,9 +9,11 @@ import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
+import com.gyf.barlibrary.ImmersionBar;
 import com.gyf.barlibrary.BarHide;
 import com.gyf.barlibrary.ImmersionBar;
 import com.rhkj.zhihuixue.R;
+import com.rhkj.zhihuixue.base.BaseActivity;
 import com.rhkj.zhihuixue.fragment.FuwuFragment;
 import com.rhkj.zhihuixue.fragment.HomeFragment;
 import com.rhkj.zhihuixue.fragment.MineFragment;
@@ -128,5 +130,11 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 break;
         }
         transaction.commit();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ImmersionBar.with(this).destroy();  //不调用该方法，如果界面bar发生改变，在不关闭app的情况下，退出此界面再进入将记忆最后一次bar改变的状态
     }
 }

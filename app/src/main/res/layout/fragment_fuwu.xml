@@ -1,15 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="22dp"
+    android:paddingRight="22dp"
+    android:background="#fff"
     tools:context=".fragment.FuwuFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="14dp"
+        android:text="英语智汇学"
+        android:textColor="#EA5404"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_english"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="11111111111"
-        android:layout_marginTop="200dip"/>
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#f8f8f8"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_fm"
+                android:layout_width="match_parent"
+                android:layout_height="186dp"
+                android:layout_gravity="top"
+                android:src="@mipmap/img_fuwu_znyy" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@mipmap/icon_greater_than"
+                android:paddingBottom="14dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="14dp"
+                android:text="智能英语介绍"
+                android:textColor="#5a5a5a"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_introduce"
+        android:layout_marginTop="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#f8f8f8"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="186dp"
+                android:layout_gravity="top"
+                android:src="@mipmap/img_fuwu_abc" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@mipmap/icon_greater_than"
+                android:paddingBottom="14dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="14dp"
+                android:text="服务介绍"
+                android:textColor="#5a5a5a"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+    <TextView
+        android:layout_marginTop="14dp"
+        android:textColor="#5a5a5a"
+        android:text="如需人工服务请拨打电话 : 400-********"
+        android:textSize="12sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 
 </LinearLayout>
