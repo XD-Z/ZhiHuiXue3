@@ -5,11 +5,13 @@
     android:layout_height="match_parent"
     android:background="@color/colorWhile"
     tools:context=".fragment.MineFragment">
+
     <com.rhkj.zhihuixue.view.ListenNestScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:scrollbars="none">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -54,6 +56,7 @@
                         android:text="会员ID:"
                         android:textColor="@color/colorWhile"
                         android:textSize="12sp" />
+
                     <!--会员号-->
                     <TextView
                         android:layout_width="wrap_content"
@@ -64,6 +67,19 @@
                         android:text="120345511556"
                         android:textColor="@color/colorWhile"
                         android:textSize="10sp" />
+
+                    <!--签到-->
+                    <TextView
+                        android:layout_width="55dip"
+                        android:layout_height="21dip"
+                        android:layout_marginTop="65dip"
+                        android:layout_marginRight="11dip"
+                        android:text="签到"
+                        android:textSize="12sp"
+                        android:textColor="@color/colorWhile"
+                        android:background="@drawable/bg_mine_tv_sign"
+                        android:gravity="center"
+                        android:layout_alignParentRight="true"/>
                 </RelativeLayout>
 
                 <!--豆子和券-->
@@ -119,7 +135,7 @@
                     <TextView
                         android:layout_width="1dip"
                         android:layout_height="match_parent"
-                        android:background="@color/colorBlack" />
+                        android:background="#A0A0A0" />
 
                     <!--优惠券-->
                     <RelativeLayout
@@ -158,7 +174,6 @@
 
         </LinearLayout>
     </com.rhkj.zhihuixue.view.ListenNestScrollView>
-
 
 
 </RelativeLayout>

@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.gyf.barlibrary.BarHide;
 import com.gyf.barlibrary.ImmersionBar;
 import com.rhkj.zhihuixue.R;
+import com.rhkj.zhihuixue.activity.login_register.LoginActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;

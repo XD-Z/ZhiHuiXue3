@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorWhile"
     android:orientation="vertical"
-    tools:context="com.rhkj.zhihuixue.activity.LoginActivity">
+    tools:context="com.rhkj.zhihuixue.activity.login_register.LoginActivity">
 
     <ImageView
         android:layout_width="135dip"
@@ -42,7 +42,8 @@
             android:maxLength="11"
             android:maxLines="1"
             android:phoneNumber="true"
-            android:textColor="@color/colorLoginGrey" />
+            android:textColor="@color/colorLoginGrey"
+            android:id="@+id/login_et_phone"/>
     </LinearLayout>
 
     <!--密码-->
@@ -69,9 +70,11 @@
             android:textSize="16sp"
             android:background="@null"
             android:hint="请输入密码"
-            android:maxLines="1"
+            android:singleLine="true"
+            android:maxLength="20"
             android:password="true"
-            android:textColor="@color/colorLoginGrey"/>
+            android:textColor="@color/colorLoginGrey"
+            android:id="@+id/login_et_password"/>
     </LinearLayout>
 
     <!--忘记密码-->
@@ -80,6 +83,7 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/tv_login_forgetpassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -112,7 +116,8 @@
         android:gravity="center"
         android:text="注册"
         android:textColor="#EA5404"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:id="@+id/btn_register"/>
 
     <!--字体-->
     <RelativeLayout

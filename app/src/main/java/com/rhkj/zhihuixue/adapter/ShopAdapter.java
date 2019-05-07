@@ -1,9 +1,6 @@
 package com.rhkj.zhihuixue.adapter;
 
 import android.support.annotation.Nullable;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.view.View;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -25,9 +22,6 @@ public class ShopAdapter extends BaseQuickAdapter<String,BaseViewHolder> {
     @Override
     protected void convert(BaseViewHolder helper, String item) {
         TextView tvMoney = helper.getView(R.id.tv_money);
-
-
-
 
     }
 }
