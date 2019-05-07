@@ -14,6 +14,7 @@
         android:id="@+id/iv_img"
         android:layout_marginRight="24dp"
         android:layout_marginLeft="24dp"
+        android:minHeight="222dp"
         android:src="@mipmap/img_fuwu_introduce"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

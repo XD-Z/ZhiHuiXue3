@@ -22,6 +22,7 @@ public class FuwuIntroduceActivity extends BaseActivity {
 
     @Override
     protected void initLayout() {
+        super.initLayout();
         setContentView(R.layout.ac_fuwu_introduce);
     }
 

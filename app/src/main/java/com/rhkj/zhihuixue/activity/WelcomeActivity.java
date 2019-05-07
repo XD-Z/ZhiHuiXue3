@@ -46,6 +46,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         ImmersionBar.with(this)
                 .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
+                .fitsSystemWindows(true)
                 .init();
         timer.schedule(task, 1000, 1000);//等待时间一秒，停顿时间一秒
     }

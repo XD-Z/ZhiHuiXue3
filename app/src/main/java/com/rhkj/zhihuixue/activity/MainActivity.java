@@ -110,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 ImmersionBar.with(this)
                         .reset()
                         .statusBarColor(R.color.colorWhile)
+                        .fitsSystemWindows(true)
                         .statusBarDarkFont(true)
                         .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
                         .init();

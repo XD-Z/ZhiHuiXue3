@@ -61,6 +61,7 @@ public abstract class BaseActivity extends FragmentActivity {
         ImmersionBar.with(this)
                 .statusBarColor(R.color.colorWhile)
                 .statusBarDarkFont(true)
+                .fitsSystemWindows(true)
                 .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
                 .init();
     }
