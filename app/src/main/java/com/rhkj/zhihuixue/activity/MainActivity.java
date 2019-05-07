@@ -3,12 +3,15 @@ package com.rhkj.zhihuixue.activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
+import com.gyf.barlibrary.BarHide;
+import com.gyf.barlibrary.ImmersionBar;
 import com.rhkj.zhihuixue.R;
-import com.rhkj.zhihuixue.base.BaseActivity;
 import com.rhkj.zhihuixue.fragment.FuwuFragment;
 import com.rhkj.zhihuixue.fragment.HomeFragment;
 import com.rhkj.zhihuixue.fragment.MineFragment;
@@ -16,18 +19,25 @@ import com.rhkj.zhihuixue.fragment.ShopFragment;
 import com.rhkj.zhihuixue.fragment.ZhiFragment;
 
 
-public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener {
+public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
 
     private Fragment[] mFragments;
     private RadioGroup mRadioGroup;
     private RelativeLayout zhi_rl;
 
+
     @Override
-    protected void initViews() {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        initViews();
+    }
+
+    protected void initViews() {
         mRadioGroup = findViewById(R.id.rg_tab);
         mRadioGroup.setOnCheckedChangeListener(this);
-        zhi_rl=findViewById(R.id.zhi_rl);
+        zhi_rl = findViewById(R.id.zhi_rl);
         initFragment();
     }
 
@@ -63,6 +73,13 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
                 FragmentManager manager = getFragmentManager();
                 FragmentTransaction transaction = manager.beginTransaction();
                 transaction.replace(R.id.content_frag, mFragments[2]);
+                ImmersionBar.with(MainActivity.this)
+                        .reset()
+                        .statusBarColor(R.color.colorWhile)
+                        .fitsSystemWindows(true)
+                        .statusBarDarkFont(true)
+                        .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
+                        .init();
                 transaction.commit();
 
             }
@@ -71,10 +88,6 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     }
 
 
-    @Override
-    protected void initData() {
-        super.initData();
-    }
 
 
     @Override
@@ -84,19 +97,34 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         switch (checkedId) {
             case R.id.home_rb:
                 transaction.replace(R.id.content_frag, mFragments[0]);
-
+                ImmersionBar.with(this)
+                        .reset().statusBarColor(R.color.colorWhile)
+                        .statusBarDarkFont(true)
+                        .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
+                        .init();
                 break;
             case R.id.fuwu_rb:
                 transaction.replace(R.id.content_frag, mFragments[1]);
-
+                ImmersionBar.with(this)
+                        .reset()
+                        .statusBarColor(R.color.colorWhile)
+                        .statusBarDarkFont(true)
+                        .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
+                        .init();
                 break;
             case R.id.shop_rb:
                 transaction.replace(R.id.content_frag, mFragments[3]);
-
+                ImmersionBar.with(this)
+                        .reset()
+                        .statusBarColor(R.color.colorWhile)
+                        .fitsSystemWindows(true)
+                        .statusBarDarkFont(true)
+                        .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
+                        .init();
                 break;
             case R.id.mine_rb:
                 transaction.replace(R.id.content_frag, mFragments[4]);
-
+                ImmersionBar.with(this).reset().hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR).init();
                 break;
         }
         transaction.commit();

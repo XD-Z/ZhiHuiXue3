@@ -4,13 +4,14 @@ package com.rhkj.zhihuixue.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.gyf.barlibrary.BarHide;
 import com.gyf.barlibrary.ImmersionBar;
 import com.rhkj.zhihuixue.R;
-import com.rhkj.zhihuixue.base.BaseActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -19,7 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class WelcomeActivity extends BaseActivity {
+public class WelcomeActivity extends AppCompatActivity {
 
     @BindView(R.id.spalsh_img)
     ImageView spalshImg;
@@ -32,16 +33,24 @@ public class WelcomeActivity extends BaseActivity {
     private Runnable runnable;
 
     @Override
-    protected void initLayout() {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
-        ImmersionBar.with(this).init();
+        initLayout();
+        initData();
+    }
+
+    protected void initLayout() {
+
+        ImmersionBar.with(this)
+                .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
+                .init();
         timer.schedule(task, 1000, 1000);//等待时间一秒，停顿时间一秒
     }
 
 
-    @Override
     protected void initData() {
         /**
          * 正常情况下不点击跳过

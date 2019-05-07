@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.Toast;
 
+import com.gyf.barlibrary.BarHide;
 import com.gyf.barlibrary.ImmersionBar;
 import com.rhkj.zhihuixue.R;
 
@@ -16,7 +17,6 @@ public abstract class BaseActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
-//        requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         initLayout();
         initViews();
@@ -30,6 +30,11 @@ public abstract class BaseActivity extends FragmentActivity {
      * 初始化布局
      */
     protected void initLayout() {
+        ImmersionBar.with(this)
+                .statusBarColor(R.color.colorWhile)
+                .statusBarDarkFont(true)
+                .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
+                .init();
     }
 
     /**

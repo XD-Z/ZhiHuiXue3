@@ -1,21 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@color/colorWhile"
     tools:context=".fragment.MineFragment">
-
-    <RelativeLayout
+    <com.rhkj.zhihuixue.view.ListenNestScrollView
         android:layout_width="match_parent"
-        android:layout_height="240dip">
-        <!--个人信息-->
-        <RelativeLayout
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="none">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dip"
-            android:background="@color/colorAppTheme">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="240dip">
+                <!--个人信息-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dip"
+                    android:background="@color/colorAppTheme">
 
-    </RelativeLayout>
-</ScrollView>
+                    <ImageView
+                        android:id="@+id/img_mine_head"
+                        android:layout_width="60dip"
+                        android:layout_height="60dip"
+                        android:layout_marginLeft="20dip"
+                        android:layout_marginTop="65dip"
+                        android:src="@mipmap/icon_defaule_head" />
+
+                    <!--用户昵称-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginTop="80dip"
+                        android:layout_toRightOf="@id/img_mine_head"
+                        android:text="我的昵称"
+                        android:textColor="@color/colorWhile"
+                        android:textSize="15sp" />
+
+                    <!--会员ID-->
+                    <TextView
+                        android:id="@+id/vipID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dip"
+                        android:layout_marginTop="105dip"
+                        android:layout_toRightOf="@id/img_mine_head"
+                        android:text="会员ID:"
+                        android:textColor="@color/colorWhile"
+                        android:textSize="12sp" />
+                    <!--会员号-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dip"
+                        android:layout_marginTop="107dip"
+                        android:layout_toRightOf="@id/vipID"
+                        android:text="120345511556"
+                        android:textColor="@color/colorWhile"
+                        android:textSize="10sp" />
+                </RelativeLayout>
+
+                <!--豆子和券-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="90dip"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="40dip"
+                    android:layout_marginRight="40dip"
+                    android:background="@drawable/bg_linearlayout_mine"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dip"
+                    android:paddingBottom="10dip">
+
+                    <!--豆子-->
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="100">
+
+                        <ImageView
+                            android:id="@+id/img_mine_beans"
+                            android:layout_width="45dip"
+                            android:layout_height="45dip"
+                            android:layout_centerHorizontal="true"
+                            android:src="@mipmap/icon_mine_beans" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/img_mine_beans"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="3dip">
+
+                            <TextView
+                                android:id="@+id/text_mine_beansNums"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="20个"
+                                android:textColor="@color/colorAppTheme"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="智汇豆"
+                                android:textColor="#666666"
+                                android:textSize="9sp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <!--竖线-->
+                    <TextView
+                        android:layout_width="1dip"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorBlack" />
+
+                    <!--优惠券-->
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="100">
+
+                        <ImageView
+                            android:id="@+id/img_mine_ticket"
+                            android:layout_width="45dip"
+                            android:layout_height="45dip"
+                            android:layout_centerHorizontal="true"
+                            android:src="@mipmap/icon_mine_ticket" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/img_mine_ticket"
+                            android:layout_centerHorizontal="true"
+                            android:text="我的优惠券"
+                            android:textColor="#666666"
+                            android:textSize="12sp" />
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/re_mine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none" />
+
+        </LinearLayout>
+    </com.rhkj.zhihuixue.view.ListenNestScrollView>
+
+
+
+</RelativeLayout>
