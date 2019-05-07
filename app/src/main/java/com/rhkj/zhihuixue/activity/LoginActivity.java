@@ -15,16 +15,13 @@ import butterknife.OnClick;
 
 public class LoginActivity extends BaseActivity {
 
-
-    @BindView(R.id.btn_login)
-    TextView btnLogin;
-
     @Override
     protected void initViews() {
         setContentView(R.layout.activity_login);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
         ImmersionBar.with(this)
+                .statusBarColor(R.color.colorBlack)     //状态栏颜色，不写默认透明色
                 .statusBarColor(R.color.colorLoginGrey)     //状态栏颜色，不写默认透明色
                 .statusBarDarkFont(true)   //状态栏字体是深色，不写默认为亮色
                 .init();
