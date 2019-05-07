@@ -30,7 +30,7 @@
         android:paddingRight="5dip"
         android:weightSum="5">
         <RadioButton
-            android:id="@+id/main_rb"
+            android:id="@+id/home_rb"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -44,7 +44,7 @@
             android:textSize="12sp" />
 
         <RadioButton
-            android:id="@+id/message_rb"
+            android:id="@+id/fuwu_rb"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -53,7 +53,7 @@
             android:drawableTop="@drawable/fuwu_tab_selecter"
             android:gravity="center"
             android:paddingLeft="0dp"
-            android:text="消息"
+            android:text="服务"
             android:textColor="@drawable/radio_selector_color"
             android:textSize="12sp" />
 
@@ -71,7 +71,7 @@
             android:gravity="center"
             android:layout_weight="1">-->
         <RadioButton
-            android:id="@+id/friend_rb"
+            android:id="@+id/shop_rb"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -80,12 +80,12 @@
             android:drawableTop="@drawable/shop_tab_selecter"
             android:gravity="center"
             android:paddingLeft="0dip"
-            android:text="朋友圈"
+            android:text="商城"
             android:textColor="@drawable/radio_selector_color"
             android:textSize="12sp" />
 
         <RadioButton
-            android:id="@+id/info_rb"
+            android:id="@+id/mine_rb"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -101,7 +101,7 @@
     </RadioGroup>
 
     <RelativeLayout
-        android:id="@+id/send_rl"
+        android:id="@+id/zhi_rl"
         android:layout_width="wrap_content"
         android:layout_height="60dip"
         android:layout_above="@+id/rg_tab"

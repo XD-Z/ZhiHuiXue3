@@ -3,13 +3,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <com.youth.banner.Banner
+        android:id="@+id/banner"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="1111111121"
-        android:layout_marginTop="200dip"/>
+        android:layout_height="200dip"
+        android:background="@mipmap/img_banner"
+        android:scaleType="fitXY"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:layout_marginTop="10dip"
+        android:src="@mipmap/img_ad1"
+        android:id="@+id/advertisement1"
+        android:scaleType="fitXY"/>
+
+    <!--语音测评 秒记单词-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="3"
+        android:paddingLeft="40dip"
+        android:paddingRight="37dip"
+        android:paddingTop="40dip">
+
+        <!--语音识别-->
+        <ImageView
+            android:layout_width="130dip"
+            android:layout_height="130dip"
+            android:layout_alignParentLeft="true"
+            android:src="@mipmap/icon_voice_recognition"
+            android:id="@+id/img_voice_recognition"/>
+        <TextView
+            android:layout_width="130dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="语音评测"
+            android:textSize="17sp"
+            android:textColor="#5A5A5A"
+            android:layout_marginTop="10dip"
+            android:layout_below="@id/img_voice_recognition"
+            android:gravity="center_horizontal"/>
+
+        <!--秒记单词-->
+        <ImageView
+            android:layout_width="130dip"
+            android:layout_height="130dip"
+            android:src="@mipmap/icon_remember_words"
+            android:layout_alignParentRight="true"
+            android:id="@+id/img_remember_words"/>
+        <TextView
+            android:layout_width="130dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="秒记单词"
+            android:textSize="17sp"
+            android:textColor="#5A5A5A"
+            android:layout_marginTop="10dip"
+            android:layout_below="@id/img_remember_words"
+            android:gravity="center_horizontal"/>
+    </RelativeLayout>
+
+    <!--底部图片广告-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1.5"
+        android:src="@mipmap/img_ad2"
+        android:id="@+id/advertisement2"
+        android:scaleType="fitXY"/>
+
+
+
 
 </LinearLayout>

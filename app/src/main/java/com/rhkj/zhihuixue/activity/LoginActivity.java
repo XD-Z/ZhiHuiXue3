@@ -25,7 +25,8 @@ public class LoginActivity extends BaseActivity {
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
         ImmersionBar.with(this)
-                .statusBarColor(R.color.colorBlack)     //状态栏颜色，不写默认透明色
+                .statusBarColor(R.color.colorLoginGrey)     //状态栏颜色，不写默认透明色
+                .statusBarDarkFont(true)   //状态栏字体是深色，不写默认为亮色
                 .init();
     }
 

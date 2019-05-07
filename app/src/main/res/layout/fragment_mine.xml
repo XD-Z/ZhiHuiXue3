@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.MineFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="1111111311"
-        android:layout_marginTop="200dip"/>
+        android:layout_height="240dip">
+        <!--个人信息-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dip"
+            android:background="@color/colorAppTheme">
 
-</LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</ScrollView>

@@ -6,8 +6,10 @@
 
     <color name="lightgray">#cccccc</color>
     <!--颜色-->
+    <color name="colorAppTheme">#EA5404</color>
     <color name="color_sp_btn">#212121</color>
     <color name="colorWhile">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
     <color name="colorLoginGrey">#B5B5B6</color>
+
 </resources>

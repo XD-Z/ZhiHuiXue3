@@ -3,7 +3,9 @@ package com.rhkj.zhihuixue.activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.view.View;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 
 import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.base.BaseActivity;
@@ -18,14 +20,14 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
 
     private Fragment[] mFragments;
     private RadioGroup mRadioGroup;
-
+    private RelativeLayout zhi_rl;
 
     @Override
     protected void initViews() {
         setContentView(R.layout.activity_main);
         mRadioGroup = findViewById(R.id.rg_tab);
         mRadioGroup.setOnCheckedChangeListener(this);
-
+        zhi_rl=findViewById(R.id.zhi_rl);
         initFragment();
     }
 
@@ -51,8 +53,20 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         //提交事物
         transaction.commit();
         //默认点击首页
-        mRadioGroup.check(R.id.main_rb);
+        mRadioGroup.check(R.id.home_rb);
 
+        zhi_rl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mRadioGroup.clearCheck();
+
+                FragmentManager manager = getFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                transaction.replace(R.id.content_frag, mFragments[2]);
+                transaction.commit();
+
+            }
+        });
 
     }
 
@@ -68,19 +82,19 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         FragmentManager manager = getFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         switch (checkedId) {
-            case R.id.main_rb:
+            case R.id.home_rb:
                 transaction.replace(R.id.content_frag, mFragments[0]);
 
                 break;
-            case R.id.message_rb:
+            case R.id.fuwu_rb:
                 transaction.replace(R.id.content_frag, mFragments[1]);
 
                 break;
-            case R.id.friend_rb:
+            case R.id.shop_rb:
                 transaction.replace(R.id.content_frag, mFragments[3]);
 
                 break;
-            case R.id.info_rb:
+            case R.id.mine_rb:
                 transaction.replace(R.id.content_frag, mFragments[4]);
 
                 break;
