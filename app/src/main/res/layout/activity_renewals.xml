@@ -1,9 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
     tools:context=".activity.mine.RenewalsActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <include
+        layout="@layout/include_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.youth.banner.Banner
+        android:id="@+id/vp"
+        app:indicator_height="10dp"
+        app:indicator_width="10dp"
+        app:indicator_margin="10dp"
+        app:indicator_drawable_selected="@drawable/vp_renewals_indicator_t"
+        app:indicator_drawable_unselected="@drawable/vp_renewals_indicator_f"
+        android:layout_width="match_parent"
+        android:layout_height="218dp" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="12dp"
+        android:text="第七代智能英语学习套餐"
+        android:textColor="#5a5a5a"
+        android:textSize="16sp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:background="#f8f8f8" />
+
+    <LinearLayout
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="22dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="16dp"
+            android:background="#ea5404" />
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:text="活动详情："
+            android:textColor="#5a5a5a"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="10dp"
+        android:text="商品详情商品详情商品详情商品详情商品详情商情商品详情商品详情"
+        android:textColor="#666666"
+        android:textSize="16sp" />
+    <Button
+        android:text="立即续费"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginRight="38dp"
+        android:background="@drawable/btn_bg_detalis"
+        android:layout_width="match_parent"
+        android:layout_height="44dp" />
+
+
+
+
+
+
+
+</LinearLayout>

@@ -2,17 +2,62 @@ package com.rhkj.zhihuixue.activity.mine;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.rhkj.zhihuixue.R;
+import com.rhkj.zhihuixue.adapter.RenewalsAdapter;
+import com.rhkj.zhihuixue.base.BaseActivity;
+import com.rhkj.zhihuixue.utils.GlideImageLoader;
+import com.youth.banner.Banner;
+
+import java.util.ArrayList;
 
 /**
  *  我要续费
  */
-public class RenewalsActivity extends AppCompatActivity {
+public class RenewalsActivity extends BaseActivity {
+
+    private Banner banner;
+    private RecyclerView recyclerView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void initLayout() {
+        super.initLayout();
         setContentView(R.layout.activity_renewals);
+    }
+
+    @Override
+    protected void initViews() {
+        banner = findViewById(R.id.vp);
+        recyclerView = findViewById(R.id.rv);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+
+
+    }
+
+    @Override
+    protected void initData() {
+        tvTitle.setText("我要续费");
+
+        ArrayList<Integer> integerArrayList = new ArrayList<>();
+        integerArrayList.add(R.mipmap.img_banner_renewals);
+        integerArrayList.add(R.mipmap.img_banner_renewals);
+
+        banner.setImages(integerArrayList).setImageLoader(new GlideImageLoader()).start();
+
+
+        ArrayList<Integer> integerArrayList1 = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+            integerArrayList1.add(0);
+        }
+
+        RenewalsAdapter renewalsAdapter = new RenewalsAdapter(integerArrayList1);
+        recyclerView.setAdapter(renewalsAdapter);
+
+
+
+
     }
 }
