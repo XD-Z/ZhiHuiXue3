@@ -1,9 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWhile"
+    android:orientation="vertical"
+    android:id="@+id/setting_layout_parent"
     tools:context=".activity.mine.SettingActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <include layout="@layout/include_title" />
+
+    <!--地区-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dip"
+        android:paddingLeft="20dip"
+        android:paddingRight="15dip"
+        android:id="@+id/setting_district"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="地区"
+            android:textColor="#5A5A5A" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="北京市-朝阳区-朝阳区"
+            android:textColor="#5A5A5A" />
+    </RelativeLayout>
+
+
+    <!--修改密码-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="3.5dip"
+        android:background="#F8F8F8" />
+
+    <RelativeLayout
+        android:id="@+id/setting_amend_password"
+        android:layout_width="match_parent"
+        android:layout_height="42dip"
+        android:paddingLeft="20dip"
+        android:paddingRight="15dip">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="修改密码"
+            android:textColor="#5A5A5A" />
+
+        <ImageView
+            android:layout_width="5dip"
+            android:layout_height="10dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_mine_enter" />
+    </RelativeLayout>
+
+    <!--更换手机号-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="3.5dip"
+        android:background="#F8F8F8" />
+
+    <RelativeLayout
+        android:id="@+id/setting_change_phone"
+        android:layout_width="match_parent"
+        android:layout_height="42dip"
+        android:paddingLeft="20dip"
+        android:paddingRight="15dip">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="更换手机号"
+            android:textColor="#5A5A5A" />
+
+        <ImageView
+            android:layout_width="5dip"
+            android:layout_height="10dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_mine_enter" />
+    </RelativeLayout>
+
+    <!--退出登录-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="3.5dip"
+        android:background="#F8F8F8" />
+
+    <RelativeLayout
+        android:id="@+id/setting_exit"
+        android:layout_width="match_parent"
+        android:layout_height="42dip"
+        android:paddingLeft="20dip"
+        android:paddingRight="15dip">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="退出登录"
+            android:textColor="#5A5A5A" />
+
+        <ImageView
+            android:layout_width="5dip"
+            android:layout_height="10dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_mine_enter" />
+    </RelativeLayout>
+
+    <!--注销申请-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="3.5dip"
+        android:background="#F8F8F8" />
+
+    <RelativeLayout
+        android:id="@+id/setting_login_out"
+        android:layout_width="match_parent"
+        android:layout_height="42dip"
+        android:paddingLeft="20dip"
+        android:paddingRight="15dip">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="注销申请"
+            android:textColor="#5A5A5A" />
+
+        <ImageView
+            android:layout_width="5dip"
+            android:layout_height="10dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_mine_enter" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="3.5dip"
+        android:background="#F8F8F8" />
+
+
+</LinearLayout>

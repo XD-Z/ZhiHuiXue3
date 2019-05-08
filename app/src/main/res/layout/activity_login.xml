@@ -71,7 +71,7 @@
             android:background="@null"
             android:hint="请输入密码"
             android:singleLine="true"
-            android:maxLength="20"
+            android:maxLength="12"
             android:password="true"
             android:textColor="@color/colorLoginGrey"
             android:id="@+id/login_et_password"/>

@@ -1,11 +1,10 @@
 package com.rhkj.zhihuixue.base;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,8 +12,9 @@ import android.widget.Toast;
 import com.gyf.barlibrary.BarHide;
 import com.gyf.barlibrary.ImmersionBar;
 import com.rhkj.zhihuixue.R;
+import com.rhkj.zhihuixue.utils.MyApplication;
 
-public abstract class BaseActivity extends FragmentActivity {
+public abstract class BaseActivity extends Activity {
     private Toast toast; // 公共的。。。。 Toast
     public static int screenW, screenH; // 全屏 宽高
     public TextView tvTitle;
@@ -23,6 +23,8 @@ public abstract class BaseActivity extends FragmentActivity {
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
 
+        // 添加Activity到堆栈
+        MyApplication.getInstance().addActivity(this);
 
         initLayout();
         initTitle();
@@ -31,14 +33,13 @@ public abstract class BaseActivity extends FragmentActivity {
         addListener();
 
 
-
     }
 
     private void initTitle() {
         tvTitle = findViewById(R.id.tv_title);
         ImageView ivBack = findViewById(R.id.iv_back);
 
-        if(ivBack!=null){
+        if (ivBack != null) {
             ivBack.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -48,8 +49,6 @@ public abstract class BaseActivity extends FragmentActivity {
         }
 
     }
-
-    ;
 
 
     /************************** 公共功能封装 ****************************************/

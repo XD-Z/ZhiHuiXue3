@@ -11,5 +11,6 @@
     <color name="colorWhile">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
     <color name="colorLoginGrey">#B5B5B6</color>
+    <color name="colorforgetGrey">#666666</color>
 
 </resources>

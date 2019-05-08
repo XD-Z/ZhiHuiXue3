@@ -1,7 +1,6 @@
 package com.rhkj.zhihuixue.activity;
 
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -11,10 +10,8 @@ import com.rhkj.zhihuixue.base.BaseActivity;
 import com.rhkj.zhihuixue.utils.GlideImageLoader;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
-import com.youth.banner.listener.OnBannerListener;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * 商品详情
@@ -37,7 +34,7 @@ public class CommodityDetailsActivity extends BaseActivity {
 
     @Override
     protected void initViews() {
-
+        super.initViews();
         banner = findViewById(R.id.vp);
         llSelect = findViewById(R.id.ll_select);
 
@@ -46,8 +43,9 @@ public class CommodityDetailsActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        tvTitle.setText("商品详情");
+        super.initData();
 
+        tvTitle.setText("商品详情");
         ArrayList<Integer> integerArrayList = new ArrayList<>();
         integerArrayList.add(R.mipmap.test_img_one);
         integerArrayList.add(R.mipmap.test_img_two);

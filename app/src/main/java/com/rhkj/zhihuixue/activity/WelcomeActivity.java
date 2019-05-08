@@ -1,10 +1,10 @@
 package com.rhkj.zhihuixue.activity;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,7 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class WelcomeActivity extends AppCompatActivity {
+public class WelcomeActivity extends Activity {
 
     @BindView(R.id.spalsh_img)
     ImageView spalshImg;
@@ -44,11 +44,10 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
     protected void initLayout() {
-
         ImmersionBar.with(this)
                 .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
-                .fitsSystemWindows(true)
                 .init();
+
         timer.schedule(task, 1000, 1000);//等待时间一秒，停顿时间一秒
     }
 

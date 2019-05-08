@@ -14,6 +14,6 @@
         android:right="1dp"
         android:top="1dp" />
     //角
-    <corners android:radius="5dp" />
+    <corners android:radius="2dp" />
 
 </shape>

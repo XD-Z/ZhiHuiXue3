@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="87dip"
+    android:background="@color/colorWhile"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/setting_exit_logout"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:paddingLeft="84dip"
+        android:paddingTop="15dip">
+
+        <ImageView
+            android:layout_width="20dip"
+            android:layout_height="20dip"
+            android:src="@mipmap/icon_setting_exit" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:text="退出登录"
+            android:textColor="@color/colorforgetGrey"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/setting_exit_close"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:paddingLeft="84dip"
+        android:paddingTop="10dip">
+
+        <ImageView
+            android:layout_width="20dip"
+            android:layout_height="20dip"
+            android:src="@mipmap/icon_setting_close" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:text="关闭智汇学"
+            android:textColor="@color/colorforgetGrey"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+</LinearLayout>

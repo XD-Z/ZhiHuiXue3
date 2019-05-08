@@ -1,10 +1,8 @@
 package com.rhkj.zhihuixue.activity;
 
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.base.BaseActivity;
 
@@ -28,6 +26,7 @@ public class FuwuIntroduceActivity extends BaseActivity {
 
     @Override
     protected void initViews() {
+        super.initViews();
         imageView = findViewById(R.id.iv_img);
         textView = findViewById(R.id.tv_text);
 
@@ -35,6 +34,8 @@ public class FuwuIntroduceActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+        super.initData();
+
         int state = getIntent().getIntExtra("state", -1);
 
 

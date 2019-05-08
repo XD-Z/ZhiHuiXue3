@@ -48,18 +48,17 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-
-
     @OnClick({R.id.tv_login_forgetpassword, R.id.btn_login, R.id.btn_register})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_login_forgetpassword:
-
+                startActivity(new Intent(this, ForgetPasswordActivity.class));
                 break;
             case R.id.btn_login:
                 startActivity(new Intent(this, MainActivity.class));
                 break;
             case R.id.btn_register:
+                startActivity(new Intent(this, RegisterActivity.class));
                 break;
         }
     }

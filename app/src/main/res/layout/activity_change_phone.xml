@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhile"
+    android:orientation="vertical"
+    tools:context=".activity.ChangePhoneActivity">
+
+    <include layout="@layout/include_title" />
+
+    <!--手机号-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="13dip"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="手机号"
+            android:textColor="@color/colorforgetGrey"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/change_phone_et_old_phone"
+            android:layout_width="130dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dip"
+            android:background="@null"
+            android:hint="150****2014"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:phoneNumber="true"
+            android:textColor="#999999"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <!--验证码-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="3.5dip"
+        android:background="#F8F8F8" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="13dip"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/change_phone_tv_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="验证码"
+            android:textColor="@color/colorforgetGrey"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/change_phone_et_code"
+            android:layout_width="130dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dip"
+            android:layout_toRightOf="@id/change_phone_tv_code"
+            android:background="@null"
+            android:hint="请输入验证码"
+            android:maxLength="4"
+            android:maxLines="1"
+            android:phoneNumber="true"
+            android:textColor="#999999"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="70dip"
+            android:layout_height="21dip"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_change_phone_tv_code"
+            android:text="发送验证码"
+            android:textColor="@color/colorAppTheme" />
+
+    </RelativeLayout>
+
+    <!--新手机号-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="3.5dip"
+        android:background="#F8F8F8" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="13dip"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="手机号"
+            android:textColor="@color/colorforgetGrey"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/change_phone_et_new_phone"
+            android:layout_width="130dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dip"
+            android:background="@null"
+            android:hint="新输入新手机号"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:phoneNumber="true"
+            android:textColor="#999999"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="3.5dip"
+        android:background="#F8F8F8" />
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dip"
+        android:gravity="center_horizontal">
+        <!--保存-->
+        <TextView
+            android:id="@+id/btn_change_phone_save"
+            android:layout_width="300dip"
+            android:layout_height="45dip"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="18dip"
+            android:background="@drawable/bg_tv_login"
+            android:gravity="center"
+            android:text="保存"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+
+
+</LinearLayout>
