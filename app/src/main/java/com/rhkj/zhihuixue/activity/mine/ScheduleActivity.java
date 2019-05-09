@@ -11,6 +11,8 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.rhkj.zhihuixue.R;
+import com.rhkj.zhihuixue.activity.ScheduleGrammarActivity;
+import com.rhkj.zhihuixue.activity.ScheduleMouthActivity;
 import com.rhkj.zhihuixue.activity.ScheduleStraightActivity;
 import com.rhkj.zhihuixue.adapter.ScheduleAdapter;
 import com.rhkj.zhihuixue.base.BaseActivity;
@@ -48,10 +50,10 @@ public class ScheduleActivity extends BaseActivity {
                         startActivity(new Intent(ScheduleActivity.this, ScheduleStraightActivity.class));
                         break;
                     case 1:
-
+                        startActivity(new Intent(ScheduleActivity.this, ScheduleMouthActivity.class));
                         break;
                     case 2:
-
+                        startActivity(new Intent(ScheduleActivity.this, ScheduleGrammarActivity.class));
                         break;
                 }
             }

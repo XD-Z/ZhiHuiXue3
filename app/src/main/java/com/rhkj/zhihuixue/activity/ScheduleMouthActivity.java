@@ -2,9 +2,6 @@ package com.rhkj.zhihuixue.activity;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
 
 import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.adapter.ScheduleStraightAdapter;
@@ -13,12 +10,12 @@ import com.rhkj.zhihuixue.base.BaseActivity;
 import java.util.ArrayList;
 
 /**
- * 直记直译
+ *      口语训练平台
  * <p>
  * Created by zjx on 2019/5/8.
  */
 
-public class ScheduleStraightActivity extends BaseActivity {
+public class ScheduleMouthActivity extends BaseActivity {
 
     private ScheduleStraightAdapter scheduleStraightAdapter;
 
@@ -30,7 +27,7 @@ public class ScheduleStraightActivity extends BaseActivity {
 
     @Override
     protected void initViews() {
-        tvTitle.setText("直记直译");
+        tvTitle.setText("口语训练平台");
 
         RecyclerView recyclerView = findViewById(R.id.rv);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 5));

@@ -55,6 +55,8 @@ dependencies {
     implementation 'com.github.pinguo-zhouwei:CustomPopwindow:2.1.1'
     //城市选择器   https://github.com/crazyandcoder/citypicker
     implementation 'liji.library.dev:citypickerview:4.2.1'
+    //圆形imageView https://github.com/hdodenhof/CircleImageView
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
     //switch-button  https://blog.csdn.net/awm_98k5520/article/details/80260200
     implementation 'com.github.zcweng:switch-button:0.0.3@aar'
 }

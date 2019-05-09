@@ -13,22 +13,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.AddaddressActivity"></activity>
-        <activity android:name=".activity.login_register.LogoutActivity" />
+        <activity android:name=".activity.login_register.LogoutActivity"></activity>
         <activity android:name=".activity.ChangePhoneActivity" />
         <activity android:name=".activity.login_register.AmendPasswordActivity" />
         <activity android:name=".activity.login_register.RegisterActivity" />
         <activity android:name=".activity.login_register.ForgetPasswordActivity" />
         <activity android:name=".activity.mine.SettingActivity" />
         <activity android:name=".activity.mine.AddressActivity" />
+        <!--常见问题-->
         <activity android:name=".activity.mine.QuestionActivity" />
         <activity android:name=".activity.mine.MessageActivity" />
+        <!--面对面分享-->
         <activity android:name=".activity.mine.ShareActivity" />
+        <!--动态学习计划表-->
         <activity android:name=".activity.mine.ScheduleActivity" />
+        <!--薄弱节点视频-->
         <activity android:name=".activity.mine.WeakvideoActivity" />
+        <!--我要续费-->
         <activity android:name=".activity.mine.RenewalsActivity" />
+        <!--我的订单-->
         <activity android:name=".activity.mine.MyorderActivity" />
-        <activity android:name=".activity.mine.MycourseActivity" /> <!-- 今日头条适配 -->
+        <!--我的课程-->
+        <activity android:name=".activity.mine.MycourseActivity" />
+        <!-- 今日头条适配 -->
         <meta-data
             android:name="design_width_in_dp"
             android:value="375" />
@@ -49,12 +56,23 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 登陆 -->
-        <activity android:name=".activity.login_register.LoginActivity" /> <!-- 智能英语介绍/服务介绍 -->
-        <activity android:name=".activity.FuwuIntroduceActivity" /> <!-- 商品详情 -->
-        <activity android:name=".activity.CommodityDetailsActivity" /> <!-- 订单详情/取消订单 -->
-        <activity android:name=".activity.OrderCancelActivity" /> <!-- 直记直译 -->
-        <activity android:name=".activity.ScheduleStraightActivity" />
+        </activity>
+        <!--登陆-->
+        <activity android:name=".activity.login_register.LoginActivity" />
+        <!-- 智能英语介绍/服务介绍 -->
+        <activity android:name=".activity.FuwuIntroduceActivity" />
+        <!-- 商品详情 -->
+        <activity android:name=".activity.CommodityDetailsActivity" />
+        <!--订单详情/取消订单-->
+        <activity android:name=".activity.OrderCancelActivity"/>
+        <!--直记直译-->
+        <activity android:name=".activity.ScheduleStraightActivity"/>
+        <!--口语训练平台-->
+        <activity android:name=".activity.ScheduleMouthActivity"/>
+        <!--语法易点通-->
+        <activity android:name=".activity.ScheduleGrammarActivity"/>
+
+
     </application>
 
 </manifest>

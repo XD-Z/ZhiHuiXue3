@@ -1,8 +1,11 @@
 package com.rhkj.zhihuixue.adapter;
 
+import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -14,50 +17,169 @@ import java.util.List;
  * Created by zjx on 2019/5/8.
  */
 
-public class ScheduleStraightAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
+public class ScheduleStraightAdapter extends BaseQuickAdapter<Integer, BaseViewHolder> {
 
-    public ScheduleStraightAdapter(@Nullable List<String> data) {
+
+    //每行的数量
+    private int spanCount = 5;
+
+    public ScheduleStraightAdapter(@Nullable List<Integer> data) {
         super(R.layout.item_schedule_straight, data);
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, String item) {
+    protected void convert(BaseViewHolder helper, Integer item) {
         View lineUp = helper.getView(R.id.line_up);
         View lineLeft = helper.getView(R.id.line_left);
         View lineRight = helper.getView(R.id.line_right);
         View lineLower = helper.getView(R.id.line_lower);
+        TextView tvTime = helper.getView(R.id.tv_time);
+        ImageView imageView = helper.getView(R.id.iv_center);
 
 
         int layoutPosition = helper.getLayoutPosition();
 
 
-        if (layoutPosition == 0) {
-            lineUp.setVisibility(View.GONE);
-            lineLeft.setVisibility(View.GONE);
-            lineLower.setVisibility(View.GONE);
-            return;
-        }
+        initLine(lineUp, lineLeft, lineRight, lineLower, layoutPosition, tvTime);
 
-
-        int num = 1;
-        int a = 0;
-
-        do {
-            a = layoutPosition - 5;
-            num++;
-        }
-        while (a < 0);
-
-
-        if (num % 2 == 1) {
-
-
-
+        if (item == 1) {
+            imageView.setImageResource(R.mipmap.icon_anniu);
         } else {
+            imageView.setImageResource(R.mipmap.icon_anniu_hui);
+        }
 
 
+        if (item == 0) {
+            lineLeft.setBackgroundColor(Color.parseColor("#a0a0a0"));
+        }
+
+        //判断还有下一个吗 有就获取下一个的值看看是不是灰的
+        if (layoutPosition + 2 <= getData().size()) {
+            if (getData().get(layoutPosition + 1) == 0) {
+                lineRight.setBackgroundColor(Color.parseColor("#a0a0a0"));
+            }
         }
 
 
     }
+
+
+    /**
+     * 获取当前是第几行
+     *
+     * @param layoutPosition
+     * @return
+     */
+    private int getLine(int layoutPosition) {
+        int num = 0;
+        do {
+            layoutPosition = layoutPosition - spanCount;
+            num++;
+        }
+        while (layoutPosition > 0);
+        return num;
+    }
+
+
+    public void initLine(View lineUp, View lineLeft, View lineRight, View lineLower, int layoutPosition, TextView textView) {
+        if (layoutPosition == 0) {
+            lineUp.setVisibility(View.INVISIBLE);
+            lineLeft.setVisibility(View.INVISIBLE);
+            lineLower.setVisibility(View.INVISIBLE);
+            if (layoutPosition + 1 == getData().size()) {
+                lineRight.setVisibility(View.INVISIBLE);
+            } else {
+                lineRight.setVisibility(View.VISIBLE);
+            }
+            return;
+        }
+
+
+        int line = getLine(layoutPosition + 1);
+
+        //获取当前布局是本行的第几个
+        int lineNum = (spanCount * line) - (layoutPosition + 1);
+
+
+        if (line % 2 == 1) {
+            if (lineNum == 0) {
+                //如果等于0 说明它是本行的最后一个
+                lineRight.setVisibility(View.INVISIBLE);
+                lineLeft.setVisibility(View.VISIBLE);
+                lineUp.setVisibility(View.INVISIBLE);
+                //判断下一排的最后一个有没有东西 true就显示竖线  flesh就不显示
+                if ((layoutPosition + 1) + spanCount <= getData().size()) {
+                    lineLower.setVisibility(View.VISIBLE);
+                } else {
+                    lineLower.setVisibility(View.INVISIBLE);
+                }
+
+
+                textView.setVisibility(View.GONE);
+
+            } else if (lineNum == spanCount - 1) {
+                //如果等于每行的总数减1 说明它是本行的第一个
+                lineLower.setVisibility(View.INVISIBLE);
+                lineLeft.setVisibility(View.INVISIBLE);
+                lineUp.setVisibility(View.VISIBLE);
+                //判断当前的是不是最后一个
+                if (layoutPosition + 1 == getData().size()) {
+                    lineRight.setVisibility(View.INVISIBLE);
+                } else {
+                    lineRight.setVisibility(View.VISIBLE);
+                }
+            } else {
+                //中间的
+                lineLower.setVisibility(View.INVISIBLE);
+                lineLeft.setVisibility(View.VISIBLE);
+                lineUp.setVisibility(View.INVISIBLE);
+                //判断当前的是不是最后一个
+                if (layoutPosition + 1 == getData().size()) {
+                    lineRight.setVisibility(View.INVISIBLE);
+                    textView.setVisibility(View.GONE);
+                } else {
+                    lineRight.setVisibility(View.VISIBLE);
+                }
+            }
+
+        } else {
+            if (lineNum == 0) {
+                //如果等于0 说明它是本行的最后一个
+                lineLower.setVisibility(View.INVISIBLE);
+                lineRight.setVisibility(View.INVISIBLE);
+                lineLeft.setVisibility(View.VISIBLE);
+                lineUp.setVisibility(View.VISIBLE);
+
+                textView.setVisibility(View.GONE);
+            } else if (lineNum == spanCount - 1) {
+                //如果等于每行的总数减1 说明它是本行的第一个
+                lineLeft.setVisibility(View.INVISIBLE);
+                lineUp.setVisibility(View.INVISIBLE);
+                if (layoutPosition + 1 == getData().size()) {
+                    lineLower.setVisibility(View.INVISIBLE);
+                    lineRight.setVisibility(View.INVISIBLE);
+                } else {
+                    if ((layoutPosition + 1) + spanCount <= getData().size()) {
+                        lineLower.setVisibility(View.VISIBLE);
+                    } else {
+                        lineLower.setVisibility(View.INVISIBLE);
+                    }
+                    lineRight.setVisibility(View.VISIBLE);
+                }
+            } else {
+                //中间的
+                lineLower.setVisibility(View.INVISIBLE);
+                lineLeft.setVisibility(View.VISIBLE);
+                lineUp.setVisibility(View.INVISIBLE);
+                if (layoutPosition + 1 == getData().size()) {
+                    lineRight.setVisibility(View.INVISIBLE);
+                    textView.setVisibility(View.GONE);
+                } else {
+                    lineRight.setVisibility(View.VISIBLE);
+                }
+            }
+        }
+
+    }
+
 }

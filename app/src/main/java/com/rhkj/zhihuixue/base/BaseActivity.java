@@ -1,5 +1,6 @@
 package com.rhkj.zhihuixue.base;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import com.gyf.barlibrary.BarHide;
 import com.gyf.barlibrary.ImmersionBar;
 import com.rhkj.zhihuixue.R;
+import com.rhkj.zhihuixue.utils.MyApplication;
 
 public abstract class BaseActivity extends AppCompatActivity {
     private Toast toast; // 公共的。。。。 Toast
@@ -23,7 +25,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(arg0);
 
         // 添加Activity到堆栈
-//        MyApplication.getInstance().addActivity(this);
+        MyApplication.getInstance().addActivity(this);
 
         initLayout();
         initTitle();

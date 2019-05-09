@@ -1,5 +1,7 @@
 package com.rhkj.zhihuixue.adapter;
 
+
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -14,7 +16,7 @@ import java.util.List;
 public class VpFratmentAdapter extends FragmentPagerAdapter {
     private List<Fragment> fragmentList = new ArrayList<>();
 
-    public VpFratmentAdapter(FragmentManager fm,List<Fragment> fragmentList) {
+    public VpFratmentAdapter(FragmentManager fm, List<Fragment> fragmentList) {
         super(fm);
         this.fragmentList=fragmentList;
     }

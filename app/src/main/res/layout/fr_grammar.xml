@@ -2,18 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
     android:orientation="vertical">
-
-    <include
-        layout="@layout/include_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:background="#f8f8f8" />
     <ImageView
         android:layout_marginTop="18dp"
         android:src="@mipmap/img_straight"
@@ -34,8 +23,5 @@
         android:layout_height="wrap_content">
 
     </android.support.v7.widget.RecyclerView>
-
-
-
 
 </LinearLayout>
