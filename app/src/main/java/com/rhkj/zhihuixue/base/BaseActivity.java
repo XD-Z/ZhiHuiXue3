@@ -1,9 +1,9 @@
 package com.rhkj.zhihuixue.base;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,9 +12,8 @@ import android.widget.Toast;
 import com.gyf.barlibrary.BarHide;
 import com.gyf.barlibrary.ImmersionBar;
 import com.rhkj.zhihuixue.R;
-import com.rhkj.zhihuixue.utils.MyApplication;
 
-public abstract class BaseActivity extends Activity {
+public abstract class BaseActivity extends AppCompatActivity {
     private Toast toast; // 公共的。。。。 Toast
     public static int screenW, screenH; // 全屏 宽高
     public TextView tvTitle;
@@ -24,7 +23,7 @@ public abstract class BaseActivity extends Activity {
         super.onCreate(arg0);
 
         // 添加Activity到堆栈
-        MyApplication.getInstance().addActivity(this);
+//        MyApplication.getInstance().addActivity(this);
 
         initLayout();
         initTitle();

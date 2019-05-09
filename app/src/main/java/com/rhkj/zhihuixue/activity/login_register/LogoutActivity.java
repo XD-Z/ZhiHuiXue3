@@ -1,15 +1,40 @@
 package com.rhkj.zhihuixue.activity.login_register;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
 import com.rhkj.zhihuixue.R;
+import com.rhkj.zhihuixue.base.BaseActivity;
 
-public class LogoutActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class LogoutActivity extends BaseActivity {
+
+    @BindView(R.id.tv_title)
+    TextView tvTitle;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void initLayout() {
+        super.initLayout();
         setContentView(R.layout.activity_logout);
+        ButterKnife.bind(this);
+        tvTitle.setText("注销账号");
+    }
+
+    @Override
+    protected void initViews() {
+        super.initViews();
+
+    }
+
+    @Override
+    protected void initData() {
+        super.initData();
+    }
+
+    @Override
+    protected void addListener() {
+        super.addListener();
     }
 }

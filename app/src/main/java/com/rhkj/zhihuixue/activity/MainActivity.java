@@ -17,6 +17,7 @@ import com.rhkj.zhihuixue.fragment.HomeFragment;
 import com.rhkj.zhihuixue.fragment.MineFragment;
 import com.rhkj.zhihuixue.fragment.ShopFragment;
 import com.rhkj.zhihuixue.fragment.ZhiFragment;
+import com.rhkj.zhihuixue.utils.SysApplication;
 
 
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        SysApplication.getInstance().addActivity(this);
         initViews();
     }
 
@@ -86,8 +87,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         });
 
     }
-
-
 
 
     @Override

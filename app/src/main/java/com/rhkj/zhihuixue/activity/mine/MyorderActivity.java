@@ -1,10 +1,7 @@
 package com.rhkj.zhihuixue.activity.mine;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 import com.flyco.tablayout.SlidingTabLayout;
 import com.rhkj.zhihuixue.R;
@@ -44,6 +41,6 @@ public class MyorderActivity extends BaseActivity {
         }
 
 
-        slidingTabLayout.setViewPager(viewPager,title,this,fragments);
+        slidingTabLayout.setViewPager(viewPager, title, this, fragments);
     }
 }

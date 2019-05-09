@@ -21,8 +21,9 @@ import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.activity.ChangePhoneActivity;
 import com.rhkj.zhihuixue.activity.login_register.AmendPasswordActivity;
 import com.rhkj.zhihuixue.activity.login_register.LoginActivity;
+import com.rhkj.zhihuixue.activity.login_register.LogoutActivity;
 import com.rhkj.zhihuixue.base.BaseActivity;
-import com.rhkj.zhihuixue.utils.MyApplication;
+import com.rhkj.zhihuixue.utils.SysApplication;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -57,6 +58,7 @@ public class SettingActivity extends BaseActivity {
     protected void initLayout() {
         super.initLayout();
         setContentView(R.layout.activity_setting);
+        SysApplication.getInstance().addActivity(this);
         ButterKnife.bind(this);
         mPicker = new CityPickerView();//实例化城市选择器
         //预先加载仿iOS滚轮实现的全部数据
@@ -93,7 +95,7 @@ public class SettingActivity extends BaseActivity {
                 popWindowhow();
                 break;
             case R.id.setting_login_out://注销
-
+                startActivity(new Intent(this, LogoutActivity.class));
                 break;
         }
     }
@@ -166,8 +168,7 @@ public class SettingActivity extends BaseActivity {
                         finish();
                         break;
                     case R.id.setting_exit_close:
-                        MyApplication.getInstance().exit();
-
+                        SysApplication.getInstance().exit();
                         break;
                 }
             }

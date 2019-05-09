@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ZhiHuiXue</string>
+    <string name="setting_logout">请确保所有交易已完结且无纠纷，账户删除后的历史交易
+可能产生的资金退回权益等将视作自动放弃</string>
 </resources>

@@ -1,18 +1,15 @@
-package com.rhkj.zhihuixue.activity.mine;
+package com.rhkj.zhihuixue.activity;
 
 import android.os.Bundle;
 
 import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.base.BaseActivity;
 
-/**
- *  收货地址
- */
-public class AddressActivity extends BaseActivity {
+public class AddaddressActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_address);
+        setContentView(R.layout.activity_addaddress);
     }
 }

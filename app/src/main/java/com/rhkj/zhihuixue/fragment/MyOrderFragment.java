@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 
 import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.adapter.MyOrderAdapter;
-import com.rhkj.zhihuixue.base.BaseFragment;
 
 import java.util.ArrayList;
 

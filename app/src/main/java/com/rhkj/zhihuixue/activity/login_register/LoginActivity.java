@@ -11,6 +11,7 @@ import com.gyf.barlibrary.BarHide;
 import com.gyf.barlibrary.ImmersionBar;
 import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.activity.MainActivity;
+import com.rhkj.zhihuixue.utils.SysApplication;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        SysApplication.getInstance().addActivity(this);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
         initViews();
