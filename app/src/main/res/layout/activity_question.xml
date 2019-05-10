@@ -4,22 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     android:orientation="vertical"
     tools:context=".activity.mine.QuestionActivity">
+
     <include
+        layout="@layout/include_title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/include_title"/>
+        android:layout_height="wrap_content" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv"
-        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
     </android.support.v7.widget.RecyclerView>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
 
+    </LinearLayout>
+    <View
+        android:background="#f8f8f8"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="如有问题请在此留言...."
+            android:textColor="#aeadad"
+            android:textSize="14sp" />
+
+        <Button
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:text="提交"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="#fe8637" />
+
+
+    </LinearLayout>
 
 
 </LinearLayout>

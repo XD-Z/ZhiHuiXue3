@@ -11,7 +11,7 @@ import java.util.List;
  * Created by zjx on 2019/5/9.
  */
 
-public class QuestionAdapter extends BaseMultiItemQuickAdapter<QuestionBean,BaseViewHolder> {
+public class QuestionAdapter extends BaseMultiItemQuickAdapter<QuestionBean, BaseViewHolder> {
     /**
      * Same as QuickAdapter#QuickAdapter(Context,int) but with
      * some initialization data.
@@ -20,13 +20,27 @@ public class QuestionAdapter extends BaseMultiItemQuickAdapter<QuestionBean,Base
      */
     public QuestionAdapter(List<QuestionBean> data) {
         super(data);
-
         addItemType(QuestionBean.you, R.layout.item_question_you);
         addItemType(QuestionBean.my, R.layout.item_question_my);
     }
 
     @Override
     protected void convert(BaseViewHolder helper, QuestionBean item) {
+
+        int itemViewType = helper.getItemViewType();
+
+        switch (itemViewType) {
+            case QuestionBean.you:
+
+                break;
+
+            case QuestionBean.my:
+
+                break;
+
+
+        }
+
 
     }
 }
