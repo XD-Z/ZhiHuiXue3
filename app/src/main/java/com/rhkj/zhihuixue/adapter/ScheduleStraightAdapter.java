@@ -10,25 +10,28 @@ import android.widget.TextView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.rhkj.zhihuixue.R;
+import com.rhkj.zhihuixue.bean.ScheduleStraightBean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by zjx on 2019/5/8.
  */
 
-public class ScheduleStraightAdapter extends BaseQuickAdapter<Integer, BaseViewHolder> {
-
+public class ScheduleStraightAdapter extends BaseQuickAdapter<ScheduleStraightBean, BaseViewHolder> {
 
     //每行的数量
     private int spanCount = 5;
 
-    public ScheduleStraightAdapter(@Nullable List<Integer> data) {
-        super(R.layout.item_schedule_straight, data);
+
+    public ScheduleStraightAdapter() {
+        super(R.layout.item_schedule_straight);
     }
 
+
     @Override
-    protected void convert(BaseViewHolder helper, Integer item) {
+    protected void convert(BaseViewHolder helper, ScheduleStraightBean item) {
         View lineUp = helper.getView(R.id.line_up);
         View lineLeft = helper.getView(R.id.line_left);
         View lineRight = helper.getView(R.id.line_right);
@@ -42,26 +45,58 @@ public class ScheduleStraightAdapter extends BaseQuickAdapter<Integer, BaseViewH
 
         initLine(lineUp, lineLeft, lineRight, lineLower, layoutPosition, tvTime);
 
-        if (item == 1) {
+
+        int isAdopt = item.getIsAdopt();
+
+
+        if (isAdopt == ScheduleStraightBean.ADOPT) {
             imageView.setImageResource(R.mipmap.icon_anniu);
         } else {
             imageView.setImageResource(R.mipmap.icon_anniu_hui);
         }
 
 
-        if (item == 0) {
+        if (isAdopt == ScheduleStraightBean.NO_ADOPT) {
             lineLeft.setBackgroundColor(Color.parseColor("#a0a0a0"));
         }
 
-        //判断还有下一个吗 有就获取下一个的值看看是不是灰的
+        //判断还有下一个吗 有就获取下一个的值看看下一个通关了吗
         if (layoutPosition + 2 <= getData().size()) {
-            if (getData().get(layoutPosition + 1) == 0) {
+            if (getData().get(layoutPosition + 1).getIsAdopt() == ScheduleStraightBean.NO_ADOPT) {
                 lineRight.setBackgroundColor(Color.parseColor("#a0a0a0"));
             }
         }
 
 
     }
+
+//    //重新排序数据
+//    public void setDateList(List<ScheduleStraightBean> dateList) {
+//        ArrayList<ScheduleStraightBean> scheduleStraightBeans = new ArrayList<>();
+//
+//        for (int i = 0; i < dateList.size(); i++) {
+//            ScheduleStraightBean scheduleStraightBean = new ScheduleStraightBean();
+//            scheduleStraightBean.setDateState(ScheduleStraightBean.DATA_NO);
+//            scheduleStraightBeans.add(scheduleStraightBean);
+//        }
+//
+//        for (int i = 0; i < dateList.size(); i++) {
+//            ScheduleStraightBean scheduleStraightBean = dateList.get(i);
+//
+//            int line = getLine(i + 1);
+//
+//            if (line % 2 == 1) {
+//                scheduleStraightBeans.set(i, scheduleStraightBean);
+//            } else {
+//
+//                int i1 = (spanCount * line)-1;
+//
+//
+//            }
+//        }
+//
+//
+//    }
 
 
     /**

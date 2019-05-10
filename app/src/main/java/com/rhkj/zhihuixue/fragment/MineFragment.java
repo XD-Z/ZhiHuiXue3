@@ -11,10 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.rhkj.zhihuixue.R;
+import com.rhkj.zhihuixue.activity.MyCouponActivity;
 import com.rhkj.zhihuixue.activity.mine.AddressActivity;
 import com.rhkj.zhihuixue.activity.mine.MessageActivity;
 import com.rhkj.zhihuixue.activity.mine.MycourseActivity;
@@ -37,7 +39,7 @@ import butterknife.Unbinder;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MineFragment extends Fragment {
+public class MineFragment extends Fragment implements View.OnClickListener {
 
 
     @BindView(R.id.img_mine_head)
@@ -46,6 +48,9 @@ public class MineFragment extends Fragment {
     ImageView imgMineBeans;
     @BindView(R.id.re_mine)
     RecyclerView reMine;
+    @BindView(R.id.rv_coupon)
+    RelativeLayout rvCoupon;
+
     Unbinder unbinder;
     private int[] images;
     private String[] titles;
@@ -114,6 +119,7 @@ public class MineFragment extends Fragment {
                 }
             }
         });
+        rvCoupon.setOnClickListener(this);
     }
 
     private void initdata() {
@@ -135,5 +141,14 @@ public class MineFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.rv_coupon:
+                startActivity(new Intent(getActivity(), MyCouponActivity.class));
+                break;
+        }
     }
 }

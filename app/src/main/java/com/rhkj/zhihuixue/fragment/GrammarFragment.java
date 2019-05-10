@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.adapter.ScheduleStraightAdapter;
 import com.rhkj.zhihuixue.base.BaseFragment;
+import com.rhkj.zhihuixue.bean.ScheduleStraightBean;
 
 import java.util.ArrayList;
 
@@ -36,15 +37,18 @@ public class GrammarFragment extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 5));
 
 
-        ArrayList<Integer> integerArrayList = new ArrayList<>();
-        for (int i = 0; i < 11; i++) {
-            integerArrayList.add(1);
-        }
-        integerArrayList.add(0);
-        integerArrayList.add(0);
+        ArrayList<ScheduleStraightBean> scheduleStraightBeans = new ArrayList<>();
 
-        ScheduleStraightAdapter scheduleStraightAdapter = new ScheduleStraightAdapter(integerArrayList);
+        for (int i = 0; i < 10; i++) {
+            ScheduleStraightBean scheduleStraightBean = new ScheduleStraightBean();
+            scheduleStraightBean.setNum("1-1");
+            scheduleStraightBean.setIsAdopt(ScheduleStraightBean.ADOPT);
+            scheduleStraightBeans.add(scheduleStraightBean);
+        }
+
+        ScheduleStraightAdapter scheduleStraightAdapter = new ScheduleStraightAdapter();
         recyclerView.setAdapter(scheduleStraightAdapter);
+        scheduleStraightAdapter.setNewData(scheduleStraightBeans);
     }
 
 }

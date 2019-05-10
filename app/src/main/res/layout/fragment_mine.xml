@@ -139,6 +139,7 @@
 
                     <!--优惠券-->
                     <RelativeLayout
+                        android:id="@+id/rv_coupon"
                         android:layout_width="0dip"
                         android:layout_height="match_parent"
                         android:layout_weight="100">

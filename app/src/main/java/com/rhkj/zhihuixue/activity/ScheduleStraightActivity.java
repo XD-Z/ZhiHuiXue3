@@ -9,6 +9,7 @@ import android.widget.EditText;
 import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.adapter.ScheduleStraightAdapter;
 import com.rhkj.zhihuixue.base.BaseActivity;
+import com.rhkj.zhihuixue.bean.ScheduleStraightBean;
 
 import java.util.ArrayList;
 
@@ -35,16 +36,27 @@ public class ScheduleStraightActivity extends BaseActivity {
         RecyclerView recyclerView = findViewById(R.id.rv);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 5));
 
-
         ArrayList<Integer> integerArrayList = new ArrayList<>();
-        for (int i = 0; i < 11; i++) {
-            integerArrayList.add(1);
-        }
-        integerArrayList.add(0);
-        integerArrayList.add(0);
 
-        scheduleStraightAdapter = new ScheduleStraightAdapter(integerArrayList);
+        integerArrayList.add(1);
+        integerArrayList.add(2);
+        integerArrayList.add(3);
+        integerArrayList.add(4);
+
+
+        ArrayList<ScheduleStraightBean> scheduleStraightBeans = new ArrayList<>();
+
+        for (int i = 0; i < 10; i++) {
+            ScheduleStraightBean scheduleStraightBean = new ScheduleStraightBean();
+            scheduleStraightBean.setNum("1-1");
+            scheduleStraightBean.setIsAdopt(ScheduleStraightBean.ADOPT);
+            scheduleStraightBeans.add(scheduleStraightBean);
+        }
+
+//
+        scheduleStraightAdapter = new ScheduleStraightAdapter();
         recyclerView.setAdapter(scheduleStraightAdapter);
+        scheduleStraightAdapter.setNewData(scheduleStraightBeans);
 
     }
 }

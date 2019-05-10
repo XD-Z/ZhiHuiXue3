@@ -51,14 +51,29 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 登陆 -->
-        <activity android:name=".activity.login_register.LoginActivity" /> <!-- 智能英语介绍/服务介绍 -->
-        <activity android:name=".activity.FuwuIntroduceActivity" /> <!-- 商品详情 -->
-        <activity android:name=".activity.CommodityDetailsActivity" /> <!-- 订单详情/取消订单 -->
-        <activity android:name=".activity.OrderCancelActivity" /> <!-- 直记直译 -->
-        <activity android:name=".activity.ScheduleStraightActivity" /> <!-- 口语训练平台 -->
-        <activity android:name=".activity.ScheduleMouthActivity" /> <!-- 语法易点通 -->
-        <activity android:name=".activity.ScheduleGrammarActivity" />
+        </activity>
+        <!--登陆-->
+        <activity android:name=".activity.login_register.LoginActivity" />
+        <!-- 智能英语介绍/服务介绍 -->
+        <activity android:name=".activity.FuwuIntroduceActivity" />
+        <!-- 商品详情 -->
+        <activity android:name=".activity.CommodityDetailsActivity" />
+        <!--订单详情/取消订单-->
+        <activity android:name=".activity.OrderCancelActivity"/>
+        <!--直记直译-->
+        <activity android:name=".activity.ScheduleStraightActivity"/>
+        <!--口语训练平台-->
+        <activity android:name=".activity.ScheduleMouthActivity"/>
+        <!--语法易点通-->
+        <activity android:name=".activity.ScheduleGrammarActivity"/>
+        <!--我的优惠券-->
+        <activity android:name=".activity.MyCouponActivity"/>
+        <!--语音评测选择级别-->
+        <activity android:name=".activity.SelectionLevelActivity"/>
+        <!--语音评测-->
+        <activity android:name=".activity.SpeechAssessmentActivity"/>
+
+
     </application>
 
 </manifest>
