@@ -22,6 +22,7 @@ public class ForgetPasswordActivity extends BaseActivity {
     @Override
     protected void initViews() {
         super.initViews();
+        tvTitle.setText("修改密码");
     }
 
     @Override

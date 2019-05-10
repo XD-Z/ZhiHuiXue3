@@ -12,4 +12,15 @@ public class AddaddressActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addaddress);
     }
+
+    @Override
+    protected void initLayout() {
+        super.initLayout();
+    }
+
+    @Override
+    protected void initViews() {
+        super.initViews();
+        tvTitle.setText("更换手机号");
+    }
 }

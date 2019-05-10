@@ -1,10 +1,7 @@
 package com.rhkj.zhihuixue.activity.mine;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.widget.TextView;
 
 import com.rhkj.zhihuixue.R;
@@ -14,7 +11,7 @@ import com.rhkj.zhihuixue.base.BaseActivity;
 import java.util.ArrayList;
 
 /**
- *  薄弱节点视频
+ * 薄弱节点视频
  */
 public class WeakvideoActivity extends BaseActivity {
 
@@ -29,9 +26,9 @@ public class WeakvideoActivity extends BaseActivity {
 
     @Override
     protected void initViews() {
+        tvTitle.setText("薄弱节点视频");
         tvIntroduce = findViewById(R.id.tv_introduce);
         recyclerView = findViewById(R.id.rv);
-
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
@@ -56,8 +53,6 @@ public class WeakvideoActivity extends BaseActivity {
 
         WeakvideoAdapter weakvideoAdapter = new WeakvideoAdapter(integerArrayList);
         recyclerView.setAdapter(weakvideoAdapter);
-
-
 
 
     }

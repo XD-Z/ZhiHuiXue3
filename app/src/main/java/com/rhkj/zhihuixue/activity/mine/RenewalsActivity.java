@@ -1,10 +1,7 @@
 package com.rhkj.zhihuixue.activity.mine;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.adapter.RenewalsAdapter;
@@ -30,6 +27,7 @@ public class RenewalsActivity extends BaseActivity {
 
     @Override
     protected void initViews() {
+        tvTitle.setText("我要续费");
         banner = findViewById(R.id.vp);
         recyclerView = findViewById(R.id.rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
@@ -39,7 +37,7 @@ public class RenewalsActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        tvTitle.setText("我要续费");
+
 
         ArrayList<Integer> integerArrayList = new ArrayList<>();
         integerArrayList.add(R.mipmap.img_banner_renewals);

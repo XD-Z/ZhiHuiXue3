@@ -19,13 +19,13 @@ public class LogoutActivity extends BaseActivity {
         super.initLayout();
         setContentView(R.layout.activity_logout);
         ButterKnife.bind(this);
-        tvTitle.setText("注销账号");
+
     }
 
     @Override
     protected void initViews() {
         super.initViews();
-
+        tvTitle.setText("注销账号");
     }
 
     @Override
