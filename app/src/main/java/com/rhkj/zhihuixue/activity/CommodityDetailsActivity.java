@@ -1,7 +1,10 @@
 package com.rhkj.zhihuixue.activity;
 
+import android.content.Intent;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -19,11 +22,12 @@ import java.util.ArrayList;
  * Created by zjx on 2019/5/7.
  */
 
-public class CommodityDetailsActivity extends BaseActivity {
+public class CommodityDetailsActivity extends BaseActivity implements View.OnClickListener {
 
     private Banner banner;
     private int[] selectImg = {R.drawable.banner_select_t, R.drawable.banner_select_f};
     private LinearLayout llSelect;
+    private Button button;
 
 
     @Override
@@ -37,8 +41,14 @@ public class CommodityDetailsActivity extends BaseActivity {
         super.initViews();
         banner = findViewById(R.id.vp);
         llSelect = findViewById(R.id.ll_select);
+        button = findViewById(R.id.btn_purchase);
 
 
+        initListener();
+    }
+
+    private void initListener() {
+        button.setOnClickListener(this);
     }
 
     @Override
@@ -57,7 +67,6 @@ public class CommodityDetailsActivity extends BaseActivity {
 
 
         bannerSelectInit(integerArrayList.size());
-
     }
 
     ArrayList<ImageView> imageViews = new ArrayList<>();
@@ -120,5 +129,15 @@ public class CommodityDetailsActivity extends BaseActivity {
     protected void onStop() {
         super.onStop();
         banner.stopAutoPlay();
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_purchase:
+                startActivity(new Intent(this,OrderConfirmActivity.class));
+                break;
+        }
+
     }
 }

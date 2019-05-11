@@ -72,6 +72,12 @@
         <activity android:name=".activity.SelectionLevelActivity"/>
         <!--语音评测-->
         <activity android:name=".activity.SpeechAssessmentActivity"/>
+        <!--为我加油-->
+        <activity android:name=".activity.ComeonActivity"/>
+        <!--确认订单-->
+        <activity android:name=".activity.OrderConfirmActivity"/>
+        <!--支付-->
+        <activity android:name=".activity.PaymentActivity"/>
 
 
     </application>
