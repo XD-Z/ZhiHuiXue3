@@ -6,16 +6,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.blankj.utilcode.util.SPUtils;
+import com.google.gson.Gson;
 import com.gyf.barlibrary.BarHide;
 import com.gyf.barlibrary.ImmersionBar;
 import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.activity.MainActivity;
+import com.rhkj.zhihuixue.base.Contents;
+import com.rhkj.zhihuixue.bean.LogoinBean;
 import com.rhkj.zhihuixue.utils.SysApplication;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import okhttp3.Call;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -37,7 +45,19 @@ public class LoginActivity extends AppCompatActivity {
         SysApplication.getInstance().addActivity(this);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
+
         initViews();
+        initData();
+
+    }
+
+    private void initData() {
+//        //判断是否第一次登录
+//        String token = SPUtils.getInstance().getString("token");
+//        if (ObjectUtils.isNotEmpty(token)) {
+//            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+//            return;
+//        }
     }
 
     protected void initViews() {
@@ -57,12 +77,42 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(this, ForgetPasswordActivity.class));
                 break;
             case R.id.btn_login:
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+//                void_login();//请求接口
                 break;
             case R.id.btn_register:
                 startActivity(new Intent(this, RegisterActivity.class));
                 break;
         }
+    }
+
+    /**
+     * //请求接口
+     */
+    private void void_login() {
+        OkHttpUtils.post().url(Contents.LOGOIN)
+                .addParams("mobile", loginEtPhone.getText().toString())
+                .addParams("password", loginEtPassword.getText().toString())
+                .build().execute(new StringCallback() {
+            @Override
+            public void onError(Call call, Exception e, int id) {
+            }
+
+            @Override
+            public void onResponse(String response, int id) {
+                LogoinBean logoinBean = new Gson().fromJson(response, LogoinBean.class);
+                if (logoinBean.getState() == 1) {
+                    //往SP中存入token，ID，name
+                    SPUtils.getInstance().put("user_token", logoinBean.getData().getToken());
+                    SPUtils.getInstance().put("user_id", logoinBean.getData().getId());
+                    SPUtils.getInstance().put("user_name", logoinBean.getData().getUser_name());
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                } else {
+                    Toast.makeText(LoginActivity.this, logoinBean.getMsg(), Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
     }
 
 

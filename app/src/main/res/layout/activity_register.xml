@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/colorWhile"
+    android:orientation="vertical"
     tools:context=".activity.login_register.RegisterActivity">
 
     <include layout="@layout/include_title" />
@@ -28,7 +28,7 @@
             android:src="@mipmap/icon_phone_orange" />
 
         <EditText
-            android:id="@+id/forget_et_phone"
+            android:id="@+id/register_et_phone"
             android:layout_width="130dip"
             android:layout_height="wrap_content"
             android:layout_marginLeft="12dip"
@@ -59,7 +59,7 @@
             android:src="@mipmap/icon_auth_code_orange" />
 
         <EditText
-            android:id="@+id/forget_et_code"
+            android:id="@+id/register_et_code"
             android:layout_width="130dip"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -74,6 +74,7 @@
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/register_verification_code"
             android:layout_width="74dip"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
@@ -103,27 +104,30 @@
             android:src="@mipmap/icon_lock_orange" />
 
         <EditText
-            android:id="@+id/forget_et_new_password"
-            android:layout_width="130dip"
+            android:id="@+id/register_et_new_password"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dip"
             android:layout_toRightOf="@id/forget_img_new_password"
             android:background="@null"
+            android:drawableRight="@mipmap/icon_eye_grey"
             android:hint="新密码"
             android:maxLength="12"
             android:maxLines="1"
+            android:paddingRight="13dip"
             android:password="true"
             android:textColor="@color/colorforgetGrey"
             android:textSize="16sp" />
 
-        <ImageView
-            android:layout_width="20dip"
-            android:layout_height="13dip"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="13dip"
-            android:src="@mipmap/icon_eye_grey" />
+        <!--<ImageView-->
+        <!--android:id="@+id/register_img_eye_new"-->
+        <!--android:layout_width="20dip"-->
+        <!--android:layout_height="13dip"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginRight="13dip"-->
+        <!--android:src="@mipmap/icon_eye_grey" />-->
 
     </RelativeLayout>
 
@@ -145,21 +149,24 @@
             android:src="@mipmap/icon_lock_sure_orange" />
 
         <EditText
-            android:id="@+id/forget_et_sure_password"
-            android:layout_width="130dip"
+            android:id="@+id/register_et_sure_password"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dip"
             android:layout_toRightOf="@id/forget_img_sure_password"
             android:background="@null"
+            android:drawableRight="@mipmap/icon_eye_grey"
             android:hint="确认密码"
             android:maxLength="12"
             android:maxLines="1"
+            android:paddingRight="13dip"
             android:password="true"
             android:textColor="@color/colorforgetGrey"
             android:textSize="16sp" />
 
         <ImageView
+            android:id="@+id/register_img_eye_sure"
             android:layout_width="20dip"
             android:layout_height="13dip"
             android:layout_alignParentRight="true"
@@ -190,6 +197,7 @@
         android:background="@drawable/bg_login_linearlayout">
 
         <TextView
+            android:id="@+id/register_tv_district"
             android:layout_width="200dip"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -217,7 +225,7 @@
         android:background="@drawable/bg_login_linearlayout">
 
         <EditText
-            android:id="@+id/forget_et_name"
+            android:id="@+id/register_et_name"
             android:layout_width="130dip"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -241,7 +249,7 @@
         android:background="@drawable/bg_login_linearlayout">
 
         <EditText
-            android:id="@+id/forget_et_baby_name"
+            android:id="@+id/register_et_baby_name"
             android:layout_width="130dip"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -264,12 +272,14 @@
         android:layout_marginRight="38dip"
         android:background="@drawable/bg_login_linearlayout">
 
-        <TextView
+        <EditText
+            android:id="@+id/register_et_grade"
             android:layout_width="200dip"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dip"
-            android:text="小学一年级"
+            android:background="@null"
+            android:hint="小学一年级"
             android:textColor="@color/colorforgetGrey"
             android:textSize="12sp" />
 
@@ -290,19 +300,20 @@
         android:layout_marginLeft="38dip"
         android:layout_marginTop="10dip"
         android:layout_marginRight="38dip"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="14dip"
             android:layout_height="14dip"
             android:layout_centerVertical="true"
             android:src="@mipmap/icon_agreement_orange" />
+
         <TextView
             android:layout_width="200dip"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="3dip"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="3dip"
             android:text="我已阅读***协议"
             android:textColor="@color/colorAppTheme"
             android:textSize="12sp" />
@@ -311,16 +322,16 @@
 
     <!--确定-->
     <TextView
+        android:id="@+id/btn_login"
         android:layout_width="300dip"
         android:layout_height="45dip"
-        android:layout_marginTop="18dip"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="18dip"
         android:background="@drawable/bg_tv_login"
         android:gravity="center"
         android:text="确定"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:id="@+id/btn_login"/>
+        android:textSize="20sp" />
 
 
 </LinearLayout>
