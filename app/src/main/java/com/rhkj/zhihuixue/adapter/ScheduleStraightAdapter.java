@@ -13,6 +13,7 @@ import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.bean.ScheduleStraightBean;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -70,11 +71,16 @@ public class ScheduleStraightAdapter extends BaseQuickAdapter<ScheduleStraightBe
 
     }
 
-//    //重新排序数据
+    //重新排序数据
 //    public void setDateList(List<ScheduleStraightBean> dateList) {
 //        ArrayList<ScheduleStraightBean> scheduleStraightBeans = new ArrayList<>();
 //
-//        for (int i = 0; i < dateList.size(); i++) {
+//        //全部几行
+//        int total = getLine(scheduleStraightBeans.size());
+//        //总共有多少个
+//        int totalNum = total * spanCount;
+//
+//        for (int i = 0; i < totalNum; i++) {
 //            ScheduleStraightBean scheduleStraightBean = new ScheduleStraightBean();
 //            scheduleStraightBean.setDateState(ScheduleStraightBean.DATA_NO);
 //            scheduleStraightBeans.add(scheduleStraightBean);
@@ -88,8 +94,7 @@ public class ScheduleStraightAdapter extends BaseQuickAdapter<ScheduleStraightBe
 //            if (line % 2 == 1) {
 //                scheduleStraightBeans.set(i, scheduleStraightBean);
 //            } else {
-//
-//                int i1 = (spanCount * line)-1;
+//                int i1 = (spanCount * line) - 1;
 //
 //
 //            }
