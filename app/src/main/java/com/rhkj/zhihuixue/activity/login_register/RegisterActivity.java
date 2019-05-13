@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.blankj.utilcode.util.ObjectUtils;
 import com.blankj.utilcode.util.RegexUtils;
+import com.blankj.utilcode.util.SPUtils;
 import com.google.gson.Gson;
 import com.lljjcoder.Interface.OnCityItemClickListener;
 import com.lljjcoder.bean.CityBean;
@@ -203,6 +204,10 @@ public class RegisterActivity extends BaseActivity {
             Toast.makeText(this, "请输入手机号码", Toast.LENGTH_SHORT).show();
             return;
         }
+        if (!RegexUtils.isMobileSimple(registerEtPhone.getText().toString())) {
+            Toast.makeText(this, "请输入正确的手机号", Toast.LENGTH_SHORT).show();
+            return;
+        }
         if (TextUtils.isEmpty(registerEtCode.getText().toString().trim())) {
             Toast.makeText(this, "请输入验证码", Toast.LENGTH_SHORT).show();
             return;
@@ -247,8 +252,12 @@ public class RegisterActivity extends BaseActivity {
                     public void onResponse(String response, int id) {
                         Log.e(TAG, "onResponse: " + response);
                         RegisterBean registerBean = new Gson().fromJson(response, RegisterBean.class);
-                        if (registerBean.getState() == 200){
-                            startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                        if (registerBean.getState() == 200) {
+                            //往SP中存入token，ID，name
+//                            SPUtils.getInstance().put("user_token", logoinBean.getData().getToken());
+//                            SPUtils.getInstance().put("user_id", logoinBean.getData().getId());
+//                            SPUtils.getInstance().put("user_name", logoinBean.getData().getUser_name());
+                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                             finish();
                         }
                     }

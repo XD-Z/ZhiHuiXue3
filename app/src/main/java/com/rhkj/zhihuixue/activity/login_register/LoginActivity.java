@@ -3,11 +3,15 @@ package com.rhkj.zhihuixue.activity.login_register;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.blankj.utilcode.util.ObjectUtils;
+import com.blankj.utilcode.util.RegexUtils;
 import com.blankj.utilcode.util.SPUtils;
 import com.google.gson.Gson;
 import com.gyf.barlibrary.BarHide;
@@ -37,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView btnLogin;
     @BindView(R.id.btn_register)
     TextView btnRegister;
+    private String TAG = "login_register";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,13 +57,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initData() {
-//        //判断是否第一次登录
-//        String token = SPUtils.getInstance().getString("token");
-//        if (ObjectUtils.isNotEmpty(token)) {
-//            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-//            return;
-//        }
     }
+
 
     protected void initViews() {
 
@@ -77,8 +77,8 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(this, ForgetPasswordActivity.class));
                 break;
             case R.id.btn_login:
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-//                void_login();//请求接口
+//                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                void_login();//登录按钮请求接口
                 break;
             case R.id.btn_register:
                 startActivity(new Intent(this, RegisterActivity.class));
@@ -90,6 +90,18 @@ public class LoginActivity extends AppCompatActivity {
      * //请求接口
      */
     private void void_login() {
+        if (TextUtils.isEmpty(loginEtPhone.getText().toString().trim())) {
+            Toast.makeText(this, "请输入手机号码", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (!RegexUtils.isMobileSimple(loginEtPhone.getText().toString())) {
+            Toast.makeText(this, "请输入正确的手机号", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(loginEtPassword.getText().toString().trim())) {
+            Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
+            return;
+        }
         OkHttpUtils.post().url(Contents.LOGOIN)
                 .addParams("mobile", loginEtPhone.getText().toString())
                 .addParams("password", loginEtPassword.getText().toString())
@@ -100,8 +112,10 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(String response, int id) {
+                Log.e(TAG, "onResponse: " + response);
                 LogoinBean logoinBean = new Gson().fromJson(response, LogoinBean.class);
-                if (logoinBean.getState() == 200) {
+                if (logoinBean.getState() == 1) {
+                    Log.e(TAG, "onResponse: " + response);
                     //往SP中存入token，ID，name
                     SPUtils.getInstance().put("user_token", logoinBean.getData().getToken());
                     SPUtils.getInstance().put("user_id", logoinBean.getData().getId());

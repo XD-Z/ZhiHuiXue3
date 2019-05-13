@@ -18,8 +18,9 @@
         <activity android:name=".activity.MOTVActivity" />
         <activity android:name=".activity.login_register.LogoutActivity" />
         <activity android:name=".activity.ChangePhoneActivity" />
-        <activity android:name=".activity.login_register.AmendPasswordActivity" />
+        <activity android:name=".activity.login_register.LoginActivity" />
         <activity android:name=".activity.login_register.RegisterActivity" />
+        <activity android:name=".activity.login_register.AmendPasswordActivity" />
         <activity android:name=".activity.login_register.ForgetPasswordActivity" />
         <activity android:name=".activity.mine.SettingActivity" />
         <activity android:name=".activity.mine.AddressActivity" /> <!-- 常见问题 -->
@@ -53,7 +54,6 @@
             </intent-filter>
         </activity>
         <!--登陆-->
-        <activity android:name=".activity.login_register.LoginActivity" />
         <!-- 智能英语介绍/服务介绍 -->
         <activity android:name=".activity.FuwuIntroduceActivity" />
         <!-- 商品详情 -->
