@@ -36,19 +36,19 @@ public class GrammarFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.rv);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 5));
 
-
-        ArrayList<ScheduleStraightBean> scheduleStraightBeans = new ArrayList<>();
-
-        for (int i = 0; i < 10; i++) {
-            ScheduleStraightBean scheduleStraightBean = new ScheduleStraightBean();
-            scheduleStraightBean.setNum("1-1");
-            scheduleStraightBean.setIsAdopt(ScheduleStraightBean.ADOPT);
-            scheduleStraightBeans.add(scheduleStraightBean);
-        }
-
         ScheduleStraightAdapter scheduleStraightAdapter = new ScheduleStraightAdapter();
         recyclerView.setAdapter(scheduleStraightAdapter);
-        scheduleStraightAdapter.setNewData(scheduleStraightBeans);
+
+        ArrayList<ScheduleStraightBean> scheduleStraightBeans = new ArrayList<>();
+        for (int i = 0; i < 16; i++) {
+            ScheduleStraightBean scheduleStraightBean = new ScheduleStraightBean();
+            scheduleStraightBean.setNum("1-" + i);
+            scheduleStraightBean.setIsAdopt(ScheduleStraightBean.ADOPT);
+            scheduleStraightBean.setDateState(ScheduleStraightBean.DATA_AVAILABLE);
+            scheduleStraightBeans.add(scheduleStraightBean);
+        }
+        scheduleStraightAdapter.setDateList(scheduleStraightBeans);
+
     }
 
 }

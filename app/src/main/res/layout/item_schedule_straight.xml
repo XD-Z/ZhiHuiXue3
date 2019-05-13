@@ -69,6 +69,7 @@
             android:background="#59a5fa" />
 
         <TextView
+            android:id="@+id/tv_checkpoint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1-1"

@@ -43,20 +43,18 @@ public class ScheduleStraightActivity extends BaseActivity {
         integerArrayList.add(3);
         integerArrayList.add(4);
 
-
-        ArrayList<ScheduleStraightBean> scheduleStraightBeans = new ArrayList<>();
-
-        for (int i = 0; i < 10; i++) {
-            ScheduleStraightBean scheduleStraightBean = new ScheduleStraightBean();
-            scheduleStraightBean.setNum("1-1");
-            scheduleStraightBean.setIsAdopt(ScheduleStraightBean.ADOPT);
-            scheduleStraightBeans.add(scheduleStraightBean);
-        }
-
-//
         scheduleStraightAdapter = new ScheduleStraightAdapter();
         recyclerView.setAdapter(scheduleStraightAdapter);
-        scheduleStraightAdapter.setNewData(scheduleStraightBeans);
+
+        ArrayList<ScheduleStraightBean> scheduleStraightBeans = new ArrayList<>();
+        for (int i = 0; i < 16; i++) {
+            ScheduleStraightBean scheduleStraightBean = new ScheduleStraightBean();
+            scheduleStraightBean.setNum("1-" + i);
+            scheduleStraightBean.setIsAdopt(ScheduleStraightBean.ADOPT);
+            scheduleStraightBean.setDateState(ScheduleStraightBean.DATA_AVAILABLE);
+            scheduleStraightBeans.add(scheduleStraightBean);
+        }
+        scheduleStraightAdapter.setDateList(scheduleStraightBeans);
 
     }
 }

@@ -19,16 +19,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
+                android:id="@+id/iv_img"
                 android:src="@mipmap/img_leve_xiao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
+                android:id="@+id/tv_level"
                 android:layout_marginRight="50dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:textColor="#5a5a5a"
                 android:textSize="18sp"
-                android:text="小学单词"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 

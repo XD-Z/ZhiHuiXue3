@@ -14,6 +14,7 @@ import com.rhkj.zhihuixue.bean.ScheduleStraightBean;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -39,6 +40,16 @@ public class ScheduleStraightAdapter extends BaseQuickAdapter<ScheduleStraightBe
         View lineLower = helper.getView(R.id.line_lower);
         TextView tvTime = helper.getView(R.id.tv_time);
         ImageView imageView = helper.getView(R.id.iv_center);
+        TextView tvCheckpoint = helper.getView(R.id.tv_checkpoint);
+
+
+        tvCheckpoint.setText(item.getNum());
+        int dateState = item.getDateState();
+        if (dateState == ScheduleStraightBean.DATA_NO) {
+            helper.itemView.setVisibility(View.INVISIBLE);
+        } else {
+            helper.itemView.setVisibility(View.VISIBLE);
+        }
 
 
         int layoutPosition = helper.getLayoutPosition();
@@ -48,7 +59,6 @@ public class ScheduleStraightAdapter extends BaseQuickAdapter<ScheduleStraightBe
 
 
         int isAdopt = item.getIsAdopt();
-
 
         if (isAdopt == ScheduleStraightBean.ADOPT) {
             imageView.setImageResource(R.mipmap.icon_anniu);
@@ -72,36 +82,33 @@ public class ScheduleStraightAdapter extends BaseQuickAdapter<ScheduleStraightBe
     }
 
     //重新排序数据
-//    public void setDateList(List<ScheduleStraightBean> dateList) {
-//        ArrayList<ScheduleStraightBean> scheduleStraightBeans = new ArrayList<>();
-//
-//        //全部几行
-//        int total = getLine(scheduleStraightBeans.size());
-//        //总共有多少个
-//        int totalNum = total * spanCount;
-//
-//        for (int i = 0; i < totalNum; i++) {
-//            ScheduleStraightBean scheduleStraightBean = new ScheduleStraightBean();
-//            scheduleStraightBean.setDateState(ScheduleStraightBean.DATA_NO);
-//            scheduleStraightBeans.add(scheduleStraightBean);
-//        }
-//
-//        for (int i = 0; i < dateList.size(); i++) {
-//            ScheduleStraightBean scheduleStraightBean = dateList.get(i);
-//
-//            int line = getLine(i + 1);
-//
-//            if (line % 2 == 1) {
-//                scheduleStraightBeans.set(i, scheduleStraightBean);
-//            } else {
-//                int i1 = (spanCount * line) - 1;
-//
-//
-//            }
-//        }
-//
-//
-//    }
+    public void setDateList(List<ScheduleStraightBean> dateList) {
+
+        if (dateList.size() > spanCount) {
+            //全部几行
+            int total = getLine(dateList.size());
+
+            int totalNum = (total * spanCount) - dateList.size();
+
+            for (int i = 0; i < totalNum; i++) {
+                ScheduleStraightBean scheduleStraightBean = new ScheduleStraightBean();
+                scheduleStraightBean.setDateState(ScheduleStraightBean.DATA_NO);
+                dateList.add(scheduleStraightBean);
+            }
+
+            for (int i = 0; i < dateList.size(); i++) {
+                int line = getLine(i);
+                if (line % 2 == 0) {
+                    if (line * spanCount == i + 1) {
+                        for (int j = 0; j < 5 / 2; j++) {
+                            Collections.swap(dateList, line * spanCount - spanCount + j, line * spanCount - 1 - j);
+                        }
+                    }
+                }
+            }
+        }
+        setNewData(dateList);
+    }
 
 
     /**
@@ -110,6 +117,7 @@ public class ScheduleStraightAdapter extends BaseQuickAdapter<ScheduleStraightBe
      * @param layoutPosition
      * @return
      */
+
     private int getLine(int layoutPosition) {
         int num = 0;
         do {
@@ -122,14 +130,29 @@ public class ScheduleStraightAdapter extends BaseQuickAdapter<ScheduleStraightBe
 
 
     public void initLine(View lineUp, View lineLeft, View lineRight, View lineLower, int layoutPosition, TextView textView) {
+        int nextDateState = ScheduleStraightBean.DATA_NO;
+        int upDateState = ScheduleStraightBean.DATA_NO;
+        //下一个
+        if (layoutPosition + 1 < getData().size()) {
+            nextDateState = getData().get(layoutPosition + 1).getDateState();
+        }
+
+        if (layoutPosition - 1 > 0) {
+            //上一个
+            upDateState = getData().get(layoutPosition - 1).getDateState();
+        }
+
+        textView.setVisibility(View.VISIBLE);
         if (layoutPosition == 0) {
             lineUp.setVisibility(View.INVISIBLE);
             lineLeft.setVisibility(View.INVISIBLE);
             lineLower.setVisibility(View.INVISIBLE);
             if (layoutPosition + 1 == getData().size()) {
                 lineRight.setVisibility(View.INVISIBLE);
+                textView.setVisibility(View.GONE);
             } else {
                 lineRight.setVisibility(View.VISIBLE);
+
             }
             return;
         }
@@ -139,7 +162,6 @@ public class ScheduleStraightAdapter extends BaseQuickAdapter<ScheduleStraightBe
 
         //获取当前布局是本行的第几个
         int lineNum = (spanCount * line) - (layoutPosition + 1);
-
 
         if (line % 2 == 1) {
             if (lineNum == 0) {
@@ -153,10 +175,7 @@ public class ScheduleStraightAdapter extends BaseQuickAdapter<ScheduleStraightBe
                 } else {
                     lineLower.setVisibility(View.INVISIBLE);
                 }
-
-
                 textView.setVisibility(View.GONE);
-
             } else if (lineNum == spanCount - 1) {
                 //如果等于每行的总数减1 说明它是本行的第一个
                 lineLower.setVisibility(View.INVISIBLE);
@@ -166,7 +185,11 @@ public class ScheduleStraightAdapter extends BaseQuickAdapter<ScheduleStraightBe
                 if (layoutPosition + 1 == getData().size()) {
                     lineRight.setVisibility(View.INVISIBLE);
                 } else {
-                    lineRight.setVisibility(View.VISIBLE);
+                    if (upDateState == ScheduleStraightBean.DATA_NO) {
+                        lineRight.setVisibility(View.INVISIBLE);
+                    } else {
+                        lineRight.setVisibility(View.VISIBLE);
+                    }
                 }
             } else {
                 //中间的
@@ -178,7 +201,13 @@ public class ScheduleStraightAdapter extends BaseQuickAdapter<ScheduleStraightBe
                     lineRight.setVisibility(View.INVISIBLE);
                     textView.setVisibility(View.GONE);
                 } else {
-                    lineRight.setVisibility(View.VISIBLE);
+                    if (nextDateState == ScheduleStraightBean.DATA_NO) {
+                        lineRight.setVisibility(View.INVISIBLE);
+                        textView.setVisibility(View.GONE);
+                    } else {
+                        lineRight.setVisibility(View.VISIBLE);
+
+                    }
                 }
             }
 
@@ -189,8 +218,14 @@ public class ScheduleStraightAdapter extends BaseQuickAdapter<ScheduleStraightBe
                 lineRight.setVisibility(View.INVISIBLE);
                 lineLeft.setVisibility(View.VISIBLE);
                 lineUp.setVisibility(View.VISIBLE);
-
                 textView.setVisibility(View.GONE);
+
+                if (upDateState == ScheduleStraightBean.DATA_NO) {
+                    lineLeft.setVisibility(View.INVISIBLE);
+                } else {
+                    lineLeft.setVisibility(View.VISIBLE);
+                }
+
             } else if (lineNum == spanCount - 1) {
                 //如果等于每行的总数减1 说明它是本行的第一个
                 lineLeft.setVisibility(View.INVISIBLE);
@@ -216,10 +251,14 @@ public class ScheduleStraightAdapter extends BaseQuickAdapter<ScheduleStraightBe
                     textView.setVisibility(View.GONE);
                 } else {
                     lineRight.setVisibility(View.VISIBLE);
+                    if (upDateState == ScheduleStraightBean.DATA_NO) {
+                        lineLeft.setVisibility(View.INVISIBLE);
+                    } else {
+                        lineLeft.setVisibility(View.VISIBLE);
+                    }
                 }
             }
         }
-
     }
 
 }

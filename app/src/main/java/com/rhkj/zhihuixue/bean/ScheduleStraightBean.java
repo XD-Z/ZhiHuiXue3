@@ -20,7 +20,7 @@ public class ScheduleStraightBean {
     private int dateState = DATA_AVAILABLE;
 
     //是否通过        1是通过 2是没通过
-    private int isAdopt = NO_ADOPT;
+    private int isAdopt = DATA_AVAILABLE;
 
 
     public String getNum() {
