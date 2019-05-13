@@ -165,14 +165,14 @@
             android:textColor="@color/colorforgetGrey"
             android:textSize="16sp" />
 
-        <ImageView
-            android:id="@+id/register_img_eye_sure"
-            android:layout_width="20dip"
-            android:layout_height="13dip"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="13dip"
-            android:src="@mipmap/icon_eye_grey" />
+        <!--<ImageView-->
+            <!--android:id="@+id/register_img_eye_sure"-->
+            <!--android:layout_width="20dip"-->
+            <!--android:layout_height="13dip"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginRight="13dip"-->
+            <!--android:src="@mipmap/icon_eye_grey" />-->
 
     </RelativeLayout>
 

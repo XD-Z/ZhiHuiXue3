@@ -1,10 +1,12 @@
 package com.rhkj.zhihuixue.activity.login_register;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
@@ -24,8 +26,10 @@ import com.lljjcoder.bean.ProvinceBean;
 import com.lljjcoder.citywheel.CityConfig;
 import com.lljjcoder.style.citypickerview.CityPickerView;
 import com.rhkj.zhihuixue.R;
+import com.rhkj.zhihuixue.activity.MainActivity;
 import com.rhkj.zhihuixue.base.BaseActivity;
 import com.rhkj.zhihuixue.base.Contents;
+import com.rhkj.zhihuixue.bean.RegisterBean;
 import com.rhkj.zhihuixue.bean.VerifyBean;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -85,8 +89,9 @@ public class RegisterActivity extends BaseActivity {
     @Override
     protected void addListener() {
         super.addListener();
-        ettouchNew(); //输入密码时的眼睛显示
         ettouchSure();//确认密码时的眼睛显示
+        ettouchNew(); //输入密码时的眼睛显示
+
     }
 
     private void ettouchSure() {
@@ -97,7 +102,6 @@ public class RegisterActivity extends BaseActivity {
         registerEtSurePassword.setOnTouchListener(new View.OnTouchListener() {
                                                       @Override
                                                       public boolean onTouch(View v, MotionEvent event) {
-
 
                                                           if (event.getAction() == MotionEvent.ACTION_UP) {
                                                               float et_pwdMinX = v.getWidth() - eyeWidth - registerEtSurePassword.getPaddingRight();
@@ -177,7 +181,7 @@ public class RegisterActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.register_verification_code, R.id.register_tv_district, R.id.btn_login, R.id.register_img_eye_sure})
+    @OnClick({R.id.register_verification_code, R.id.register_tv_district, R.id.btn_login})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.register_verification_code:
@@ -186,7 +190,6 @@ public class RegisterActivity extends BaseActivity {
             case R.id.register_tv_district:
                 chosecityConfig();//城市选择器
                 break;
-
             case R.id.btn_login:
                 void_logoin();
                 break;
@@ -194,30 +197,62 @@ public class RegisterActivity extends BaseActivity {
     }
 
     private void void_logoin() {
-        if (registerEtSurePassword.getText() == registerEtNewPassword.getText()) {
-            OkHttpUtils.post().url(Contents.REGISTER)
-                    .addParams("mobile", registerEtPhone.getText().toString())
-                    .addParams("password", registerEtNewPassword.getText().toString())
-                    .addParams("yzm", registerEtCode.getText().toString())
-                    .addParams("user_name", registerEtName.getText().toString())
-                    .addParams("nickname", registerEtBabyName.getText().toString())
-                    .addParams("city", registerTvDistrict.getText().toString())
-                    .addParams("grade_id", registerEtGrade.getText().toString())
-                    .build()
-                    .execute(new StringCallback() {
-                        @Override
-                        public void onError(Call call, Exception e, int id) {
-                        }
-
-                        @Override
-                        public void onResponse(String response, int id) {
-                            Log.d(TAG, "onResponse: " + response);
-                        }
-                    });
-        } else {
-            Toast.makeText(this, "第二次密码输入错误", Toast.LENGTH_SHORT).show();
+        Log.e(TAG, "void_logoin1: " + registerEtSurePassword.getText().toString().trim());
+        Log.e(TAG, "void_logoin2: " + registerEtNewPassword.getText().toString().trim());
+        if (TextUtils.isEmpty(registerEtPhone.getText().toString().trim())) {
+            Toast.makeText(this, "请输入手机号码", Toast.LENGTH_SHORT).show();
+            return;
         }
+        if (TextUtils.isEmpty(registerEtCode.getText().toString().trim())) {
+            Toast.makeText(this, "请输入验证码", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(registerEtNewPassword.getText().toString().trim())) {
+            Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(registerTvDistrict.getText().toString().trim())) {
+            Toast.makeText(this, "请输入所在城市", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(registerEtBabyName.getText().toString().trim())) {
+            Toast.makeText(this, "请输入宝宝昵称", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(registerEtGrade.getText().toString().trim())) {
+            Toast.makeText(this, "请输入当前年级", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (!ObjectUtils.equals(registerEtSurePassword.getText().toString().trim(),
+                registerEtNewPassword.getText().toString().trim())) {
+            Toast.makeText(this, "第二次密码输入错误", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        OkHttpUtils.post().url(Contents.REGISTER)
+                .addParams("mobile", registerEtPhone.getText().toString().trim())
+                .addParams("password", registerEtNewPassword.getText().toString().trim())
+                .addParams("yzm", registerEtCode.getText().toString().trim())
+                .addParams("user_name", registerEtName.getText().toString().trim())
+                .addParams("nickname", registerEtBabyName.getText().toString().trim())
+                .addParams("city", registerTvDistrict.getText().toString().trim())
+                .addParams("grade_id", registerEtGrade.getText().toString().trim())
+                .build()
+                .execute(new StringCallback() {
+                    @Override
+                    public void onError(Call call, Exception e, int id) {
+                        Log.e(TAG, "onError: " + e);
+                    }
 
+                    @Override
+                    public void onResponse(String response, int id) {
+                        Log.e(TAG, "onResponse: " + response);
+                        RegisterBean registerBean = new Gson().fromJson(response, RegisterBean.class);
+                        if (registerBean.getState() == 200){
+                            startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                            finish();
+                        }
+                    }
+                });
     }
 
     /**
@@ -290,14 +325,12 @@ public class RegisterActivity extends BaseActivity {
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {
-                        Log.e("wky", "onError: " + e + "====" + id);
                     }
 
                     @Override
                     public void onResponse(String response, int id) {
-                        Log.e("wky", "onResponse: " + response + "====" + id);
-                        VerifyBean verifyBean = new Gson().fromJson((String) response, VerifyBean.class);
-
+                        Log.e(TAG, "onResponse: " + response);
+                        VerifyBean verifyBean = new Gson().fromJson(response, VerifyBean.class);
                         if (verifyBean.getState() == 200) {
                             registerVerificationCode.setText(timer + "  s后重新发送");
                             //子线程执行倒计时
@@ -323,8 +356,6 @@ public class RegisterActivity extends BaseActivity {
                             Toast.makeText(RegisterActivity.this, verifyBean.getMsg(), Toast.LENGTH_SHORT).show();
                         }
                     }
-
-
                 });
     }
 

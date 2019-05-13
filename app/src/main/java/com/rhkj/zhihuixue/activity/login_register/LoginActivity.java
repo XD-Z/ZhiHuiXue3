@@ -101,12 +101,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response, int id) {
                 LogoinBean logoinBean = new Gson().fromJson(response, LogoinBean.class);
-                if (logoinBean.getState() == 1) {
+                if (logoinBean.getState() == 200) {
                     //往SP中存入token，ID，name
                     SPUtils.getInstance().put("user_token", logoinBean.getData().getToken());
                     SPUtils.getInstance().put("user_id", logoinBean.getData().getId());
                     SPUtils.getInstance().put("user_name", logoinBean.getData().getUser_name());
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    finish();
                 } else {
                     Toast.makeText(LoginActivity.this, logoinBean.getMsg(), Toast.LENGTH_SHORT).show();
                 }

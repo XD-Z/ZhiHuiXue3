@@ -29,6 +29,9 @@ dependencies {
     implementation 'com.jakewharton:butterknife:8.6.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
 
+    //语音测评
+    implementation 'com.singsound.library:evaluating:2.0.1'
+
     // 状态栏及刘海屏适配   http://www.jcodecraeer.com/a/opensource/2017/0526/7976.html
     implementation 'com.gyf.immersionbar:immersionbar:2.3.3'
 
