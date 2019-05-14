@@ -44,7 +44,7 @@ public class FuwuFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), FuwuIntroduceActivity.class);
-                intent.putExtra("state",0);
+                intent.putExtra("state", 0);
                 startActivity(intent);
             }
         });
@@ -53,7 +53,7 @@ public class FuwuFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), FuwuIntroduceActivity.class);
-                intent.putExtra("state",1);
+                intent.putExtra("state", 1);
                 startActivity(intent);
             }
         });

@@ -10,9 +10,10 @@ import com.rhkj.zhihuixue.base.BaseActivity;
  */
 public class AddressActivity extends BaseActivity {
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void initLayout() {
+        super.initLayout();
         setContentView(R.layout.activity_address);
     }
 }

@@ -8,15 +8,9 @@ import com.rhkj.zhihuixue.base.BaseActivity;
 public class ForgetPasswordActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forget_password);
-
-    }
-
-    @Override
     protected void initLayout() {
         super.initLayout();
+        setContentView(R.layout.activity_forget_password);
     }
 
     @Override

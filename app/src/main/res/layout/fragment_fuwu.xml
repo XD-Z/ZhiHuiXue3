@@ -36,7 +36,7 @@
             <ImageView
                 android:id="@+id/iv_fm"
                 android:layout_width="match_parent"
-                android:layout_height="186dp"
+                android:layout_height="176dp"
                 android:layout_gravity="top"
                 android:src="@mipmap/img_fuwu_znyy" />
 
@@ -72,7 +72,7 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="186dp"
+                android:layout_height="176dp"
                 android:layout_gravity="top"
                 android:src="@mipmap/img_fuwu_abc" />
 

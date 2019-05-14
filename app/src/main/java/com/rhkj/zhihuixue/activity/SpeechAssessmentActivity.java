@@ -61,6 +61,8 @@ public class SpeechAssessmentActivity extends BaseActivity implements View.OnCli
         });
 
         initClickListener();
+
+        
     }
 
 
