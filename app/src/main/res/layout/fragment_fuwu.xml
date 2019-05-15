@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingLeft="22dp"
-    android:paddingRight="22dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
     android:background="#fff"
+    android:orientation="vertical"
     tools:context=".fragment.FuwuFragment">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="14dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="14dp"
         android:text="英语智汇学"
         android:textColor="#EA5404"
         android:textSize="18sp"
@@ -24,9 +25,11 @@
         android:id="@+id/cv_english"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         app:cardBackgroundColor="#f8f8f8"
         app:cardCornerRadius="10dp"
-        app:cardElevation="2dp">
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,8 +39,8 @@
             <ImageView
                 android:id="@+id/iv_fm"
                 android:layout_width="match_parent"
-                android:layout_height="176dp"
-                android:layout_gravity="top"
+                android:layout_height="166dp"
+                android:scaleType="fitXY"
                 android:src="@mipmap/img_fuwu_znyy" />
 
             <TextView
@@ -53,17 +56,18 @@
                 android:textSize="16sp" />
 
         </LinearLayout>
-
-
     </android.support.v7.widget.CardView>
+
     <android.support.v7.widget.CardView
         android:id="@+id/cv_introduce"
-        android:layout_marginTop="18dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         app:cardBackgroundColor="#f8f8f8"
         app:cardCornerRadius="10dp"
-        app:cardElevation="2dp">
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -72,8 +76,9 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="176dp"
+                android:layout_height="166dp"
                 android:layout_gravity="top"
+                android:scaleType="fitXY"
                 android:src="@mipmap/img_fuwu_abc" />
 
             <TextView
@@ -89,13 +94,15 @@
                 android:textSize="16sp" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
+
     <TextView
-        android:layout_marginTop="14dp"
-        android:textColor="#5a5a5a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:text="如需人工服务请拨打电话 : 400-********"
-        android:textSize="12sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:textColor="#5a5a5a"
+        android:textSize="14sp" />
 
 
 </LinearLayout>

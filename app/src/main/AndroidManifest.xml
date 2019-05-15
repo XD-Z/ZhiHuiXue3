@@ -62,8 +62,10 @@
             </intent-filter>
         </activity>
         <!--登陆-->
-        <!-- 智能英语介绍/服务介绍 -->
+        <!-- 服务介绍 -->
         <activity android:name=".activity.FuwuIntroduceActivity" />
+        <!-- 智能英语介绍 -->
+        <activity android:name=".activity.FuwuEnglishActivity" />
         <!-- 商品详情 -->
         <activity android:name=".activity.CommodityDetailsActivity" />
         <!--订单详情/取消订单-->

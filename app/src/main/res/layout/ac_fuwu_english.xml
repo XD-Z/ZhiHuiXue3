@@ -15,9 +15,9 @@
         android:layout_marginRight="24dp"
         android:layout_marginLeft="24dp"
         android:minHeight="222dp"
-        android:src="@mipmap/img_fuwu_introduce"
+        android:src="@mipmap/img_fuwu_english"
         android:layout_width="match_parent"
-        android:layout_height="148dp" />
+        android:layout_height="236dp" />
     <TextView
         android:layout_marginTop="20dp"
         android:id="@+id/tv_text"

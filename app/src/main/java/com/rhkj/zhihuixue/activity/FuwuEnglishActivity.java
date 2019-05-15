@@ -7,12 +7,12 @@ import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.base.BaseActivity;
 
 /**
- * 服务介绍
+ * 智能英语介绍
  * <p>
  * Created by zjx on 2019/5/7.
  */
 
-public class FuwuIntroduceActivity extends BaseActivity {
+public class FuwuEnglishActivity extends BaseActivity {
 
 
     private ImageView imageView;
@@ -35,7 +35,7 @@ public class FuwuIntroduceActivity extends BaseActivity {
     @Override
     protected void initData() {
         super.initData();
-        tvTitle.setText("服务介绍");
+        tvTitle.setText("智能英语介绍");
 
 
     }

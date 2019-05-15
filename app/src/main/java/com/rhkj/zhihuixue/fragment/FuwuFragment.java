@@ -14,24 +14,29 @@ import android.view.ViewGroup;
 import com.gyf.barlibrary.ImmersionBar;
 import com.gyf.barlibrary.ImmersionFragment;
 import com.rhkj.zhihuixue.R;
+import com.rhkj.zhihuixue.activity.FuwuEnglishActivity;
 import com.rhkj.zhihuixue.activity.FuwuIntroduceActivity;
+
+import me.jessyan.autosize.AutoSizeConfig;
+import me.jessyan.autosize.internal.CancelAdapt;
+import me.jessyan.autosize.internal.CustomAdapt;
 
 /**
  * 服务
  * A simple {@link Fragment} subclass.
  */
-public class FuwuFragment extends Fragment {
+public class FuwuFragment extends Fragment  {
 
 
     public FuwuFragment() {
         // Required empty public constructor
+        AutoSizeConfig.getInstance().setCustomFragment(true);
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_fuwu, container, false);
     }
@@ -43,8 +48,8 @@ public class FuwuFragment extends Fragment {
         view.findViewById(R.id.cv_english).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), FuwuIntroduceActivity.class);
-                intent.putExtra("state", 0);
+                Intent intent = new Intent(getActivity(), FuwuEnglishActivity.class);
+
                 startActivity(intent);
             }
         });
@@ -53,12 +58,10 @@ public class FuwuFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), FuwuIntroduceActivity.class);
-                intent.putExtra("state", 1);
                 startActivity(intent);
             }
         });
 
     }
-
 
 }

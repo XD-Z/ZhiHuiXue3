@@ -124,7 +124,10 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 break;
             case R.id.mine_rb:
                 transaction.replace(R.id.content_frag, mFragments[4]);
-                ImmersionBar.with(this).reset().hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR).init();
+                ImmersionBar.with(this)
+                        .reset()
+                        .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
+                        .init();
                 break;
         }
         transaction.commit();

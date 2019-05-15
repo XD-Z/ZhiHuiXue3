@@ -34,7 +34,7 @@ dependencies {
     // 状态栏及刘海屏适配   http://www.jcodecraeer.com/a/opensource/2017/0526/7976.html
     implementation 'com.gyf.immersionbar:immersionbar:2.3.3'
     //今日头条适配
-    implementation 'me.jessyan:autosize:1.1.2'
+    implementation 'me.jessyan:autosize:1.1.1'
     // Banner  https://github.com/youth5201314/banner
     implementation 'com.youth.banner:banner:1.4.10'
     // gosn
