@@ -3,7 +3,6 @@ package com.rhkj.zhihuixue.base;
 public class Contents {
     //后台域名
     public static final String BASE = "http://192.168.2.254/api/";
-
     //注册
     public static final String REGISTER = BASE + "Index/register";
     //登录
@@ -16,7 +15,13 @@ public class Contents {
     public static final String WORD_LEVEL = BASE + "Word/level";
     //语音评测
     public static final String SPEECH_ASSESSMENT = BASE + "Word/library";
-
-
+    //商城
+    public static final String GOODS = BASE + "Goods/goods";
+    //获取服务介绍
+    public static final String SERVICE = BASE + "Service/Service_list";
+    //引导页
+    public static final String GUIDE = BASE + "Service/guide";
+    //添加地址
+    public static final String ADD_ADDRESS=BASE+"Goods/address";
 
 }

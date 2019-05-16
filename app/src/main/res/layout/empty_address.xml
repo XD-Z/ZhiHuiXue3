@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--没有地址的布局-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="127dip"
+            android:layout_height="103dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="67dip"
+            android:src="@mipmap/img_notaddress" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dip"
+            android:text="您还没有添加收货地址"
+            android:textColor="@color/colorGrey999"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_add_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dip"
+            android:background="@drawable/bg_change_phone_tv_code"
+            android:paddingBottom="5dip"
+            android:paddingLeft="7dip"
+            android:paddingRight="7dip"
+            android:paddingTop="5dip"
+            android:text="添加收货地址"
+            android:textColor="@color/colorAppTheme"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -9,25 +9,12 @@
         layout="@layout/include_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-    <ImageView
-        android:layout_marginTop="10dp"
-        android:id="@+id/iv_img"
-        android:layout_marginRight="24dp"
-        android:layout_marginLeft="24dp"
-        android:minHeight="222dp"
-        android:src="@mipmap/img_fuwu_introduce"
-        android:layout_width="match_parent"
-        android:layout_height="148dp" />
-    <TextView
-        android:layout_marginTop="20dp"
-        android:id="@+id/tv_text"
-        android:textColor="#5a5a5a"
-        android:textSize="14sp"
-        android:text="亲爱的用户，依照相关法规要求进行实名制管理、履行反洗钱职责和采取风险防范措施。为了您可以正常使用支付宝服务，您的身份信息联系方式，交易信息需要被依法收集并使用。"
-        android:layout_marginRight="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+  <WebView
+      android:id="@+id/web"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+  </WebView>
 
 
 

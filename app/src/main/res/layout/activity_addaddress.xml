@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
+    android:paddingBottom="36dp"
     tools:context=".activity.AddaddressActivity">
 
     <include layout="@layout/include_title" />
@@ -18,15 +19,17 @@
         android:paddingLeft="21dip">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="62dp"
             android:layout_height="wrap_content"
             android:text="收货人"
             android:textColor="@color/colorGrey5A"
             android:textSize="15sp" />
 
         <EditText
+            android:gravity="center_vertical"
+            android:id="@+id/edit_name"
             android:layout_width="130dip"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="10dip"
             android:background="@null"
             android:maxLength="8"
@@ -38,7 +41,7 @@
     <!--手机号-->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="2dip"
+        android:layout_height="4dip"
         android:background="@color/colorGreyF8" />
 
     <LinearLayout
@@ -48,15 +51,17 @@
         android:paddingLeft="21dip">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="62dp"
             android:layout_height="wrap_content"
             android:text="手机号"
             android:textColor="@color/colorGrey5A"
             android:textSize="15sp" />
 
         <EditText
+            android:gravity="center_vertical"
+            android:id="@+id/edit_phone"
             android:layout_width="130dip"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="10dip"
             android:background="@null"
             android:maxLength="11"
@@ -70,21 +75,32 @@
     <!--所在地区-->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="2dip"
+        android:layout_height="4dip"
         android:background="@color/colorGreyF8" />
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/ll_region"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="44dip"
         android:paddingLeft="21dip">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="62dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:text="所在地区"
             android:textColor="@color/colorGrey5A"
             android:textSize="15sp" />
+        <TextView
+            android:id="@+id/tv_region"
+            android:textColor="@color/colorGrey999"
+            android:textSize="12sp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <ImageView
             android:layout_width="5dp"
@@ -93,7 +109,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="14dip"
             android:src="@mipmap/icon_enter_black" />
-    </RelativeLayout>
+    </LinearLayout>
 
 
     <!--详细地址：-->
@@ -117,25 +133,23 @@
             android:textSize="15sp" />
 
         <EditText
+            android:id="@+id/edit_address"
             android:layout_width="250dip"
             android:layout_height="50dip"
-            android:layout_below="@id/addaddress_tv_address"
-            android:layout_marginLeft="4dip"
-            android:layout_marginTop="7dip"
-            android:layout_toRightOf="@id/addaddress_tv_address"
+            android:layout_below="@+id/addaddress_tv_address"
+            android:layout_toEndOf="@+id/addaddress_tv_address"
             android:background="@null"
             android:gravity="top"
+            android:hint="详细地址 : 如道路,门牌号,小区,单元"
             android:maxLines="3"
-            android:text="详细地址 : 如道路,门牌号,小区,单元"
             android:textColor="@color/colorGrey999"
             android:textSize="12sp" />
     </RelativeLayout>
 
-
     <!--设为默认地址-->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="2dip"
+        android:layout_height="4dip"
         android:background="@color/colorGreyF8" />
 
     <RelativeLayout
@@ -152,17 +166,34 @@
             android:textSize="15sp" />
 
         <com.suke.widget.SwitchButton
+            android:id="@+id/swbtn"
             android:layout_width="36dp"
             android:layout_height="20dp"
-            android:layout_marginRight="17dip"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="17dip"
             android:layout_weight="0.8"
             app:sb_checked="true"
             app:sb_checked_color="@color/colorAppTheme"
             app:sb_show_indicator="false" />
 
     </RelativeLayout>
+    <View
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_preservation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        android:background="@drawable/btn_bg_detalis"
+        android:text="保存"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
 
 
 </LinearLayout>

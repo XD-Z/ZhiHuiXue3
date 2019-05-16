@@ -20,9 +20,13 @@ import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.activity.MainActivity;
 import com.rhkj.zhihuixue.base.Contents;
 import com.rhkj.zhihuixue.bean.LogoinBean;
+import com.rhkj.zhihuixue.utils.SharedPrefsUtil;
 import com.rhkj.zhihuixue.utils.SysApplication;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -77,8 +81,8 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(this, ForgetPasswordActivity.class));
                 break;
             case R.id.btn_login:
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-//                void_login();//登录按钮请求接口
+//                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                void_login();//登录按钮请求接口
                 break;
             case R.id.btn_register:
                 startActivity(new Intent(this, RegisterActivity.class));
@@ -105,29 +109,41 @@ public class LoginActivity extends AppCompatActivity {
         OkHttpUtils.post().url(Contents.LOGOIN)
                 .addParams("mobile", loginEtPhone.getText().toString())
                 .addParams("password", loginEtPassword.getText().toString())
-                .build().execute(new StringCallback() {
-            @Override
-            public void onError(Call call, Exception e, int id) {
-            }
+                .build()
+                .execute(new StringCallback() {
+                    @Override
+                    public void onError(Call call, Exception e, int id) {
+                    }
 
-            @Override
-            public void onResponse(String response, int id) {
-                Log.e(TAG, "onResponse: " + response);
-                LogoinBean logoinBean = new Gson().fromJson(response, LogoinBean.class);
-                if (logoinBean.getState() == 1) {
-                    Log.e(TAG, "onResponse: " + response);
-                    //往SP中存入token，ID，name
-                    SPUtils.getInstance().put("user_token", logoinBean.getData().getToken());
-                    SPUtils.getInstance().put("user_id", logoinBean.getData().getId());
-                    SPUtils.getInstance().put("user_name", logoinBean.getData().getUser_name());
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                    finish();
-                } else {
-                    Toast.makeText(LoginActivity.this, logoinBean.getMsg(), Toast.LENGTH_SHORT).show();
-                }
+                    @Override
+                    public void onResponse(String response, int id) {
+                        Log.e(TAG, "onResponse: " + response);
 
-            }
-        });
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            int state = jsonObject.getInt("state");
+                            String msg = jsonObject.getString("msg");
+                            if (state == 1) {
+                                LogoinBean logoinBean = new Gson().fromJson(response, LogoinBean.class);
+                                Log.e(TAG, "onResponse: " + response);
+                                //往SP中存入token，ID，name
+                                SharedPrefsUtil.putData("user_token", logoinBean.getData().getToken());
+                                SharedPrefsUtil.putData("user_id", logoinBean.getData().getId());
+                                SharedPrefsUtil.putData("user_name", logoinBean.getData().getUser_name());
+
+                                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                finish();
+                            } else {
+                                Toast.makeText(LoginActivity.this, msg, Toast.LENGTH_SHORT).show();
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
+                    }
+                });
     }
 
 

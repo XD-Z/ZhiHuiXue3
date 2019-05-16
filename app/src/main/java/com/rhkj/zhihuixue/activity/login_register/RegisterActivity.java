@@ -35,6 +35,8 @@ import com.rhkj.zhihuixue.bean.VerifyBean;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
+import java.io.IOException;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -198,8 +200,8 @@ public class RegisterActivity extends BaseActivity {
     }
 
     private void void_logoin() {
-        Log.e(TAG, "void_logoin1: " + registerEtSurePassword.getText().toString().trim());
-        Log.e(TAG, "void_logoin2: " + registerEtNewPassword.getText().toString().trim());
+
+
         if (TextUtils.isEmpty(registerEtPhone.getText().toString().trim())) {
             Toast.makeText(this, "请输入手机号码", Toast.LENGTH_SHORT).show();
             return;
@@ -252,13 +254,15 @@ public class RegisterActivity extends BaseActivity {
                     public void onResponse(String response, int id) {
                         Log.e(TAG, "onResponse: " + response);
                         RegisterBean registerBean = new Gson().fromJson(response, RegisterBean.class);
-                        if (registerBean.getState() == 200) {
+                        if (registerBean.getState() == 1) {
                             //往SP中存入token，ID，name
 //                            SPUtils.getInstance().put("user_token", logoinBean.getData().getToken());
 //                            SPUtils.getInstance().put("user_id", logoinBean.getData().getId());
 //                            SPUtils.getInstance().put("user_name", logoinBean.getData().getUser_name());
                             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                             finish();
+                        }else {
+                            showToast(registerBean.getMsg());
                         }
                     }
                 });
@@ -334,6 +338,7 @@ public class RegisterActivity extends BaseActivity {
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {
+
                     }
 
                     @Override

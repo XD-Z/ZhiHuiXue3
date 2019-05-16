@@ -5,14 +5,24 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
 import com.gyf.barlibrary.BarHide;
 import com.gyf.barlibrary.ImmersionBar;
 import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.activity.login_register.LoginActivity;
+import com.rhkj.zhihuixue.base.Contents;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -20,6 +30,7 @@ import java.util.TimerTask;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import okhttp3.Call;
 
 public class WelcomeActivity extends Activity {
 
@@ -32,11 +43,15 @@ public class WelcomeActivity extends Activity {
     Timer timer = new Timer();
     private Handler handler;
     private Runnable runnable;
+    private ImageView imageView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+        imageView = findViewById(R.id.spalsh_img);
+
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
         initLayout();
@@ -44,11 +59,46 @@ public class WelcomeActivity extends Activity {
     }
 
     protected void initLayout() {
+
+
         ImmersionBar.with(this)
                 .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
                 .init();
 
         timer.schedule(task, 1000, 1000);//等待时间一秒，停顿时间一秒
+
+
+        OkHttpUtils.post()
+                .url(Contents.GUIDE)
+                .build().execute(new StringCallback() {
+            @Override
+            public void onError(Call call, Exception e, int id) {
+
+            }
+
+            @Override
+            public void onResponse(String response, int id) {
+                Log.e("TAG", response);
+
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    int state = jsonObject.getInt("state");
+
+                    if (state == 200) {
+                        JSONArray data = jsonObject.getJSONArray("data");
+                        if (data.length() != 0) {
+                            JSONObject o = (JSONObject) data.get(0);
+                            String desc = o.getString("desc");
+                            Glide.with(WelcomeActivity.this).load(desc).into(imageView);
+                        }
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
     }
 
 
@@ -99,6 +149,7 @@ public class WelcomeActivity extends Activity {
                 break;
         }
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();

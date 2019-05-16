@@ -1,11 +1,15 @@
 package com.rhkj.zhihuixue.adapter;
 
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.rhkj.zhihuixue.R;
+import com.rhkj.zhihuixue.bean.ShopGsonBean;
 
 import java.util.List;
 
@@ -13,15 +17,22 @@ import java.util.List;
  * Created by zjx on 2019/5/7.
  */
 
-public class ShopAdapter extends BaseQuickAdapter<String,BaseViewHolder> {
+public class ShopAdapter extends BaseQuickAdapter<ShopGsonBean.DataBean, BaseViewHolder> {
 
-    public ShopAdapter(@Nullable List<String> data) {
-        super(R.layout.item_shop,data);
+    public ShopAdapter() {
+        super(R.layout.item_shop);
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, String item) {
-        TextView tvMoney = helper.getView(R.id.tv_money);
+    protected void convert(BaseViewHolder helper, ShopGsonBean.DataBean item) {
+
+        helper.setText(R.id.tv_title_item, item.getName());
+        RecyclerView recyclerView = helper.getView(R.id.rv_itme);
+        recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
+
+        ShopRvAdapter shopRvAdapter = new ShopRvAdapter(item.getRes());
+        recyclerView.setAdapter(shopRvAdapter);
+
 
     }
 }
