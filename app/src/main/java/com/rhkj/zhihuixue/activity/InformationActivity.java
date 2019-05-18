@@ -12,6 +12,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import com.luck.picture.lib.PictureSelector;
+import com.luck.picture.lib.config.PictureConfig;
+import com.luck.picture.lib.config.PictureMimeType;
+import com.luck.picture.lib.entity.LocalMedia;
 import com.rhkj.zhihuixue.R;
 
 import com.rhkj.zhihuixue.base.BaseActivity;
@@ -25,10 +29,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.finalteam.rxgalleryfinal.RxGalleryFinal;
-import cn.finalteam.rxgalleryfinal.imageloader.ImageLoaderType;
-import cn.finalteam.rxgalleryfinal.rxbus.RxBusResultDisposable;
-import cn.finalteam.rxgalleryfinal.rxbus.event.ImageRadioResultEvent;
+
 
 /**
  * Created by zjx on 2019/5/17.
@@ -107,23 +108,29 @@ public class InformationActivity extends BaseActivity implements View.OnClickLis
 
     }
 
+    //图片选择
     private void imgSelect() {
-
-        RxGalleryFinal
-                .with(this)
-                .image()
-                .imageLoader(ImageLoaderType.GLIDE)
-                .subscribe(new RxBusResultDisposable<ImageRadioResultEvent>() {
-                    @Override
-                    protected void onEvent(ImageRadioResultEvent imageRadioResultEvent) throws Exception {
-                        String originalPath = imageRadioResultEvent.getResult().getOriginalPath();
-                        Glide.with(InformationActivity.this).load(new File(originalPath)).into(ivHade);
-                    }
-                })
-                .openGallery();
+        PictureSelector.create(this)
+                .openGallery(PictureMimeType.ofImage())
+                .maxSelectNum(1)
+                .forResult(PictureConfig.CHOOSE_REQUEST);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            switch (requestCode) {
+                case PictureConfig.CHOOSE_REQUEST:
+                    // 图片、视频、音频选择结果回调
+                    List<LocalMedia> selectList = PictureSelector.obtainMultipleResult(data);
+                    String path = selectList.get(0).getPath();
+                    Glide.with(this).load(new File(path)).into(ivHade);
 
+                    break;
+            }
+        }
+    }
 
     //选择年级
     private void grade() {

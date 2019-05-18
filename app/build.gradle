@@ -42,7 +42,7 @@ dependencies {
     //工具类
     implementation 'com.blankj:utilcode:1.10.0'
     //Glide
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
     //OkHttp
     implementation 'com.zhy:okhttputils:2.6.2'
     //design包
@@ -67,6 +67,6 @@ dependencies {
     //三级联动 https://github.com/Bigkoo/Android-PickerView
     implementation 'com.contrarywind:Android-PickerView:4.1.8'
 
-    //图片选择 https://github.com/FinalTeam/RxGalleryFinal
-    api 'cn.finalteam.rxgalleryfinal:library:1.0.9'
+    //图片选择 https://github.com/LuckSiege/PictureSelector
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
 }

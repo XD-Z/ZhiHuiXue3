@@ -74,7 +74,8 @@
 
                 <EditText
                     android:id="@+id/edit_phone"
-                    android:layout_width="wrap_content"
+                    android:gravity="right"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:background="@null"
@@ -105,7 +106,8 @@
 
                 <TextView
                     android:id="@+id/tv_address"
-                    android:layout_width="wrap_content"
+                    android:gravity="right"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:text="北京市 朝阳区 立水桥 明天生活馆"
@@ -135,7 +137,8 @@
 
                 <EditText
                     android:id="@+id/edit_call"
-                    android:layout_width="wrap_content"
+                    android:gravity="right"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:background="@null"
@@ -166,7 +169,8 @@
 
                 <EditText
                     android:id="@+id/edit_name"
-                    android:layout_width="wrap_content"
+                    android:gravity="right"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:background="@null"
@@ -197,7 +201,8 @@
 
                 <TextView
                     android:id="@+id/tv_grade"
-                    android:layout_width="wrap_content"
+                    android:gravity="right"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:text="小学一年级"
