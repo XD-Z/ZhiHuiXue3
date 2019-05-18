@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         mRadioGroup.setOnCheckedChangeListener(this);
         zhi_rl = findViewById(R.id.zhi_rl);
         initFragment();
+
     }
 
 
@@ -79,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                         .statusBarColor(R.color.colorWhile)
                         .fitsSystemWindows(true)
                         .statusBarDarkFont(true)
-                        .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
+//                        .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
                         .init();
                 transaction.commit();
 
@@ -99,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 ImmersionBar.with(this)
                         .reset().statusBarColor(R.color.colorWhile)
                         .statusBarDarkFont(true)
-                        .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
+//                        .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
                         .init();
                 break;
             case R.id.fuwu_rb:
@@ -109,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                         .statusBarColor(R.color.colorWhile)
                         .fitsSystemWindows(true)
                         .statusBarDarkFont(true)
-                        .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
+//                        .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
                         .init();
                 break;
             case R.id.shop_rb:
@@ -119,14 +121,14 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                         .statusBarColor(R.color.colorWhile)
                         .fitsSystemWindows(true)
                         .statusBarDarkFont(true)
-                        .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
+//                        .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
                         .init();
                 break;
             case R.id.mine_rb:
                 transaction.replace(R.id.content_frag, mFragments[4]);
                 ImmersionBar.with(this)
                         .reset()
-                        .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
+//                        .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
                         .init();
                 break;
         }

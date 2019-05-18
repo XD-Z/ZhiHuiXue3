@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.rhkj.zhihuixue.R;
+import com.rhkj.zhihuixue.activity.InformationActivity;
 import com.rhkj.zhihuixue.activity.MyCouponActivity;
 import com.rhkj.zhihuixue.activity.mine.AddressActivity;
 import com.rhkj.zhihuixue.activity.mine.MessageActivity;
@@ -120,6 +121,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
             }
         });
         rvCoupon.setOnClickListener(this);
+        imgMineHead.setOnClickListener(this);
     }
 
     private void initdata() {
@@ -149,6 +151,12 @@ public class MineFragment extends Fragment implements View.OnClickListener {
             case R.id.rv_coupon:
                 startActivity(new Intent(getActivity(), MyCouponActivity.class));
                 break;
+            case R.id.img_mine_head:
+                startActivity(new Intent(getActivity(), InformationActivity.class));
+                break;
         }
     }
+
+
+
 }

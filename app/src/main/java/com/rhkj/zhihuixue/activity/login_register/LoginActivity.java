@@ -61,6 +61,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initData() {
+
+        loginEtPhone.setText("17664092628");
+        loginEtPassword.setText("123456");
     }
 
 
@@ -128,7 +131,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Log.e(TAG, "onResponse: " + response);
                                 //往SP中存入token，ID，name
                                 SharedPrefsUtil.putData("user_token", logoinBean.getData().getToken());
-                                SharedPrefsUtil.putData("user_id", logoinBean.getData().getId());
+                                SharedPrefsUtil.putData("user_id", String.valueOf(logoinBean.getData().getId()));
                                 SharedPrefsUtil.putData("user_name", logoinBean.getData().getUser_name());
 
                                 startActivity(new Intent(LoginActivity.this, MainActivity.class));

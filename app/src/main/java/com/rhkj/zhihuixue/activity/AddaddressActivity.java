@@ -1,5 +1,6 @@
 package com.rhkj.zhihuixue.activity;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -8,7 +9,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.RegexUtils;
-import com.blankj.utilcode.util.SPUtils;
 import com.lljjcoder.Interface.OnCityItemClickListener;
 import com.lljjcoder.bean.CityBean;
 import com.lljjcoder.bean.DistrictBean;
@@ -22,6 +22,9 @@ import com.rhkj.zhihuixue.utils.SharedPrefsUtil;
 import com.suke.widget.SwitchButton;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import okhttp3.Call;
 
@@ -40,6 +43,7 @@ public class AddaddressActivity extends BaseActivity implements View.OnClickList
     private String mCity;
     private String mCountyarea;
     private CityPickerView mPicker;
+
 
     @Override
     protected void initLayout() {
@@ -111,26 +115,45 @@ public class AddaddressActivity extends BaseActivity implements View.OnClickList
             return;
         }
 
+
+
+
         OkHttpUtils.post()
                 .url(Contents.ADD_ADDRESS)
-                .addParams("user_id", (String) SharedPrefsUtil.getData("user_id",""))
+                .addParams("user_id", (String) SharedPrefsUtil.getData("user_id", ""))
                 .addParams("name", name)
                 .addParams("tel", phone)
                 .addParams("province", mProvince)
                 .addParams("city", mCity)
                 .addParams("countyarea", mCountyarea)
-                .addParams("desc",address)
+                .addParams("desc", address)
                 .addParams("default", checked ? "0" : "1")
                 .build()
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {
-
+                        Log.e("TAG", e.getMessage());
                     }
 
                     @Override
                     public void onResponse(String response, int id) {
-                        Log.e("TAG", response+"");
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String msg = jsonObject.getString("msg");
+                            int state = jsonObject.getInt("state");
+
+                            if (state == 200) {
+                                Intent intent = new Intent();
+                                intent.putExtra("statr", "1");
+                                setResult(2, intent);
+                                finish();
+
+                            }
+                            showToast(msg);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
 
                     }
                 });
@@ -171,4 +194,5 @@ public class AddaddressActivity extends BaseActivity implements View.OnClickList
         //显示
         mPicker.showCityPicker();
     }
+
 }

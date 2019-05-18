@@ -16,26 +16,25 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bigkoo.pickerview.builder.OptionsPickerBuilder;
+import com.bigkoo.pickerview.listener.OnOptionsSelectListener;
+import com.bigkoo.pickerview.view.OptionsPickerView;
 import com.blankj.utilcode.util.ObjectUtils;
 import com.blankj.utilcode.util.RegexUtils;
-import com.blankj.utilcode.util.SPUtils;
 import com.google.gson.Gson;
-import com.lljjcoder.Interface.OnCityItemClickListener;
-import com.lljjcoder.bean.CityBean;
-import com.lljjcoder.bean.DistrictBean;
-import com.lljjcoder.bean.ProvinceBean;
-import com.lljjcoder.citywheel.CityConfig;
-import com.lljjcoder.style.citypickerview.CityPickerView;
 import com.rhkj.zhihuixue.R;
-import com.rhkj.zhihuixue.activity.MainActivity;
 import com.rhkj.zhihuixue.base.BaseActivity;
 import com.rhkj.zhihuixue.base.Contents;
 import com.rhkj.zhihuixue.bean.RegisterBean;
+import com.rhkj.zhihuixue.bean.RegisterGradeGsonBean;
 import com.rhkj.zhihuixue.bean.VerifyBean;
+import com.rhkj.zhihuixue.repeat.CityData;
+import com.rhkj.zhihuixue.repeat.GradeData;
+
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
-import java.io.IOException;
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -61,7 +60,7 @@ public class RegisterActivity extends BaseActivity {
     @BindView(R.id.register_et_baby_name)
     EditText registerEtBabyName;
     @BindView(R.id.register_et_grade)
-    EditText registerEtGrade;
+    TextView registerEtGrade;
     @BindView(R.id.btn_login)
     TextView btnLogin;
 
@@ -69,17 +68,19 @@ public class RegisterActivity extends BaseActivity {
     private final int RESEND_VERIFICATION_CODE = -9;
     private final int RECEIVE_VERIFICATION_CODE = -8;
     private String TAG = "login_register";
-    private CityPickerView mPicker;
+
     private boolean isHideFirst = true;// 输入框密码是否是隐藏的，默认为true
+
+    private int gradeId = -1;
+    private CityData cityData;
 
     @Override
     protected void initLayout() {
         super.initLayout();
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
-        mPicker = new CityPickerView();//实例化城市选择器
-        //预先加载仿iOS滚轮实现的全部数据
-        mPicker.init(this);
+
+
     }
 
     @Override
@@ -87,7 +88,10 @@ public class RegisterActivity extends BaseActivity {
         super.initViews();
 
         tvTitle.setText("会员注册");
+
+
     }
+
 
     @Override
     protected void addListener() {
@@ -181,10 +185,12 @@ public class RegisterActivity extends BaseActivity {
     @Override
     protected void initData() {
         super.initData();
+
+        cityData = new CityData(this);
     }
 
 
-    @OnClick({R.id.register_verification_code, R.id.register_tv_district, R.id.btn_login})
+    @OnClick({R.id.register_verification_code, R.id.register_tv_district, R.id.btn_login, R.id.register_et_grade})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.register_verification_code:
@@ -196,11 +202,17 @@ public class RegisterActivity extends BaseActivity {
             case R.id.btn_login:
                 void_logoin();
                 break;
+
+            case R.id.register_et_grade:
+
+                grade();
+
+                break;
         }
     }
 
-    private void void_logoin() {
 
+    private void void_logoin() {
 
         if (TextUtils.isEmpty(registerEtPhone.getText().toString().trim())) {
             Toast.makeText(this, "请输入手机号码", Toast.LENGTH_SHORT).show();
@@ -242,7 +254,7 @@ public class RegisterActivity extends BaseActivity {
                 .addParams("user_name", registerEtName.getText().toString().trim())
                 .addParams("nickname", registerEtBabyName.getText().toString().trim())
                 .addParams("city", registerTvDistrict.getText().toString().trim())
-                .addParams("grade_id", registerEtGrade.getText().toString().trim())
+                .addParams("grade_id", String.valueOf(gradeId))
                 .build()
                 .execute(new StringCallback() {
                     @Override
@@ -252,7 +264,6 @@ public class RegisterActivity extends BaseActivity {
 
                     @Override
                     public void onResponse(String response, int id) {
-                        Log.e(TAG, "onResponse: " + response);
                         RegisterBean registerBean = new Gson().fromJson(response, RegisterBean.class);
                         if (registerBean.getState() == 1) {
                             //往SP中存入token，ID，name
@@ -261,40 +272,37 @@ public class RegisterActivity extends BaseActivity {
 //                            SPUtils.getInstance().put("user_name", logoinBean.getData().getUser_name());
                             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                             finish();
-                        }else {
-                            showToast(registerBean.getMsg());
                         }
+                        showToast(registerBean.getMsg());
+
                     }
                 });
     }
+
+    //选择年级
+    private void grade() {
+        GradeData gradeData = new GradeData(this);
+        gradeData.setRepoeatInterface(new GradeData.GradeInterface() {
+            @Override
+            public void gradeData(RegisterGradeGsonBean.DataBean dataBean) {
+                String name = dataBean.getName();
+                gradeId = dataBean.getId();
+                registerEtGrade.setText(name);
+            }
+        });
+    }
+
 
     /**
      * //城市选择器
      */
     private void chosecityConfig() {
-        //添加默认的配置，不需要自己定义，当然也可以自定义相关熟悉，详细属性请看demo
-        CityConfig cityConfig = new CityConfig.Builder()
-                .province("北京市")//默认显示的省份
-                .city("省直辖县级行政单位")//默认显示省份下面的城市
-                .district("朝阳区")//默认显示省市下面的区县数据
-                .provinceCyclic(false)//省份滚轮是否可以循环滚动
-                .build();
-        mPicker.setConfig(cityConfig);
-
-        //监听选择点击事件及返回结果
-        mPicker.setOnCityItemClickListener(new OnCityItemClickListener() {
+        cityData.setCityInterface(new CityData.CityInterface() {
             @Override
-            public void onSelected(ProvinceBean province, CityBean city, DistrictBean district) {
-                registerTvDistrict.setText(district.toString());
-            }
-
-            @Override
-            public void onCancel() {
-                Toast.makeText(RegisterActivity.this, "已取消", Toast.LENGTH_SHORT).show();
+            public void city(String province, String city, String area) {
+                registerTvDistrict.setText(province + city + area);
             }
         });
-        //显示
-        mPicker.showCityPicker();
     }
 
 

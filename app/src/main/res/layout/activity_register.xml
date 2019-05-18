@@ -197,12 +197,13 @@
         android:background="@drawable/bg_login_linearlayout">
 
         <TextView
+            android:gravity="center_vertical"
             android:id="@+id/register_tv_district"
             android:layout_width="200dip"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dip"
-            android:text="请选择省、市、县、区"
+            android:hint="请选择省、市、县、区"
             android:textColor="@color/colorforgetGrey"
             android:textSize="12sp" />
 
@@ -272,14 +273,15 @@
         android:layout_marginRight="38dip"
         android:background="@drawable/bg_login_linearlayout">
 
-        <EditText
+        <TextView
+            android:gravity="center_vertical"
             android:id="@+id/register_et_grade"
-            android:layout_width="200dip"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dip"
             android:background="@null"
-            android:hint="小学一年级"
+            android:text="请选择年级"
             android:textColor="@color/colorforgetGrey"
             android:textSize="12sp" />
 

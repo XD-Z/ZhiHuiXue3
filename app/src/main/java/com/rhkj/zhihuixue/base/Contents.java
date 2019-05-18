@@ -22,6 +22,10 @@ public class Contents {
     //引导页
     public static final String GUIDE = BASE + "Service/guide";
     //添加地址
-    public static final String ADD_ADDRESS=BASE+"Goods/address";
+    public static final String ADD_ADDRESS = BASE + "Goods/address";
+    //我的收货地址
+    public static final String ADDRESS = BASE + "My/address";
+
+
 
 }

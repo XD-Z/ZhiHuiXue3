@@ -36,6 +36,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
+
+
     private void initTitle() {
         tvTitle = findViewById(R.id.tv_title);
         ImageView ivBack = findViewById(R.id.iv_back);
@@ -62,7 +64,7 @@ public abstract class BaseActivity extends AppCompatActivity {
                 .statusBarColor(R.color.colorWhile)
                 .statusBarDarkFont(true)
                 .fitsSystemWindows(true)
-                .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
+//                .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
                 .init();
     }
 
@@ -176,5 +178,11 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     public void myFinish() {
         super.finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ImmersionBar.with(this).destroy();
     }
 }

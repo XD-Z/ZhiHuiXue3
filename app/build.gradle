@@ -66,4 +66,7 @@ dependencies {
 
     //三级联动 https://github.com/Bigkoo/Android-PickerView
     implementation 'com.contrarywind:Android-PickerView:4.1.8'
+
+    //图片选择 https://github.com/FinalTeam/RxGalleryFinal
+    api 'cn.finalteam.rxgalleryfinal:library:1.0.9'
 }

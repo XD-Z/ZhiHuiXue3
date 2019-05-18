@@ -2,7 +2,7 @@ package com.rhkj.zhihuixue;
 
 import android.app.Application;
 
-import com.rhkj.zhihuixue.utils.MyApplication;
+
 import com.rhkj.zhihuixue.utils.SharedPrefsUtil;
 
 /**
@@ -15,8 +15,6 @@ public class MyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
-
-        SharedPrefsUtil.getInstance(this,"zhihuixue");
+        SharedPrefsUtil.getInstance(this, "zhihuixue");
     }
 }

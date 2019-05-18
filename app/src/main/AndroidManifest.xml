@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -101,7 +101,19 @@
         <activity android:name=".activity.OrderConfirmActivity"/>
         <!--支付-->
         <activity android:name=".activity.PaymentActivity"/>
+        <!--个人信息-->
+        <activity android:name=".activity.InformationActivity"/>
 
+
+        <!--<activity-->
+            <!--android:name="cn.finalteam.rxgalleryfinal.ui.activity.MediaActivity"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:exported="true"-->
+            <!--android:theme="@style/Theme_Light.Default"/>-->
+        <!--<activity-->
+            <!--android:name="com.yalantis.ucrop.UCropActivity"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:theme="@style/Theme_Light.Default"/>-->
 
     </application>
 
