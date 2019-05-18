@@ -13,9 +13,9 @@
     <!--通知名称-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="38dip"
-        android:layout_marginLeft="20dip"
-        android:layout_marginRight="13dip"
+        android:layout_height="38pt"
+        android:layout_marginLeft="20pt"
+        android:layout_marginRight="13pt"
         android:gravity="center_vertical">
 
         <TextView
@@ -23,30 +23,30 @@
             android:layout_height="wrap_content"
             android:text="通知名称："
             android:textColor="#4C4948"
-            android:textSize="12sp" />
+            android:textSize="12pt" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="12dip"
+            android:layout_marginLeft="12pt"
             android:text="关于北京发展"
             android:textColor="#424242"
-            android:textSize="12sp" />
+            android:textSize="12pt" />
 
     </LinearLayout>
 
     <!--通知时间：-->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="0.3dip"
-        android:layout_marginLeft="70dip"
+        android:layout_height="0.3pt"
+        android:layout_marginLeft="70pt"
         android:background="#A0A0A0" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="38dip"
-        android:layout_marginLeft="20dip"
-        android:layout_marginRight="13dip"
+        android:layout_height="38pt"
+        android:layout_marginLeft="20pt"
+        android:layout_marginRight="13pt"
         android:gravity="center_vertical">
 
         <TextView
@@ -54,40 +54,40 @@
             android:layout_height="wrap_content"
             android:text="通知时间："
             android:textColor="#4C4948"
-            android:textSize="12sp" />
+            android:textSize="12pt" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="12dip"
+            android:layout_marginLeft="12pt"
             android:text="2018-10-27"
             android:textColor="#424242"
-            android:textSize="12sp" />
+            android:textSize="12pt" />
 
     </LinearLayout>
-    <!--15dip的分割线-->
+    <!--15pt的分割线-->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="15dip"
+        android:layout_height="15pt"
         android:background="@color/colorGreyF8" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dip"
-        android:layout_marginTop="15dip"
+        android:layout_marginLeft="20pt"
+        android:layout_marginTop="15pt"
         android:text="尊敬的用户："
         android:textColor="#ff4c4948"
-        android:textSize="14sp" />
+        android:textSize="14pt" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dip"
-        android:layout_marginRight="45dip"
-        android:layout_marginTop="10dip"
-        android:lineSpacingExtra="10dip"
+        android:layout_marginLeft="20pt"
+        android:layout_marginRight="45pt"
+        android:layout_marginTop="10pt"
+        android:lineSpacingExtra="10pt"
         android:textColor="#4c4948"
-        android:textSize="12sp"
+        android:textSize="12pt"
 
         android:text="@string/message_details"/>
 

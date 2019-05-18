@@ -4,9 +4,9 @@
     android:layout_height="wrap_content"
     android:background="#fff"
     android:orientation="vertical"
-    android:paddingTop="14dp"
-    android:paddingLeft="14dp"
-    android:paddingRight="14dp">
+    android:paddingTop="14pt"
+    android:paddingLeft="14pt"
+    android:paddingRight="14pt">
 
     <LinearLayout
         android:id="@+id/ll_title"
@@ -15,9 +15,9 @@
         android:background="#38ff7e00"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingBottom="10dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp">
+        android:paddingBottom="10pt"
+        android:paddingLeft="10pt"
+        android:paddingTop="10pt">
 
         <ImageView
             android:id="@+id/iv_play"
@@ -29,17 +29,17 @@
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
+            android:layout_marginLeft="4pt"
             android:text="秒记单词"
             android:textColor="#ff7e00"
-            android:textSize="16sp" />
+            android:textSize="16pt" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginLeft="24pt"
+        android:layout_marginTop="12pt"
         android:orientation="horizontal">
 
         <TextView
@@ -47,13 +47,13 @@
             android:layout_height="wrap_content"
             android:text="☆"
             android:textColor="#595757"
-            android:textSize="12sp"
+            android:textSize="12pt"
             android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
+            android:layout_marginLeft="4pt"
             android:gravity="center_vertical"
             android:orientation="vertical">
 
@@ -68,23 +68,23 @@
                     android:layout_weight="1"
                     android:text="赠送单词100个"
                     android:textColor="#595757"
-                    android:textSize="12sp" />
+                    android:textSize="12pt" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:drawablePadding="10dp"
+                    android:drawablePadding="10pt"
                     android:drawableRight="@mipmap/icon_greater_than_xiao"
                     android:text="剩余次数: 2次; 时间: 7天"
                     android:textColor="#999999"
-                    android:textSize="10sp" />
+                    android:textSize="10pt" />
 
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="6dp"
+                android:layout_height="1pt"
+                android:layout_marginTop="6pt"
                 android:background="#c2c2c2" />
 
 

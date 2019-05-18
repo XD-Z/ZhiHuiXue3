@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
-
     <FrameLayout
         android:id="@+id/content_frag"
         android:layout_width="match_parent"
@@ -15,44 +14,47 @@
 
     </FrameLayout>
 
+
     <RadioGroup
         android:id="@+id/rg_tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:background="#F3F3F3"
         android:orientation="horizontal"
-        android:paddingBottom="3pt"
         android:paddingLeft="5pt"
-        android:paddingRight="5pt"
         android:paddingTop="6pt"
+        android:paddingRight="5pt"
+        android:paddingBottom="3pt"
         android:weightSum="5">
 
         <RadioButton
             android:id="@+id/home_rb"
-            android:layout_width="0dp"
+            android:layout_width="0pt"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:button="@null"
             android:drawableTop="@drawable/home_tab_selecter"
             android:gravity="center"
-            android:paddingLeft="0dp"
+            android:paddingLeft="0pt"
             android:text="首页"
             android:textColor="@drawable/radio_selector_color"
             android:textSize="12pt" />
 
         <RadioButton
             android:id="@+id/fuwu_rb"
-            android:layout_width="0dp"
+            android:layout_width="0pt"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:button="@null"
             android:drawableTop="@drawable/fuwu_tab_selecter"
             android:gravity="center"
-            android:paddingLeft="0dp"
+            android:paddingLeft="0pt"
             android:text="服务"
             android:textColor="@drawable/radio_selector_color"
             android:textSize="12pt" />
@@ -60,13 +62,16 @@
         <!--</LinearLayout>-->
         <!--给中间凸起按钮预留位置-->
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="0pt"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center">
-
         </LinearLayout>
-
+        <!--<LinearLayout
+            android:layout_width="0pt"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1">-->
         <RadioButton
             android:id="@+id/shop_rb"
             android:layout_width="0pt"
@@ -94,16 +99,18 @@
             android:text="我的"
             android:textColor="@drawable/radio_selector_color"
             android:textSize="12pt" />
+        <!-- </LinearLayout>-->
     </RadioGroup>
 
     <RelativeLayout
         android:id="@+id/zhi_rl"
-        android:layout_width="wrap_content"
-        android:layout_height="60pt"
+        android:layout_width="65pt"
+        android:layout_height="65pt"
         android:layout_above="@+id/rg_tab"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="3pt"
+        android:background="@drawable/bg_realtivelayout_zhi"
         android:clickable="true">
 
         <ImageView

@@ -2,6 +2,7 @@ package com.rhkj.zhihuixue.base;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.blankj.utilcode.util.AdaptScreenUtils;
 import com.gyf.barlibrary.BarHide;
 import com.gyf.barlibrary.ImmersionBar;
 import com.rhkj.zhihuixue.R;
@@ -184,5 +186,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         ImmersionBar.with(this).destroy();
+    }
+    @Override
+    public Resources getResources() {
+        return AdaptScreenUtils.adaptHeight(super.getResources(), 667);
     }
 }

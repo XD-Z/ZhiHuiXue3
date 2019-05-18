@@ -15,24 +15,24 @@
 
     <com.youth.banner.Banner
         android:id="@+id/vp"
-        app:indicator_height="10dp"
-        app:indicator_width="10dp"
-        app:indicator_margin="10dp"
+        app:indicator_height="10pt"
+        app:indicator_width="10pt"
+        app:indicator_margin="10pt"
         app:indicator_drawable_selected="@drawable/vp_renewals_indicator_t"
         app:indicator_drawable_unselected="@drawable/vp_renewals_indicator_f"
         android:layout_width="match_parent"
-        android:layout_height="218dp" />
+        android:layout_height="218pt" />
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12pt"
+        android:layout_marginLeft="18pt"
+        android:layout_marginTop="12pt"
         android:text="第七代智能英语学习套餐"
         android:textColor="#5a5a5a"
-        android:textSize="16sp" />
+        android:textSize="16pt" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv"
@@ -45,53 +45,53 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="12dp"
+        android:layout_height="2pt"
+        android:layout_marginTop="12pt"
         android:background="#f8f8f8" />
 
     <LinearLayout
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="12pt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="22dp"
+        android:layout_marginLeft="22pt"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <View
-            android:layout_width="4dp"
-            android:layout_height="16dp"
+            android:layout_width="4pt"
+            android:layout_height="16pt"
             android:background="#ea5404" />
 
         <TextView
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="6dp"
+            android:layout_marginLeft="6pt"
             android:text="活动详情："
             android:textColor="#5a5a5a"
-            android:textSize="16sp" />
+            android:textSize="16pt" />
     </LinearLayout>
 
     <TextView
         android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="32pt"
+        android:layout_marginRight="32pt"
+        android:layout_marginTop="10pt"
         android:text="商品详情商品详情商品详情商品详情商品详情商情商品详情商品详情"
         android:textColor="#666666"
-        android:textSize="16sp" />
+        android:textSize="16pt" />
     <Button
         android:text="立即续费"
         android:textColor="#ffffff"
-        android:textSize="18sp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="38dp"
-        android:layout_marginRight="38dp"
+        android:textSize="18pt"
+        android:layout_marginBottom="10pt"
+        android:layout_marginLeft="38pt"
+        android:layout_marginRight="38pt"
         android:background="@drawable/btn_bg_detalis"
         android:layout_width="match_parent"
-        android:layout_height="44dp" />
+        android:layout_height="44pt" />
 
 
 

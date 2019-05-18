@@ -3,6 +3,7 @@ package com.rhkj.zhihuixue.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.AdaptScreenUtils;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.gyf.barlibrary.BarHide;
@@ -152,5 +154,9 @@ public class WelcomeActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         ImmersionBar.with(this).destroy();  //不调用该方法，如果界面bar发生改变，在不关闭app的情况下，退出此界面再进入将记忆最后一次bar改变的状态
+    }
+    @Override
+    public Resources getResources() {
+        return AdaptScreenUtils.adaptHeight(super.getResources(), 667);
     }
 }

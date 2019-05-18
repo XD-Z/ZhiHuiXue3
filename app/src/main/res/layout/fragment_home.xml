@@ -30,7 +30,7 @@
         android:layout_weight="3"
         android:paddingLeft="35pt"
         android:paddingRight="37pt"
-        android:paddingTop="40pt">
+        android:paddingTop="30pt">
 
         <!--语音识别-->
         <ImageView
@@ -74,6 +74,7 @@
         android:layout_width="match_parent"
         android:layout_height="0pt"
         android:layout_weight="1.5"
+        android:layout_marginBottom="23pt"
         android:src="@mipmap/img_ad2"
         android:id="@+id/advertisement2"
         android:scaleType="fitXY"/>

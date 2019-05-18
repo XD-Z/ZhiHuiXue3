@@ -19,63 +19,63 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="240dip">
+                android:layout_height="240pt">
                 <!--个人信息-->
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="200dip"
+                    android:layout_height="200pt"
                     android:background="@color/colorAppTheme">
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/img_mine_head"
-                        android:layout_width="60dip"
-                        android:layout_height="60dip"
-                        android:layout_marginLeft="20dip"
-                        android:layout_marginTop="65dip"
+                        android:layout_width="60pt"
+                        android:layout_height="60pt"
+                        android:layout_marginLeft="20pt"
+                        android:layout_marginTop="65pt"
                         android:src="@mipmap/icon_defaule_head" />
 
                     <!--用户昵称-->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dip"
-                        android:layout_marginTop="80dip"
+                        android:layout_marginLeft="15pt"
+                        android:layout_marginTop="80pt"
                         android:layout_toRightOf="@id/img_mine_head"
                         android:text="我的昵称"
                         android:textColor="@color/colorWhile"
-                        android:textSize="15sp" />
+                        android:textSize="15pt" />
 
                     <!--会员ID-->
                     <TextView
                         android:id="@+id/vipID"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dip"
-                        android:layout_marginTop="105dip"
+                        android:layout_marginLeft="15pt"
+                        android:layout_marginTop="105pt"
                         android:layout_toRightOf="@id/img_mine_head"
                         android:text="会员ID:"
                         android:textColor="@color/colorWhile"
-                        android:textSize="12sp" />
+                        android:textSize="12pt" />
 
                     <!--会员号-->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="2dip"
-                        android:layout_marginTop="107dip"
+                        android:layout_marginLeft="2pt"
+                        android:layout_marginTop="107pt"
                         android:layout_toRightOf="@id/vipID"
                         android:text="120345511556"
                         android:textColor="@color/colorWhile"
-                        android:textSize="10sp" />
+                        android:textSize="10pt" />
 
                     <!--签到-->
                     <TextView
-                        android:layout_width="55dip"
-                        android:layout_height="21dip"
-                        android:layout_marginTop="65dip"
-                        android:layout_marginRight="11dip"
+                        android:layout_width="55pt"
+                        android:layout_height="21pt"
+                        android:layout_marginTop="65pt"
+                        android:layout_marginRight="11pt"
                         android:text="签到"
-                        android:textSize="12sp"
+                        android:textSize="12pt"
                         android:textColor="@color/colorWhile"
                         android:background="@drawable/bg_mine_tv_sign"
                         android:gravity="center"
@@ -85,25 +85,25 @@
                 <!--豆子和券-->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="90dip"
+                    android:layout_height="90pt"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="40dip"
-                    android:layout_marginRight="40dip"
+                    android:layout_marginLeft="40pt"
+                    android:layout_marginRight="40pt"
                     android:background="@drawable/bg_linearlayout_mine"
                     android:orientation="horizontal"
-                    android:paddingTop="10dip"
-                    android:paddingBottom="10dip">
+                    android:paddingTop="10pt"
+                    android:paddingBottom="10pt">
 
                     <!--豆子-->
                     <RelativeLayout
-                        android:layout_width="0dip"
+                        android:layout_width="0pt"
                         android:layout_height="match_parent"
                         android:layout_weight="100">
 
                         <ImageView
                             android:id="@+id/img_mine_beans"
-                            android:layout_width="45dip"
-                            android:layout_height="45dip"
+                            android:layout_width="45pt"
+                            android:layout_height="45pt"
                             android:layout_centerHorizontal="true"
                             android:src="@mipmap/icon_mine_beans" />
 
@@ -112,7 +112,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@id/img_mine_beans"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginTop="3dip">
+                            android:layout_marginTop="3pt">
 
                             <TextView
                                 android:id="@+id/text_mine_beansNums"
@@ -120,34 +120,34 @@
                                 android:layout_height="wrap_content"
                                 android:text="20个"
                                 android:textColor="@color/colorAppTheme"
-                                android:textSize="15sp" />
+                                android:textSize="15pt" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="智汇豆"
                                 android:textColor="#666666"
-                                android:textSize="9sp" />
+                                android:textSize="9pt" />
                         </LinearLayout>
                     </RelativeLayout>
 
                     <!--竖线-->
                     <TextView
-                        android:layout_width="1dip"
+                        android:layout_width="1pt"
                         android:layout_height="match_parent"
                         android:background="#A0A0A0" />
 
                     <!--优惠券-->
                     <RelativeLayout
                         android:id="@+id/rv_coupon"
-                        android:layout_width="0dip"
+                        android:layout_width="0pt"
                         android:layout_height="match_parent"
                         android:layout_weight="100">
 
                         <ImageView
                             android:id="@+id/img_mine_ticket"
-                            android:layout_width="45dip"
-                            android:layout_height="45dip"
+                            android:layout_width="45pt"
+                            android:layout_height="45pt"
                             android:layout_centerHorizontal="true"
                             android:src="@mipmap/icon_mine_ticket" />
 
@@ -158,7 +158,7 @@
                             android:layout_centerHorizontal="true"
                             android:text="我的优惠券"
                             android:textColor="#666666"
-                            android:textSize="12sp" />
+                            android:textSize="12pt" />
 
 
                     </RelativeLayout>

@@ -29,6 +29,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Math.sqrt;
 
 
 /**
@@ -67,6 +68,9 @@ public class InformationActivity extends BaseActivity implements View.OnClickLis
         tvId = findViewById(R.id.tv_id);
         tvPreservation = findViewById(R.id.tv_preservation);
         ivHade = findViewById(R.id.iv_hade);
+
+
+
 
 
         tvGrade.setOnClickListener(this);

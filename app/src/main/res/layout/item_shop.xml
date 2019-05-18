@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingBottom="8dp"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    android:paddingTop="8dp">
+    android:paddingBottom="8pt"
+    android:paddingLeft="10pt"
+    android:paddingRight="10pt"
+    android:paddingTop="8pt">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,22 +16,89 @@
         android:orientation="horizontal">
 
         <View
-            android:layout_width="6dp"
-            android:layout_height="16dp"
+            android:layout_width="6pt"
+            android:layout_height="16pt"
             android:background="#ea5404" />
 
         <TextView
             android:id="@+id/tv_title_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="6dp"
+            android:layout_marginLeft="6pt"
             android:text="秒记单词商品区"
             android:textColor="#5a5a5a" />
     </LinearLayout>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_itme"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12pt"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardPreventCornerOverlap="true"
+            app:cardCornerRadius="10pt"
+            app:cardElevation="0pt">
+            <ImageView
+                android:id="@+id/iv_"
+                android:scaleType="fitXY"
+                android:layout_width="92pt"
+                android:layout_height="92pt"
+                android:src="@mipmap/img_shangchengbanner" />
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16pt"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="小学单词100个"
+                android:textColor="#5a5a5a"
+                android:textSize="14pt" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6pt"
+                android:text="有效期：365天~"
+                android:textColor="#7a7979"
+                android:textSize="14pt" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginRight="10dip">
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10个/天"
+                    android:textColor="#999999"
+                    android:textSize="12pt" />
+                <TextView
+                    android:textColor="#d25353"
+                    android:textSize="12pt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥" />
+                <TextView
+                    android:layout_marginLeft="4pt"
+                    android:id="@+id/tv_money"
+                    android:textColor="#d25353"
+                    android:textSize="18pt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="99" />
+            </LinearLayout>
+
+        </LinearLayout>
 
     </android.support.v7.widget.RecyclerView>
 

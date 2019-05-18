@@ -3,17 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="16dp">
+    android:paddingLeft="16pt"
+    android:paddingRight="16pt"
+    android:paddingTop="16pt">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingLeft="16dp"
-        android:paddingRight="28dp"
-        android:paddingTop="16dp">
+        android:paddingLeft="16pt"
+        android:paddingRight="28pt"
+        android:paddingTop="16pt">
 
         <TextView
             android:id="@+id/tv_word"
@@ -21,16 +21,16 @@
             android:layout_height="wrap_content"
             android:text="book"
             android:textColor="#ea5404"
-            android:textSize="24sp" />
+            android:textSize="24pt" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="20pt"
             android:layout_weight="1"
             android:text="[BʊK]"
             android:textColor="#999999"
-            android:textSize="14sp" />
+            android:textSize="14pt" />
 
         <ImageView
             android:layout_width="wrap_content"

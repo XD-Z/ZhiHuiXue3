@@ -5,13 +5,13 @@
     android:background="#fff"
     android:orientation="vertical"
 
-    android:paddingTop="14dp">
+    android:paddingTop="14pt">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingLeft="20dp">
+        android:paddingLeft="20pt">
 
 
         <LinearLayout
@@ -31,32 +31,32 @@
                     android:layout_height="wrap_content"
                     android:text="尹晓峰"
                     android:textColor="#5a5a5a"
-                    android:textSize="14sp" />
+                    android:textSize="14pt" />
 
                 <TextView
                     android:id="@+id/tv_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginLeft="16pt"
                     android:text="17635621248"
                     android:textColor="#5a5a5a"
-                    android:textSize="12sp" />
+                    android:textSize="12pt" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="12pt"
                 android:text="收货地址:北京市昌平区立水桥502北京市昌平区立水桥502"
                 android:textColor="#7a7979"
-                android:textSize="12sp" />
+                android:textSize="12pt" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8pt"
+                android:layout_marginBottom="8pt"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -69,38 +69,38 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
+                    android:layout_marginLeft="6pt"
                     android:text="设为默认"
                     android:textColor="#999999"
-                    android:textSize="10sp" />
+                    android:textSize="10pt" />
             </LinearLayout>
         </LinearLayout>
 
         <View
-            android:layout_width="1dp"
-            android:layout_height="50dp"
+            android:layout_width="1pt"
+            android:layout_height="50pt"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="40pt"
             android:background="#a0a0a0" />
 
         <TextView
             android:id="@+id/tv_edit"
             android:gravity="center_vertical"
-            android:paddingLeft="28dp"
-            android:paddingRight="28dp"
+            android:paddingLeft="28pt"
+            android:paddingRight="28pt"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
             android:text="编辑"
             android:textColor="#5a5a5a"
-            android:textSize="16sp" />
+            android:textSize="16pt" />
 
 
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="4dp"
+        android:layout_height="4pt"
         android:background="#f8f8f8" />
 
 </LinearLayout>

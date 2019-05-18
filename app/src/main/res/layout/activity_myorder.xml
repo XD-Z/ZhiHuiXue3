@@ -22,7 +22,7 @@
         android:id="@+id/stl"
         app:tl_tab_space_equal="true"
         app:tl_textSelectColor="#ea5404"
-        app:tl_textsize="14sp"
+        app:tl_textsize="14pt"
         app:tl_textUnselectColor="#5a5a5a"
         app:tl_indicator_color="#ea5404"
         app:tl_indicator_height="3dp"

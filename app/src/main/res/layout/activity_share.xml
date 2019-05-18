@@ -20,23 +20,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="42dp"
-            android:layout_marginRight="42dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginLeft="42pt"
+            android:layout_marginRight="42pt"
+            android:layout_marginTop="30pt"
             android:background="#fff"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="44dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginLeft="44pt"
+                android:layout_marginTop="24pt"
                 android:orientation="horizontal">
 
                 <android.support.v7.widget.CardView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    app:cardCornerRadius="8dp">
+                    android:layout_width="50pt"
+                    android:layout_height="50pt"
+                    app:cardCornerRadius="8pt">
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -49,43 +49,43 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="12dp"
+                    android:layout_marginLeft="12pt"
                     android:text="张晓晓"
                     android:textColor="#5a5a5a"
-                    android:textSize="18sp" />
+                    android:textSize="18pt" />
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="4dp"
-                android:layout_marginLeft="28dp"
-                android:layout_marginRight="28dp"
-                android:layout_marginTop="18dp"
+                android:layout_height="4pt"
+                android:layout_marginLeft="28pt"
+                android:layout_marginRight="28pt"
+                android:layout_marginTop="18pt"
                 android:background="@drawable/share_dotted_line" />
 
             <ImageView
-                android:layout_width="196dp"
-                android:layout_height="196dp"
+                android:layout_width="196pt"
+                android:layout_height="196pt"
                 android:layout_gravity="center"
-                android:layout_marginBottom="36dp"
-                android:layout_marginTop="36dp"
+                android:layout_marginBottom="36pt"
+                android:layout_marginTop="36pt"
                 android:src="@mipmap/img_qrcord" />
         </LinearLayout>
 
         <LinearLayout
-            android:paddingBottom="50dp"
+            android:paddingBottom="50pt"
             android:id="@+id/ll_select"
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="42dp"
-            android:layout_marginRight="42dp"
+            android:layout_marginLeft="42pt"
+            android:layout_marginRight="42pt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
                 android:layout_weight="1"
-                android:drawablePadding="10dp"
+                android:drawablePadding="10pt"
                 android:gravity="center"
-                android:textSize="12sp"
+                android:textSize="12pt"
                 android:textColor="#fff"
                 android:text="微信"
                 android:drawableTop="@mipmap/icon_share_wx"
@@ -93,9 +93,9 @@
                 android:layout_height="wrap_content" />
             <TextView
                 android:layout_weight="1"
-                android:drawablePadding="10dp"
+                android:drawablePadding="10pt"
                 android:gravity="center"
-                android:textSize="12sp"
+                android:textSize="12pt"
                 android:textColor="#fff"
                 android:text="微信"
                 android:drawableTop="@mipmap/icon_share_pyq"
@@ -103,9 +103,9 @@
                 android:layout_height="wrap_content" />
             <TextView
                 android:layout_weight="1"
-                android:drawablePadding="10dp"
+                android:drawablePadding="10pt"
                 android:gravity="center"
-                android:textSize="12sp"
+                android:textSize="12pt"
                 android:textColor="#fff"
                 android:text="微信"
                 android:drawableTop="@mipmap/icon_share_qq"
@@ -113,9 +113,9 @@
                 android:layout_height="wrap_content" />
             <TextView
                 android:layout_weight="1"
-                android:drawablePadding="10dp"
+                android:drawablePadding="10pt"
                 android:gravity="center"
-                android:textSize="12sp"
+                android:textSize="12pt"
                 android:textColor="#fff"
                 android:text="微博"
                 android:drawableTop="@mipmap/icon_share_weibo"
@@ -125,11 +125,11 @@
 
         </LinearLayout>
         <TextView
-            android:layout_marginBottom="38dp"
+            android:layout_marginBottom="38pt"
             android:layout_centerHorizontal="true"
             android:layout_above="@+id/ll_select"
             android:textColor="#ffffff"
-            android:textSize="14sp"
+            android:textSize="14pt"
             android:text="更多分享方式"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

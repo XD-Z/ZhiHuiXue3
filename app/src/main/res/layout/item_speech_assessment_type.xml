@@ -3,21 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="16dp">
+    android:paddingLeft="16pt"
+    android:paddingRight="16pt"
+    android:paddingTop="16pt">
 
     <TextView
         android:textColor="#424242"
         android:id="@+id/tv_type"
-        android:textSize="14sp"
-        android:layout_width="60dp"
+        android:textSize="14pt"
+        android:layout_width="60pt"
         android:layout_height="wrap_content"
         android:text="n." />
 
     <TextView
         android:textColor="#666666"
-        android:textSize="12sp"
+        android:textSize="12pt"
         android:id="@+id/tv_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

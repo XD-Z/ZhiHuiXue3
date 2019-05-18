@@ -4,13 +4,13 @@
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingLeft="10dp"
-    android:paddingRight="72dp"
-    android:paddingTop="26dp">
+    android:paddingLeft="10pt"
+    android:paddingRight="72pt"
+    android:paddingTop="26pt">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="50pt"
+        android:layout_height="50pt"
         android:src="@mipmap/img_shangchengbanner" />
 
     <TextView
@@ -18,11 +18,11 @@
         android:gravity="left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="10pt"
         android:background="@drawable/question_my"
         android:text="1.我怎样才能获得现金奖励"
         android:textColor="#ea5404"
-        android:textSize="14sp" />
+        android:textSize="14pt" />
 
 
 </LinearLayout>

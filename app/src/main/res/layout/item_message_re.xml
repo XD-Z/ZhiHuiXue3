@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="63dip">
+    android:layout_height="63pt">
 
     <ImageView
         android:id="@+id/item_message_re_img"
-        android:layout_width="40dip"
-        android:layout_height="40dip"
+        android:layout_width="40pt"
+        android:layout_height="40pt"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="14dip"
+        android:layout_marginLeft="14pt"
         android:src="@mipmap/icon_staff_server" />
 
     <TextView
@@ -16,36 +16,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/item_message_re_img"
-        android:layout_marginLeft="15dip"
+        android:layout_marginLeft="15pt"
         android:layout_toRightOf="@id/item_message_re_img"
         android:ellipsize="end"
         android:singleLine="true"
         android:text="客服消息"
         android:textColor="@color/colorGrey5A"
-        android:textSize="14sp" />
+        android:textSize="14pt" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/item_message_re_title"
-        android:layout_marginLeft="16dip"
-        android:layout_marginTop="8dip"
+        android:layout_marginLeft="16pt"
+        android:layout_marginTop="8pt"
         android:layout_toRightOf="@id/item_message_re_img"
         android:ellipsize="end"
         android:singleLine="true"
         android:text="所有与客服的对话记录都在这里"
         android:textColor="@color/colorGrey666"
-        android:textSize="12sp" />
+        android:textSize="12pt" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dip"
-        android:layout_marginRight="5dip"
+        android:layout_marginTop="10pt"
+        android:layout_marginRight="5pt"
         android:text="2019-1-4"
         android:textColor="@color/colorGrey999"
         android:layout_alignParentRight="true"
-        android:textSize="9sp"
+        android:textSize="9pt"
         />
 
 </RelativeLayout>

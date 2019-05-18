@@ -22,11 +22,11 @@
             android:paddingLeft="21dip">
 
             <TextView
-                android:layout_width="62dp"
+                android:layout_width="62pt"
                 android:layout_height="wrap_content"
                 android:text="收货人"
                 android:textColor="@color/colorGrey5A"
-                android:textSize="15sp" />
+                android:textSize="15pt" />
 
             <EditText
                 android:id="@+id/edit_name"
@@ -38,7 +38,7 @@
                 android:maxLength="8"
                 android:maxLines="1"
                 android:textColor="@color/colorGrey999"
-                android:textSize="12sp" />
+                android:textSize="12pt" />
         </LinearLayout>
 
         <!--手机号-->
@@ -54,11 +54,11 @@
             android:paddingLeft="21dip">
 
             <TextView
-                android:layout_width="62dp"
+                android:layout_width="62pt"
                 android:layout_height="wrap_content"
                 android:text="手机号"
                 android:textColor="@color/colorGrey5A"
-                android:textSize="15sp" />
+                android:textSize="15pt" />
 
             <EditText
                 android:id="@+id/edit_phone"
@@ -71,7 +71,7 @@
                 android:maxLines="1"
                 android:phoneNumber="true"
                 android:textColor="@color/colorGrey999"
-                android:textSize="12sp" />
+                android:textSize="12pt" />
         </LinearLayout>
 
 
@@ -90,25 +90,25 @@
             android:paddingLeft="21dip">
 
             <TextView
-                android:layout_width="62dp"
+                android:layout_width="62pt"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:text="所在地区"
                 android:textColor="@color/colorGrey5A"
-                android:textSize="15sp" />
+                android:textSize="15pt" />
 
             <TextView
                 android:id="@+id/tv_region"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="10pt"
                 android:layout_weight="1"
                 android:textColor="@color/colorGrey999"
-                android:textSize="12sp" />
+                android:textSize="12pt" />
 
             <ImageView
-                android:layout_width="5dp"
-                android:layout_height="9dp"
+                android:layout_width="5pt"
+                android:layout_height="9pt"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="14dip"
@@ -134,7 +134,7 @@
                 android:layout_height="wrap_content"
                 android:text="详细地址："
                 android:textColor="@color/colorGrey5A"
-                android:textSize="15sp" />
+                android:textSize="15pt" />
 
             <EditText
                 android:id="@+id/edit_address"
@@ -147,7 +147,7 @@
                 android:hint="详细地址 : 如道路,门牌号,小区,单元"
                 android:maxLines="3"
                 android:textColor="@color/colorGrey999"
-                android:textSize="12sp" />
+                android:textSize="12pt" />
         </RelativeLayout>
 
         <!--设为默认地址-->
@@ -167,12 +167,12 @@
                 android:layout_height="wrap_content"
                 android:text="设为默认地址"
                 android:textColor="@color/colorGrey5A"
-                android:textSize="15sp" />
+                android:textSize="15pt" />
 
             <com.suke.widget.SwitchButton
                 android:id="@+id/swbtn"
-                android:layout_width="36dp"
-                android:layout_height="20dp"
+                android:layout_width="36pt"
+                android:layout_height="20pt"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="17dip"
@@ -185,17 +185,17 @@
     </LinearLayout>
 
     <Button
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="100pt"
         android:id="@+id/btn_preservation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="36dp"
-        android:layout_marginRight="36dp"
+        android:layout_marginLeft="36pt"
+        android:layout_marginRight="36pt"
         android:background="@drawable/btn_bg_detalis"
         android:text="保存"
         android:textColor="#ffffff"
-        android:textSize="18sp"
+        android:textSize="18pt"
         android:textStyle="bold" />
 
 

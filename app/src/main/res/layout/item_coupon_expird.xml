@@ -2,13 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="8dp"
-    android:paddingLeft="44dp"
-    android:paddingRight="44dp">
+    android:paddingTop="8pt"
+    android:paddingLeft="44pt"
+    android:paddingRight="44pt">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_height="110pt"
         android:background="@mipmap/bg_coupon_alreadyused"
         android:orientation="horizontal">
 
@@ -16,8 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingLeft="12dp"
-            android:paddingTop="12dp">
+            android:paddingLeft="12pt"
+            android:paddingTop="12pt">
 
             <TextView
                 android:includeFontPadding="false"
@@ -25,50 +25,50 @@
                 android:layout_height="wrap_content"
                 android:text="优惠券"
                 android:textColor="#ffffff"
-                android:textSize="24sp"
+                android:textSize="24pt"
                 android:textStyle="bold" />
 
             <TextView
                 android:includeFontPadding="false"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="6pt"
                 android:text="邀请好友获得"
                 android:textColor="#ffffff"
-                android:textSize="12sp"
+                android:textSize="12pt"
                 android:textStyle="bold" />
 
             <TextView
                 android:includeFontPadding="false"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="4pt"
                 android:text="2018-06-07 ~ 2018-06-09"
                 android:textColor="#ffffff"
-                android:textSize="10sp"
+                android:textSize="10pt"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/tv_money"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="18pt"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="20pt"
             android:text="20"
             android:includeFontPadding="false"
             android:textColor="#ffffff"
-            android:textSize="42sp" />
+            android:textSize="42pt" />
         <TextView
             android:textStyle="bold"
             android:includeFontPadding="false"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="20pt"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/tv_money"
             android:textColor="#ffffff"
-            android:textSize="22sp"
+            android:textSize="22pt"
             android:text="￥"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

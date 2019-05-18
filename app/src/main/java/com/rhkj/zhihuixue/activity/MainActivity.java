@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.blankj.utilcode.util.AdaptScreenUtils;
 import com.gyf.barlibrary.BarHide;
@@ -38,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         SysApplication.getInstance().addActivity(this);
+        double v = sqrt(750 * 750 + 1334 * 1334) / 72;
+        Log.e("wky", "onCreate: " + v);
         initViews();
     }
 
@@ -103,7 +106,9 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
             case R.id.home_rb:
                 transaction.replace(R.id.content_frag, mFragments[0]);
                 ImmersionBar.with(this)
-                        .reset().statusBarColor(R.color.colorWhile)
+                        .reset()
+                        .statusBarColor(R.color.colorWhile)
+                        .fitsSystemWindows(true)
                         .statusBarDarkFont(true)
 //                        .hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
                         .init();
@@ -149,4 +154,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     public Resources getResources() {
         return AdaptScreenUtils.adaptHeight(super.getResources(), 667);
     }
+
+
 }

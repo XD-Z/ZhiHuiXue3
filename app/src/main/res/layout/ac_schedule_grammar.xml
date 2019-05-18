@@ -13,27 +13,27 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="4dp"
+        android:layout_height="4pt"
         android:background="#f8f8f8" />
 
     <com.flyco.tablayout.SlidingTabLayout
         android:id="@+id/stl"
         android:layout_width="match_parent"
-        android:layout_height="34dp"
+        android:layout_height="34pt"
         app:tl_indicator_color="#ea5404"
-        app:tl_indicator_height="3dp"
+        app:tl_indicator_height="3pt"
         app:tl_indicator_width_equal_title="true"
         app:tl_tab_space_equal="false"
         app:tl_textSelectColor="#ea5404"
         app:tl_textUnselectColor="#5a5a5a"
-        app:tl_textsize="12sp">
+        app:tl_textsize="12pt">
 
 
     </com.flyco.tablayout.SlidingTabLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="4dp"
+        android:layout_height="4pt"
         android:background="#f8f8f8" />
 
     <android.support.v4.view.ViewPager

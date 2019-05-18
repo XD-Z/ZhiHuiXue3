@@ -12,15 +12,15 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="2dip"
+        android:layout_height="2pt"
         android:background="@color/colorLoginGrey" />
 
     <ImageView
-        android:layout_width="36dip"
-        android:layout_height="36dip"
+        android:layout_width="36pt"
+        android:layout_height="36pt"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="25dip"
-        android:layout_marginBottom="26dip"
+        android:layout_marginTop="25pt"
+        android:layout_marginBottom="26pt"
         android:src="@mipmap/icon_warning_exclamation" />
 
     <TextView
@@ -29,123 +29,123 @@
         android:gravity="center"
         android:text="将139****125所绑定的账号注销"
         android:textColor="@color/colorGrey5A"
-        android:textSize="18sp" />
+        android:textSize="18pt" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="11dip"
+        android:layout_marginTop="11pt"
         android:gravity="center"
         android:text="注意，注销账号后以下信息将被清空且无法找回"
         android:textColor="@color/colorGrey5A"
-        android:textSize="10sp" />
+        android:textSize="10pt" />
 
 
     <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="11dip"
-        android:layout_marginTop="30dip"
-        android:layout_marginRight="11dip"
+        android:layout_marginLeft="11pt"
+        android:layout_marginTop="30pt"
+        android:layout_marginRight="11pt"
         app:cardBackgroundColor="#f8f8f8"
-        app:cardCornerRadius="2dp"
-        app:cardElevation="1dp">
+        app:cardCornerRadius="2pt"
+        app:cardElevation="1pt">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="207dip"
+            android:layout_height="207pt"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dip"
+                android:layout_height="0pt"
                 android:layout_weight="2"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dip"
-                    android:layout_marginTop="30dip"
+                    android:layout_marginLeft="30pt"
+                    android:layout_marginTop="30pt"
                     android:text="身份、账户信息、会员、及权益信息"
                     android:textColor="@color/colorGrey5A"
-                    android:textSize="12sp" />
+                    android:textSize="12pt" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dip"
-                    android:layout_marginTop="21dip"
+                    android:layout_marginLeft="30pt"
+                    android:layout_marginTop="21pt"
                     android:text="交易记录"
                     android:textColor="@color/colorGrey5A"
-                    android:textSize="12sp" />
+                    android:textSize="12pt" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dip"
-                    android:layout_marginTop="23dip"
+                    android:layout_marginLeft="30pt"
+                    android:layout_marginTop="23pt"
                     android:text="银行卡的快捷支付（含卡通）服务"
                     android:textColor="@color/colorGrey5A"
-                    android:textSize="12sp" />
+                    android:textSize="12pt" />
 
 
             </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="1dip"
+                android:layout_height="1pt"
                 android:background="@color/colorBlack" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dip"
+                android:layout_height="0pt"
                 android:layout_weight="1"
                 android:gravity="center_vertical">
 
                 <TextView
-                    android:layout_width="299dip"
+                    android:layout_width="299pt"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="19dip"
+                    android:layout_marginLeft="19pt"
                     android:text="@string/setting_logout"
                     android:textColor="@color/colorGrey666"
-                    android:textSize="12dip" />
+                    android:textSize="12pt" />
             </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
     <!--下一步-->
     <TextView
-        android:layout_width="300dip"
-        android:layout_height="43dip"
+        android:layout_width="300pt"
+        android:layout_height="43pt"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dip"
+        android:layout_marginTop="40pt"
         android:background="@drawable/bg_tv_login"
         android:gravity="center"
         android:text="下一步"
         android:textColor="#FFFFFF"
-        android:textSize="20sp" />
+        android:textSize="20pt" />
 
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="18dip">
+        android:layout_marginTop="18pt">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="点击【下一步】即代表你已经同意"
             android:textColor="@color/colorGrey9C9A"
-            android:textSize="12sp" />
+            android:textSize="12pt" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="《用户注销协议》"
             android:textColor="@color/colorGrey5A"
-            android:textSize="12sp" />
+            android:textSize="12pt" />
     </LinearLayout>
 
 </LinearLayout>

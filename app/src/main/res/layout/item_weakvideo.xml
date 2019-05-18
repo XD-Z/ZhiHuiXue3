@@ -3,40 +3,40 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingLeft="8dp"
-    android:paddingRight="8dp">
+    android:paddingLeft="8pt"
+    android:paddingRight="8pt">
 
     <LinearLayout
         android:id="@+id/ll_title"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="12pt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#f2f2f3"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp">
+        android:paddingBottom="10pt"
+        android:paddingTop="10pt">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="10pt"
             android:src="@mipmap/icon_play_hui" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="3dp"
+            android:layout_marginLeft="3pt"
             android:text="第1关"
             android:textColor="#595757"
-            android:textSize="16sp" />
+            android:textSize="16pt" />
     </LinearLayout>
 
     <LinearLayout
-        android:paddingTop="6dp"
+        android:paddingTop="6pt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="22dp"
+        android:layout_marginLeft="22pt"
         android:orientation="horizontal">
 
         <ImageView
@@ -47,17 +47,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="6dp"
+            android:layout_marginLeft="6pt"
             android:text="最小知识点名称1-1-3"
             android:textColor="#898989"
-            android:textSize="12sp" />
+            android:textSize="12pt" />
     </LinearLayout>
     <View
-        android:layout_marginTop="6dp"
-        android:layout_marginLeft="22dp"
+        android:layout_marginTop="6pt"
+        android:layout_marginLeft="22pt"
         android:background="#b5b5b6"
         android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+        android:layout_height="1pt"/>
 
 
 </LinearLayout>

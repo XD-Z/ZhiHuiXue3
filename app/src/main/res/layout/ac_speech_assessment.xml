@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        android:paddingBottom="70dp">
+        android:paddingBottom="70pt">
 
         <ImageView
             android:id="@+id/iv_up"
@@ -42,14 +42,14 @@
             android:id="@+id/tv_evaluating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:drawablePadding="12dp"
+            android:layout_marginLeft="50pt"
+            android:layout_marginRight="50pt"
+            android:drawablePadding="12pt"
             android:drawableTop="@mipmap/icon_speech_microphone"
             android:gravity="center"
             android:text="点击开始评测"
             android:textColor="#666666"
-            android:textSize="12sp" />
+            android:textSize="12pt" />
 
 
         <ImageView

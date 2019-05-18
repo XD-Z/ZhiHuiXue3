@@ -16,8 +16,8 @@
 
         <ImageView
             android:id="@+id/iv_back"
-            android:layout_width="12dp"
-            android:layout_height="19dp"
+            android:layout_width="12pt"
+            android:layout_height="19pt"
             android:layout_centerVertical="true"
             android:layout_marginLeft="21dip"
             android:src="@mipmap/icon_back_while" />
@@ -28,7 +28,7 @@
             android:layout_centerInParent="true"
             android:text="收货地址"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="18pt" />
         <!--添加新地址-->
         <TextView
             android:id="@+id/tv_add"
@@ -39,7 +39,7 @@
             android:layout_marginRight="21dip"
             android:text="添加新地址"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textSize="12pt"
             android:visibility="gone" />
 
     </RelativeLayout>

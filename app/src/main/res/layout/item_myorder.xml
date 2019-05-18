@@ -10,10 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="8dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="8dp"
-        android:paddingTop="8dp">
+        android:paddingBottom="8pt"
+        android:paddingLeft="16pt"
+        android:paddingRight="8pt"
+        android:paddingTop="8pt">
 
         <TextView
             android:layout_width="wrap_content"
@@ -21,7 +21,7 @@
             android:layout_centerVertical="true"
             android:text="秒记单词商品区"
             android:textColor="#ea5404"
-            android:textSize="16sp" />
+            android:textSize="16pt" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,26 +30,26 @@
             android:layout_centerVertical="true"
             android:text="物流单号:123523411354"
             android:textColor="#5a5a5a"
-            android:textSize="12sp" />
+            android:textSize="12pt" />
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="2pt"
         android:background="#f8f8f8" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="20pt"
         android:orientation="horizontal"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp">
+        android:paddingLeft="20pt"
+        android:paddingRight="20pt">
 
         <android.support.v7.widget.CardView
-            android:layout_width="108dp"
-            android:layout_height="94dp"
-            app:cardCornerRadius="10dp">
+            android:layout_width="108pt"
+            android:layout_height="94pt"
+            app:cardCornerRadius="10pt">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -61,7 +61,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="18dp"
+            android:layout_marginLeft="18pt"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -70,25 +70,25 @@
                 android:layout_height="wrap_content"
                 android:text="小学生单词100个"
                 android:textColor="#5a5a5a"
-                android:textSize="16sp" />
+                android:textSize="16pt" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="10pt"
                 android:text="有效期：365天"
                 android:textColor="#666666"
-                android:textSize="12sp" />
+                android:textSize="12pt" />
 
             <TextView
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="10pt"
                 android:layout_weight="1"
                 android:text="¥ 99.00"
                 android:textColor="#c53434"
-                android:textSize="16sp" />
+                android:textSize="16pt" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -104,7 +104,7 @@
                     android:layout_gravity="right"
                     android:text="实付: ¥99.00"
                     android:textColor="#666464"
-                    android:textSize="12sp" />
+                    android:textSize="12pt" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -113,23 +113,23 @@
 
                     <Button
                         android:id="@+id/btn_cancel"
-                        android:layout_width="68dp"
-                        android:layout_height="20dp"
-                        android:layout_marginTop="6dp"
+                        android:layout_width="68pt"
+                        android:layout_height="20pt"
+                        android:layout_marginTop="6pt"
                         android:background="@drawable/btn_order_gray"
                         android:text="取消订单"
                         android:textColor="#939191"
-                        android:textSize="12sp" />
+                        android:textSize="12pt" />
 
                     <Button
-                        android:layout_width="68dp"
-                        android:layout_height="20dp"
-                        android:layout_marginLeft="6dp"
-                        android:layout_marginTop="6dp"
+                        android:layout_width="68pt"
+                        android:layout_height="20pt"
+                        android:layout_marginLeft="6pt"
+                        android:layout_marginTop="6pt"
                         android:background="@drawable/btn_order_rad"
                         android:text="确认收货"
                         android:textColor="#ea5404"
-                        android:textSize="12sp" />
+                        android:textSize="12pt" />
 
                 </LinearLayout>
 
@@ -142,8 +142,8 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="4pt"
+        android:layout_marginTop="10pt"
         android:background="#f8f8f8" />
 
 

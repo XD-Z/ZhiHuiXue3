@@ -14,8 +14,8 @@
             android:id="@+id/iv_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:padding="14dp"
+            android:layout_marginLeft="8pt"
+            android:padding="14pt"
             android:src="@mipmap/icon_fanhui" />
 
         <TextView
@@ -25,7 +25,7 @@
             android:layout_centerInParent="true"
             android:text="服务介绍"
             android:textColor="#ea5404"
-            android:textSize="18sp"
+            android:textSize="18pt"
             android:textStyle="bold" />
 
         <TextView
@@ -34,10 +34,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:padding="12dp"
+            android:padding="12pt"
             android:text="保存"
             android:textColor="#ea5404"
-            android:textSize="14sp" />
+            android:textSize="14pt" />
     </RelativeLayout>
 
     <android.support.v4.widget.NestedScrollView
@@ -51,26 +51,26 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_hade"
-                android:layout_width="82dp"
-                android:layout_height="82dp"
+                android:layout_width="82pt"
+                android:layout_height="82pt"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="40pt"
                 android:src="@mipmap/img_shangchengbanner" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="12dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="24dp">
+                android:paddingBottom="12pt"
+                android:paddingLeft="20pt"
+                android:paddingRight="20pt"
+                android:paddingTop="24pt">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="电话"
                     android:textColor="#5a5a5a"
-                    android:textSize="14sp" />
+                    android:textSize="14pt" />
 
                 <EditText
                     android:id="@+id/edit_phone"
@@ -81,28 +81,28 @@
                     android:background="@null"
                     android:text="15458695896"
                     android:textColor="#999999"
-                    android:textSize="12sp" />
+                    android:textSize="12pt" />
             </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="2pt"
                 android:background="#f8f8f8" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="12dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="12dp">
+                android:paddingBottom="12pt"
+                android:paddingLeft="20pt"
+                android:paddingRight="20pt"
+                android:paddingTop="12pt">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="地址"
                     android:textColor="#5a5a5a"
-                    android:textSize="14sp" />
+                    android:textSize="14pt" />
 
                 <TextView
                     android:id="@+id/tv_address"
@@ -112,28 +112,28 @@
                     android:layout_alignParentRight="true"
                     android:text="北京市 朝阳区 立水桥 明天生活馆"
                     android:textColor="#999999"
-                    android:textSize="12sp" />
+                    android:textSize="12pt" />
             </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="2pt"
                 android:background="#f8f8f8" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="12dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="12dp">
+                android:paddingBottom="12pt"
+                android:paddingLeft="20pt"
+                android:paddingRight="20pt"
+                android:paddingTop="12pt">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="名称"
                     android:textColor="#5a5a5a"
-                    android:textSize="14sp" />
+                    android:textSize="14pt" />
 
                 <EditText
                     android:id="@+id/edit_call"
@@ -144,28 +144,28 @@
                     android:background="@null"
                     android:text="昵称"
                     android:textColor="#999999"
-                    android:textSize="12sp" />
+                    android:textSize="12pt" />
             </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="2pt"
                 android:background="#f8f8f8" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="12dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="12dp">
+                android:paddingBottom="12pt"
+                android:paddingLeft="20pt"
+                android:paddingRight="20pt"
+                android:paddingTop="12pt">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="姓名"
                     android:textColor="#5a5a5a"
-                    android:textSize="14sp" />
+                    android:textSize="14pt" />
 
                 <EditText
                     android:id="@+id/edit_name"
@@ -176,28 +176,28 @@
                     android:background="@null"
                     android:text="张晓晓"
                     android:textColor="#999999"
-                    android:textSize="12sp" />
+                    android:textSize="12pt" />
             </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="2pt"
                 android:background="#f8f8f8" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="12dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="12dp">
+                android:paddingBottom="12pt"
+                android:paddingLeft="20pt"
+                android:paddingRight="20pt"
+                android:paddingTop="12pt">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="年级"
                     android:textColor="#5a5a5a"
-                    android:textSize="14sp" />
+                    android:textSize="14pt" />
 
                 <TextView
                     android:id="@+id/tv_grade"
@@ -207,28 +207,28 @@
                     android:layout_alignParentRight="true"
                     android:text="小学一年级"
                     android:textColor="#999999"
-                    android:textSize="12sp" />
+                    android:textSize="12pt" />
             </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="2pt"
                 android:background="#f8f8f8" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="12dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="12dp">
+                android:paddingBottom="12pt"
+                android:paddingLeft="20pt"
+                android:paddingRight="20pt"
+                android:paddingTop="12pt">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="会员ID"
                     android:textColor="#5a5a5a"
-                    android:textSize="14sp" />
+                    android:textSize="14pt" />
 
                 <TextView
                     android:id="@+id/tv_id"
@@ -237,12 +237,12 @@
                     android:layout_alignParentRight="true"
                     android:text="id50122456"
                     android:textColor="#999999"
-                    android:textSize="12sp" />
+                    android:textSize="12pt" />
             </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="2pt"
                 android:background="#f8f8f8" />
 
 

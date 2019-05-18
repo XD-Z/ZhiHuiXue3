@@ -25,16 +25,16 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="33dp"
-                android:layout_marginRight="33dp"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="4dp">
+                android:layout_marginLeft="33pt"
+                android:layout_marginRight="33pt"
+                app:cardCornerRadius="10pt"
+                app:cardElevation="4pt">
 
                 <com.youth.banner.Banner
 
                     android:id="@+id/vp"
                     android:layout_width="match_parent"
-                    android:layout_height="178dp"></com.youth.banner.Banner>
+                    android:layout_height="178pt"></com.youth.banner.Banner>
 
             </android.support.v7.widget.CardView>
 
@@ -43,118 +43,118 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="6pt"
                 android:orientation="horizontal"></LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="26dp"
+                android:layout_marginLeft="20pt"
+                android:layout_marginTop="26pt"
                 android:text="小学生单词100个"
                 android:textColor="#5a5a5a"
-                android:textSize="16sp" />
+                android:textSize="16pt" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginLeft="20pt"
+                android:layout_marginTop="16pt"
                 android:text="测评次数 : 10次"
                 android:textColor="#5a5a5a"
-                android:textSize="16sp" />
+                android:textSize="16pt" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginLeft="20pt"
+                android:layout_marginTop="16pt"
                 android:text="有效时间 : 100天"
                 android:textColor="#5a5a5a"
-                android:textSize="16sp" />
+                android:textSize="16pt" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="16dp">
+                android:layout_marginLeft="20pt"
+                android:layout_marginTop="16pt">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="商品价格 :¥"
                     android:textColor="#5a5a5a"
-                    android:textSize="16sp" />
+                    android:textSize="16pt" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
+                    android:layout_marginLeft="6pt"
                     android:text="260"
                     android:textColor="#c53434"
-                    android:textSize="18sp"
+                    android:textSize="18pt"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
+                    android:layout_marginLeft="6pt"
                     android:text="元"
                     android:textColor="#5a5a5a"
-                    android:textSize="14sp" />
+                    android:textSize="14pt" />
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="4dp"
-                android:layout_marginTop="18dp"
+                android:layout_height="4pt"
+                android:layout_marginTop="18pt"
                 android:background="#f8f8f8" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="14dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="14pt"
+                android:layout_marginTop="10pt"
                 android:gravity="center_vertical">
 
                 <View
-                    android:layout_width="3dp"
-                    android:layout_height="14dp"
+                    android:layout_width="3pt"
+                    android:layout_height="14pt"
                     android:background="#ea5404" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
+                    android:layout_marginLeft="6pt"
                     android:text="商品详情"
                     android:textColor="#5a5a5a"
-                    android:textSize="16sp" />
+                    android:textSize="16pt" />
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20pt"
+                android:layout_marginRight="16pt"
+                android:layout_marginTop="10pt"
                 android:layout_weight="1"
                 android:text="商品详情商品详情商品详情商品详情商品详情商品详
 情商品详情商品详情"
                 android:textColor="#999999"
-                android:textSize="16sp" />
+                android:textSize="16pt" />
         </LinearLayout>
     </ScrollView>
     <Button
         android:id="@+id/btn_purchase"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginRight="36dp"
+        android:layout_marginBottom="36pt"
+        android:layout_marginLeft="36pt"
+        android:layout_marginRight="36pt"
         android:background="@drawable/btn_bg_detalis"
         android:text="立即购买"
         android:textColor="#ffffff"
-        android:textSize="18sp"
+        android:textSize="18pt"
         android:textStyle="bold" />
 
 

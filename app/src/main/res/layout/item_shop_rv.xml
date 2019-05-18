@@ -4,15 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingBottom="8dp"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    android:paddingTop="8dp">
+    android:paddingBottom="8pt"
+    android:paddingLeft="10pt"
+    android:paddingRight="10pt"
+    android:paddingTop="8pt">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="12pt"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -20,14 +20,14 @@
             android:id="@+id/cv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="0dp"
+            app:cardCornerRadius="10pt"
+            app:cardElevation="0pt"
             app:cardPreventCornerOverlap="true">
 
             <ImageView
                 android:id="@+id/iv_cover"
-                android:layout_width="92dp"
-                android:layout_height="92dp"
+                android:layout_width="92pt"
+                android:layout_height="92pt"
                 android:scaleType="fitXY"
                 android:src="@mipmap/img_shangchengbanner" />
         </android.support.v7.widget.CardView>
@@ -35,7 +35,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="16pt"
             android:orientation="vertical">
 
             <TextView
@@ -44,16 +44,16 @@
                 android:layout_height="wrap_content"
                 android:text="小学单词100个"
                 android:textColor="#5a5a5a"
-                android:textSize="14sp" />
+                android:textSize="14pt" />
 
             <TextView
                 android:id="@+id/tv_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="6pt"
                 android:text="有效期：365天~"
                 android:textColor="#7a7979"
-                android:textSize="14sp" />
+                android:textSize="14pt" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -67,23 +67,23 @@
                     android:layout_weight="1"
                     android:text="10个/天"
                     android:textColor="#999999"
-                    android:textSize="12sp" />
+                    android:textSize="12pt" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="￥"
                     android:textColor="#d25353"
-                    android:textSize="12sp" />
+                    android:textSize="12pt" />
 
                 <TextView
                     android:id="@+id/tv_money"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
+                    android:layout_marginLeft="4pt"
                     android:text="99"
                     android:textColor="#d25353"
-                    android:textSize="18sp" />
+                    android:textSize="18pt" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

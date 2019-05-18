@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.constraint.ResultBody;
 import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.adapter.SpeechAssessmentAdapter;
 import com.rhkj.zhihuixue.base.BaseActivity;
@@ -15,11 +16,15 @@ import com.rhkj.zhihuixue.base.Contents;
 import com.rhkj.zhihuixue.bean.SpeechAssessmentBean;
 import com.rhkj.zhihuixue.dialog.EvaluationResultsDialog;
 import com.rhkj.zhihuixue.utils.RecyclerViewScrollerUtils;
+import com.xs.BaseSingEngine;
+import com.xs.SingEngine;
+import com.xs.impl.OnEndCallback;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
-import java.util.ArrayList;
+import org.json.JSONObject;
 
+import java.util.ArrayList;
 import okhttp3.Call;
 
 /**
@@ -36,10 +41,77 @@ public class SpeechAssessmentActivity extends BaseActivity implements View.OnCli
     private ImageView ivNext;
     private ImageView ivUp;
 
+    private SingEngine mEngine;
+
     @Override
     protected void initLayout() {
         super.initLayout();
         setContentView(R.layout.ac_speech_assessment);
+
+        mEngine = SingEngine.newInstance(SpeechAssessmentActivity.this);
+        mEngine.createEngine();
+        mEngine.setListener(new BaseSingEngine.ResultListener() {
+            @Override
+            public void onBegin() {
+
+            }
+
+            @Override
+            public void onResult(JSONObject jsonObject) {
+
+            }
+
+            @Override
+            public void onEnd(int i, String s) {
+
+            }
+
+            @Override
+            public void onUpdateVolume(int i) {
+
+            }
+
+            @Override
+            public void onFrontVadTimeOut() {
+
+            }
+
+            @Override
+            public void onBackVadTimeOut() {
+
+            }
+
+            @Override
+            public void onRecordingBuffer(byte[] bytes, int i) {
+
+            }
+
+            @Override
+            public void onRecordLengthOut() {
+
+            }
+
+            @Override
+            public void onReady() {
+
+            }
+
+            @Override
+            public void onPlayCompeleted() {
+
+            }
+
+            @Override
+            public void onRecordStop() {
+
+            }
+        });
+        mEngine.setOnEndCallback(new OnEndCallback() {
+            @Override
+            public void onEnd(ResultBody resultBody) {
+
+            }
+        });
 
     }
 
@@ -106,6 +178,11 @@ public class SpeechAssessmentActivity extends BaseActivity implements View.OnCli
 
 
     }
+
+
+
+
+
 
     private int num = 0;
 

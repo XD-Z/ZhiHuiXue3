@@ -1,6 +1,7 @@
 package com.rhkj.zhihuixue.activity.login_register;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -10,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.blankj.utilcode.util.AdaptScreenUtils;
 import com.blankj.utilcode.util.ObjectUtils;
 import com.blankj.utilcode.util.RegexUtils;
 import com.blankj.utilcode.util.SPUtils;
@@ -155,5 +157,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         ImmersionBar.with(this).destroy();  //不调用该方法，如果界面bar发生改变，在不关闭app的情况下，退出此界面再进入将记忆最后一次bar改变的状态
+    }
+    @Override
+    public Resources getResources() {
+        return AdaptScreenUtils.adaptHeight(super.getResources(), 667);
     }
 }

@@ -31,12 +31,10 @@ public class QuestionActivity extends BaseActivity {
         recyclerView = findViewById(R.id.rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-
     }
 
     @Override
     protected void initData() {
-
 
         ArrayList<QuestionBean> questionBeans = new ArrayList<>();
         questionBeans.add(new QuestionBean(2));
@@ -47,7 +45,5 @@ public class QuestionActivity extends BaseActivity {
         questionBeans.add(new QuestionBean(2));
         QuestionAdapter questionAdapter = new QuestionAdapter(questionBeans);
         recyclerView.setAdapter(questionAdapter);
-
-
     }
 }

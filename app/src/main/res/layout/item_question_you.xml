@@ -4,9 +4,9 @@
     android:layout_height="wrap_content"
     android:gravity="center_vertical|right"
     android:orientation="horizontal"
-    android:paddingLeft="72dp"
-    android:paddingRight="10dp"
-    android:paddingTop="26dp">
+    android:paddingLeft="72pt"
+    android:paddingRight="10pt"
+    android:paddingTop="26pt">
 
     <TextView
         android:layout_weight="1"
@@ -16,13 +16,13 @@
         android:gravity="left"
         android:text="将这个app分享给你的朋友,你的朋友成功完善信息并在商城购买商品,你将获得现金奖励."
         android:textColor="#fff"
-        android:textSize="14sp" />
+        android:textSize="14pt" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="50pt"
+        android:layout_height="50pt"
         android:layout_gravity="top"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="10pt"
         android:src="@mipmap/img_shangchengbanner" />
 
 

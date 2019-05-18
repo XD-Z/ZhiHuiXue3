@@ -12,29 +12,29 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="4dp"
+        android:layout_height="4pt"
         android:background="#f8f8f8" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="18pt"
         android:src="@mipmap/img_straight" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="20pt"
         android:text="15/24H , 距离成为单词小达人还有9小时"
         android:textColor="#5a5a5a"
-        android:textSize="16sp" />
+        android:textSize="16pt" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="20pt"
         android:overScrollMode="never"
         android:scrollbars="none" />
 
