@@ -3,13 +3,16 @@ package com.rhkj.zhihuixue.activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
+import com.blankj.utilcode.util.AdaptScreenUtils;
 import com.gyf.barlibrary.BarHide;
 import com.gyf.barlibrary.ImmersionBar;
 import com.rhkj.zhihuixue.R;
@@ -19,6 +22,8 @@ import com.rhkj.zhihuixue.fragment.MineFragment;
 import com.rhkj.zhihuixue.fragment.ShopFragment;
 import com.rhkj.zhihuixue.fragment.ZhiFragment;
 import com.rhkj.zhihuixue.utils.SysApplication;
+
+import static java.lang.Math.sqrt;
 
 
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
@@ -41,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         mRadioGroup.setOnCheckedChangeListener(this);
         zhi_rl = findViewById(R.id.zhi_rl);
         initFragment();
+
 
     }
 
@@ -139,5 +145,10 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     protected void onDestroy() {
         super.onDestroy();
         ImmersionBar.with(this).destroy();  //不调用该方法，如果界面bar发生改变，在不关闭app的情况下，退出此界面再进入将记忆最后一次bar改变的状态
+    }
+
+    @Override
+    public Resources getResources() {
+        return AdaptScreenUtils.adaptHeight(super.getResources(), 667);
     }
 }

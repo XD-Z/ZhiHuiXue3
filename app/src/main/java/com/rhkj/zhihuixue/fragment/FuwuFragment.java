@@ -17,9 +17,7 @@ import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.activity.FuwuEnglishActivity;
 import com.rhkj.zhihuixue.activity.FuwuIntroduceActivity;
 
-import me.jessyan.autosize.AutoSizeConfig;
-import me.jessyan.autosize.internal.CancelAdapt;
-import me.jessyan.autosize.internal.CustomAdapt;
+
 
 /**
  * 服务
@@ -30,7 +28,7 @@ public class FuwuFragment extends Fragment  {
 
     public FuwuFragment() {
         // Required empty public constructor
-        AutoSizeConfig.getInstance().setCustomFragment(true);
+
     }
 
 
@@ -63,5 +61,6 @@ public class FuwuFragment extends Fragment  {
         });
 
     }
+
 
 }

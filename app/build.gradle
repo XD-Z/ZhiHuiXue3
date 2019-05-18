@@ -34,13 +34,13 @@ dependencies {
     // 状态栏及刘海屏适配   http://www.jcodecraeer.com/a/opensource/2017/0526/7976.html
     implementation 'com.gyf.immersionbar:immersionbar:2.3.3'
     //今日头条适配
-    implementation 'me.jessyan:autosize:1.1.1'
+//    implementation 'me.jessyan:autosize:1.1.1'
     // Banner  https://github.com/youth5201314/banner
     implementation 'com.youth.banner:banner:1.4.10'
     // gosn
     implementation 'com.google.code.gson:gson:2.8.5'
     //工具类
-    implementation 'com.blankj:utilcode:1.10.0'
+    implementation 'com.blankj:utilcode:1.23.7'
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     //OkHttp

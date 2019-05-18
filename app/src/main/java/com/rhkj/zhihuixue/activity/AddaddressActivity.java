@@ -85,8 +85,6 @@ public class AddaddressActivity extends BaseActivity implements View.OnClickList
             case R.id.btn_preservation:
                 preservation();
                 break;
-
-
         }
     }
 
