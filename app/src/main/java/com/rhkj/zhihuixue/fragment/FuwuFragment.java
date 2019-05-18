@@ -47,7 +47,6 @@ public class FuwuFragment extends Fragment  {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), FuwuEnglishActivity.class);
-
                 startActivity(intent);
             }
         });

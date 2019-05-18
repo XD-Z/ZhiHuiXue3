@@ -78,8 +78,6 @@ public class WelcomeActivity extends Activity {
 
             @Override
             public void onResponse(String response, int id) {
-                Log.e("TAG", response);
-
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     int state = jsonObject.getInt("state");

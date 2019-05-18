@@ -148,7 +148,6 @@ public class AddaddressActivity extends BaseActivity implements View.OnClickList
 
                             }
                             showToast(msg);
-
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

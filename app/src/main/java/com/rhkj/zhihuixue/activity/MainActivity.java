@@ -46,8 +46,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         mRadioGroup.setOnCheckedChangeListener(this);
         zhi_rl = findViewById(R.id.zhi_rl);
         initFragment();
-
-
     }
 
 

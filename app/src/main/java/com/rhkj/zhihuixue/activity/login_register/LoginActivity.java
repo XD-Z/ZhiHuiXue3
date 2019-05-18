@@ -84,8 +84,8 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(this, ForgetPasswordActivity.class));
                 break;
             case R.id.btn_login:
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-//                void_login();//登录按钮请求接口
+//                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                void_login();//登录按钮请求接口
                 break;
             case R.id.btn_register:
                 startActivity(new Intent(this, RegisterActivity.class));

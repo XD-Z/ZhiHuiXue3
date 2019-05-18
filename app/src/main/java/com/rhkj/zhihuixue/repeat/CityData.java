@@ -53,12 +53,10 @@ public class CityData {
             @Override
             public void onOptionsSelect(int options1, int option2, int options3, View v) {
                 //返回的分别是三个级别的选中位置
-
                 cityInterface.city(
                         itemOneList.get(options1),
                         itemTwoList.get(options1).get(option2),
                         itemthreeList.get(options1).get(option2).get(options3));
-
             }
         }).build();
         pvOptions.setPicker(itemOneList, itemTwoList, itemthreeList);
