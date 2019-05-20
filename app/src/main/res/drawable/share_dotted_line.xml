@@ -7,8 +7,8 @@
         android:color="#999999"
         android:dashGap="4dp"
         android:dashWidth="9dp" />
-    <!-- 虚线的高度 -->
-    <size android:height="4dp" />
+    <!--&lt;!&ndash; 虚线的高度 &ndash;&gt;-->
+    <!--<size android:height="4dp" />-->
 
 
 </shape>

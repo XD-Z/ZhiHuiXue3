@@ -36,12 +36,6 @@ public class ScheduleStraightActivity extends BaseActivity {
         RecyclerView recyclerView = findViewById(R.id.rv);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 5));
 
-        ArrayList<Integer> integerArrayList = new ArrayList<>();
-
-        integerArrayList.add(1);
-        integerArrayList.add(2);
-        integerArrayList.add(3);
-        integerArrayList.add(4);
 
         scheduleStraightAdapter = new ScheduleStraightAdapter();
         recyclerView.setAdapter(scheduleStraightAdapter);
