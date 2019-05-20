@@ -29,7 +29,7 @@
         <ImageView
             android:layout_width="5pt"
             android:layout_height="10pt"
-            android:src="@mipmap/icon_mine_enter"
+            android:src="@mipmap/icon_greater_than_xiao"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"/>
     </RelativeLayout>
@@ -37,7 +37,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="1pt"
+        android:layout_height="0.5pt"
         android:layout_marginLeft="72pt"
         android:background="#c3c3c3"
         android:layout_alignParentBottom="true"/>

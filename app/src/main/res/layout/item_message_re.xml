@@ -34,7 +34,7 @@
         android:ellipsize="end"
         android:singleLine="true"
         android:text="所有与客服的对话记录都在这里"
-        android:textColor="@color/colorGrey666"
+        android:textColor="#949494"
         android:textSize="12pt" />
 
     <TextView

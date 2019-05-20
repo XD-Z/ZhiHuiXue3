@@ -135,7 +135,7 @@
                     <TextView
                         android:layout_width="1pt"
                         android:layout_height="match_parent"
-                        android:background="#A0A0A0" />
+                        android:background="#DFDEDE" />
 
                     <!--优惠券-->
                     <RelativeLayout

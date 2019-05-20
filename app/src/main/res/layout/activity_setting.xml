@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:text="北京市-朝阳区-朝阳区"
-            android:textColor="#5A5A5A" />
+            android:textColor="#858383" />
     </RelativeLayout>
 
 
@@ -60,7 +60,7 @@
             android:layout_height="10pt"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@mipmap/icon_mine_enter" />
+            android:src="@mipmap/icon_greater_than_xiao" />
     </RelativeLayout>
 
     <!--更换手机号-->
@@ -88,7 +88,7 @@
             android:layout_height="10pt"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@mipmap/icon_mine_enter" />
+            android:src="@mipmap/icon_greater_than_xiao" />
     </RelativeLayout>
 
     <!--退出登录-->
@@ -116,7 +116,7 @@
             android:layout_height="10pt"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@mipmap/icon_mine_enter" />
+            android:src="@mipmap/icon_greater_than_xiao" />
     </RelativeLayout>
 
     <!--注销申请-->
@@ -144,7 +144,7 @@
             android:layout_height="10pt"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@mipmap/icon_mine_enter" />
+            android:src="@mipmap/icon_greater_than_xiao" />
     </RelativeLayout>
 
     <TextView
