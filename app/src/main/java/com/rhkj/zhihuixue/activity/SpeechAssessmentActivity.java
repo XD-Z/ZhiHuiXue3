@@ -48,70 +48,70 @@ public class SpeechAssessmentActivity extends BaseActivity implements View.OnCli
         super.initLayout();
         setContentView(R.layout.ac_speech_assessment);
 
-        mEngine = SingEngine.newInstance(SpeechAssessmentActivity.this);
-        mEngine.createEngine();
-        mEngine.setListener(new BaseSingEngine.ResultListener() {
-            @Override
-            public void onBegin() {
-
-            }
-
-            @Override
-            public void onResult(JSONObject jsonObject) {
-
-            }
-
-            @Override
-            public void onEnd(int i, String s) {
-
-            }
-
-            @Override
-            public void onUpdateVolume(int i) {
-
-            }
-
-            @Override
-            public void onFrontVadTimeOut() {
-
-            }
-
-            @Override
-            public void onBackVadTimeOut() {
-
-            }
-
-            @Override
-            public void onRecordingBuffer(byte[] bytes, int i) {
-
-            }
-
-            @Override
-            public void onRecordLengthOut() {
-
-            }
-
-            @Override
-            public void onReady() {
-
-            }
-
-            @Override
-            public void onPlayCompeleted() {
-
-            }
-
-            @Override
-            public void onRecordStop() {
-
-            }
-        });
-        mEngine.setOnEndCallback(new OnEndCallback() {
-            @Override
-            public void onEnd(ResultBody resultBody) {
-
-            }
-        });
+//        mEngine = SingEngine.newInstance(SpeechAssessmentActivity.this);
+//        mEngine.createEngine();
+//        mEngine.setListener(new BaseSingEngine.ResultListener() {
+//            @Override
+//            public void onBegin() {
+//
+//            }
+//
+//            @Override
+//            public void onResult(JSONObject jsonObject) {
+//
+//            }
+//
+//            @Override
+//            public void onEnd(int i, String s) {
+//
+//            }
+//
+//            @Override
+//            public void onUpdateVolume(int i) {
+//
+//            }
+//
+//            @Override
+//            public void onFrontVadTimeOut() {
+//
+//            }
+//
+//            @Override
+//            public void onBackVadTimeOut() {
+//
+//            }
+//
+//            @Override
+//            public void onRecordingBuffer(byte[] bytes, int i) {
+//
+//            }
+//
+//            @Override
+//            public void onRecordLengthOut() {
+//
+//            }
+//
+//            @Override
+//            public void onReady() {
+//
+//            }
+//
+//            @Override
+//            public void onPlayCompeleted() {
+//
+//            }
+//
+//            @Override
+//            public void onRecordStop() {
+//
+//            }
+//        });
+//        mEngine.setOnEndCallback(new OnEndCallback() {
+//            @Override
+//            public void onEnd(ResultBody resultBody) {
+//
+//            }
+//        });
 
     }
 
@@ -146,26 +146,26 @@ public class SpeechAssessmentActivity extends BaseActivity implements View.OnCli
 
     @Override
     protected void initData() {
-        int id = getIntent().getIntExtra("id", -1);
-
-
-        OkHttpUtils.post()
-                .url(Contents.SPEECH_ASSESSMENT)
-                .addParams("id", String.valueOf(id))
-                .build()
-                .execute(new StringCallback() {
-                    @Override
-                    public void onError(Call call, Exception e, int id) {
-
-                    }
-
-                    @Override
-                    public void onResponse(String response, int id) {
-
-                        Log.e("TAG", response);
-
-                    }
-                });
+//        int id = getIntent().getIntExtra("id", -1);
+//
+//
+//        OkHttpUtils.post()
+//                .url(Contents.SPEECH_ASSESSMENT)
+//                .addParams("id", String.valueOf(id))
+//                .build()
+//                .execute(new StringCallback() {
+//                    @Override
+//                    public void onError(Call call, Exception e, int id) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onResponse(String response, int id) {
+//
+//                        Log.e("TAG", response);
+//
+//                    }
+//                });
 
 
         ArrayList<SpeechAssessmentBean> speechAssessmentBeans = new ArrayList<>();

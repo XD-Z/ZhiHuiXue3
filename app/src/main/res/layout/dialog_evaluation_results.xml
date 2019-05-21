@@ -15,23 +15,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="180pt"
+            android:layout_marginTop="180dp"
             android:text="发音太酷了竟然100分！"
             android:textColor="#d30000"
-            android:textSize="16pt" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/tv_playback"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_fraction"
-            android:layout_marginLeft="24pt"
-            android:layout_marginTop="20pt"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="20dp"
             android:drawableLeft="@mipmap/icon_shengyin_lan"
-            android:drawablePadding="6pt"
+            android:drawablePadding="6dp"
             android:text="点击我听回放"
             android:textColor="#50a5fc"
-            android:textSize="12pt" />
+            android:textSize="12dp" />
 
         <ImageView
             android:id="@+id/iv_text"
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_playback"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="18pt"
+            android:layout_marginTop="18dp"
             android:src="@mipmap/img_text_symjdcqhyxzjb" />
 
         <LinearLayout
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/iv_text"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="32pt"
+            android:layout_marginTop="32dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -60,7 +60,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20pt"
+                android:layout_marginLeft="20dp"
                 android:src="@mipmap/icon_btn_xydc" />
 
         </LinearLayout>
@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/ll_btn"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="12pt"
+            android:layout_marginTop="12dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -83,7 +83,7 @@
                 android:id="@+id/iv_wwjy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20pt"
+                android:layout_marginLeft="20dp"
                 android:src="@mipmap/icon_btn_wwjy" />
 
         </LinearLayout>

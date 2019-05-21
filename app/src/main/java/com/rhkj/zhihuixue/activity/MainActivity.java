@@ -39,8 +39,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         SysApplication.getInstance().addActivity(this);
-        double v = sqrt(750 * 750 + 1334 * 1334) / 72;
-        Log.e("wky", "onCreate: " + v);
+
         initViews();
     }
 

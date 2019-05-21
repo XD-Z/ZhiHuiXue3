@@ -56,37 +56,47 @@ public class SelectionLevelActivity extends BaseActivity implements BaseQuickAda
         selectionLevelAdapter.setOnItemClickListener(this);
         gson = new Gson();
 
-        OkHttpUtils
-                .post()
-                .url(Contents.WORD_LEVEL)
-                .build()
-                .execute(new StringCallback() {
-                    @Override
-                    public void onError(Call call, Exception e, int id) {
 
-                    }
+        ArrayList<SelectionLeveGsonBean.DataBean> dataBeans = new ArrayList<>();
+        dataBeans.add(new SelectionLeveGsonBean.DataBean());
+        dataBeans.add(new SelectionLeveGsonBean.DataBean());
+        dataBeans.add(new SelectionLeveGsonBean.DataBean());
+        dataBeans.add(new SelectionLeveGsonBean.DataBean());
+        dataBeans.add(new SelectionLeveGsonBean.DataBean());
+        selectionLevelAdapter.setNewData(dataBeans);
 
-                    @Override
-                    public void onResponse(String response, int id) {
-                        SelectionLeveGsonBean selectionLeveGsonBean = gson.fromJson(response, SelectionLeveGsonBean.class);
-                        List<SelectionLeveGsonBean.DataBean> data = selectionLeveGsonBean.getData();
-                        selectionLevelAdapter.setNewData(data);
 
-                    }
-                });
+//        OkHttpUtils
+//                .post()
+//                .url(Contents.WORD_LEVEL)
+//                .build()
+//                .execute(new StringCallback() {
+//                    @Override
+//                    public void onError(Call call, Exception e, int id) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onResponse(String response, int id) {
+//                        SelectionLeveGsonBean selectionLeveGsonBean = gson.fromJson(response, SelectionLeveGsonBean.class);
+//                        List<SelectionLeveGsonBean.DataBean> data = selectionLeveGsonBean.getData();
+//                        selectionLevelAdapter.setNewData(data);
+//
+//                    }
+//                });
 
     }
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        List<SelectionLeveGsonBean.DataBean> data = selectionLevelAdapter.getData();
-
-        SelectionLeveGsonBean.DataBean dataBean = data.get(position);
-
-        int id = dataBean.getId();
+//        List<SelectionLeveGsonBean.DataBean> data = selectionLevelAdapter.getData();
+//
+//        SelectionLeveGsonBean.DataBean dataBean = data.get(position);
+//
+//        int id = dataBean.getId();
 
         Intent intent = new Intent(this, SpeechAssessmentActivity.class);
-        intent.putExtra("id", id);
+//        intent.putExtra("id", id);
         startActivity(intent);
 
     }

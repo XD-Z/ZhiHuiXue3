@@ -11,6 +11,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.bean.ShopGsonBean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,11 +27,18 @@ public class ShopAdapter extends BaseQuickAdapter<ShopGsonBean.DataBean, BaseVie
     @Override
     protected void convert(BaseViewHolder helper, ShopGsonBean.DataBean item) {
 
-        helper.setText(R.id.tv_title_item, item.getName());
+//        helper.setText(R.id.tv_title_item, item.getName());
         RecyclerView recyclerView = helper.getView(R.id.rv_itme);
         recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
 
-        ShopRvAdapter shopRvAdapter = new ShopRvAdapter(item.getRes());
+        ArrayList<ShopGsonBean.DataBean.ResBean> dataBeans = new ArrayList<>();
+        dataBeans.add(new ShopGsonBean.DataBean.ResBean());
+//        dataBeans.add(new ShopGsonBean.DataBean.ResBean());
+//        dataBeans.add(new ShopGsonBean.DataBean.ResBean());
+//        dataBeans.add(new ShopGsonBean.DataBean.ResBean());
+//        dataBeans.add(new ShopGsonBean.DataBean.ResBean());
+
+        ShopRvAdapter shopRvAdapter = new ShopRvAdapter(dataBeans);
         recyclerView.setAdapter(shopRvAdapter);
 
 

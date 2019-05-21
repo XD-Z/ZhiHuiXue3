@@ -69,27 +69,36 @@ public class ShopFragment extends Fragment {
 
         shopAdapter = new ShopAdapter();
         recyclerView.setAdapter(shopAdapter);
-        OkHttpUtils.post()
-                .url(Contents.GOODS)
-                .build()
-                .execute(new StringCallback() {
-                    @Override
-                    public void onError(Call call, Exception e, int id) {
+        ArrayList<ShopGsonBean.DataBean> dataBeans = new ArrayList<>();
+        dataBeans.add(new ShopGsonBean.DataBean());
+        dataBeans.add(new ShopGsonBean.DataBean());
+        dataBeans.add(new ShopGsonBean.DataBean());
+        dataBeans.add(new ShopGsonBean.DataBean());
+        dataBeans.add(new ShopGsonBean.DataBean());
+        shopAdapter.setNewData(dataBeans);
 
 
-                    }
-
-                    @Override
-                    public void onResponse(String response, int id) {
-
-                        ShopGsonBean shopGsonBean = gson.fromJson(response, ShopGsonBean.class);
-                        int state = shopGsonBean.getState();
-                        if (state == 200) {
-                            List<ShopGsonBean.DataBean> data = shopGsonBean.getData();
-                            shopAdapter.setNewData(data);
-                        }
-                    }
-                });
+//        OkHttpUtils.post()
+//                .url(Contents.GOODS)
+//                .build()
+//                .execute(new StringCallback() {
+//                    @Override
+//                    public void onError(Call call, Exception e, int id) {
+//
+//
+//                    }
+//
+//                    @Override
+//                    public void onResponse(String response, int id) {
+//
+//                        ShopGsonBean shopGsonBean = gson.fromJson(response, ShopGsonBean.class);
+//                        int state = shopGsonBean.getState();
+//                        if (state == 200) {
+//                            List<ShopGsonBean.DataBean> data = shopGsonBean.getData();
+//                            shopAdapter.setNewData(data);
+//                        }
+//                    }
+//                });
 
 
         shopAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {

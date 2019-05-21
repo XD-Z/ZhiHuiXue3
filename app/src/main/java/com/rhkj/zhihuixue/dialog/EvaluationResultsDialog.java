@@ -10,6 +10,8 @@ import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.rhkj.zhihuixue.R;
@@ -29,6 +31,16 @@ public class EvaluationResultsDialog extends DialogFragment implements View.OnCl
         super.onCreate(savedInstanceState);
         setStyle(DialogFragment.STYLE_NORMAL, R.style.NoticeDialogStyle);
 
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+//         <!--关键点1-->
+        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        super.onActivityCreated(savedInstanceState);
+//    <!--关键点2-->
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(0x00000000));
+        getDialog().getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
     }
 
     @Nullable

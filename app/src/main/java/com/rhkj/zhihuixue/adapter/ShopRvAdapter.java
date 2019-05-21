@@ -29,19 +29,19 @@ public class ShopRvAdapter extends BaseQuickAdapter<ShopGsonBean.DataBean.ResBea
 
     @Override
     protected void convert(BaseViewHolder helper, ShopGsonBean.DataBean.ResBean item) {
-
-        helper.setText(R.id.tv_name, item.getGoods_name());
-        helper.setText(R.id.tv_money, item.getShop_price());
-        ImageView ivCover = helper.getView(R.id.iv_cover);
-
-
-        String original_img = item.getOriginal_img();
-        String replace = original_img.replace(" ", "");
-        List<String> strings = Arrays.asList(replace.split(","));
-        if (!strings.isEmpty()) {
-            String s = strings.get(0);
-            Glide.with(mContext).load(s).into(ivCover);
-        }
+//
+//        helper.setText(R.id.tv_name, item.getGoods_name());
+//        helper.setText(R.id.tv_money, item.getShop_price());
+//        ImageView ivCover = helper.getView(R.id.iv_cover);
+//
+//
+//        String original_img = item.getOriginal_img();
+//        String replace = original_img.replace(" ", "");
+//        List<String> strings = Arrays.asList(replace.split(","));
+//        if (!strings.isEmpty()) {
+//            String s = strings.get(0);
+//            Glide.with(mContext).load(s).into(ivCover);
+//        }
 
 
     }

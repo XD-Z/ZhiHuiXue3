@@ -7,15 +7,12 @@ import com.rhkj.zhihuixue.base.BaseActivity;
 
 public class MessagedetailsActivity extends BaseActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_messagedetails);
-    }
+
 
     @Override
     protected void initLayout() {
         super.initLayout();
+        setContentView(R.layout.activity_messagedetails);
     }
 
     @Override

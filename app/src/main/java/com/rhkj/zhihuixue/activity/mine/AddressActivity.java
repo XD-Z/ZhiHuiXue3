@@ -68,30 +68,30 @@ public class AddressActivity extends BaseActivity implements View.OnClickListene
     @Override
     protected void initData() {
 
-        OkHttpUtils.post()
-                .addParams("user_id", (String) SharedPrefsUtil.getData("user_id", ""))
-                .url(Contents.ADDRESS)
-                .build()
-                .execute(new StringCallback() {
-                    @Override
-                    public void onError(Call call, Exception e, int id) {
-
-                    }
-
-                    @Override
-                    public void onResponse(String response, int id) {
-                        AddressGsonBean addressGsonBean = gson.fromJson(response, AddressGsonBean.class);
-                        List<AddressGsonBean.DataBean> data = addressGsonBean.getData();
-
-                        if (!data.isEmpty()) {
-                            tvAdd.setVisibility(View.VISIBLE);
-                        } else {
-                            tvAdd.setVisibility(View.GONE);
-                        }
-
-                        addressAdapter.setNewData(data);
-                    }
-                });
+//        OkHttpUtils.post()
+//                .addParams("user_id", (String) SharedPrefsUtil.getData("user_id", ""))
+//                .url(Contents.ADDRESS)
+//                .build()
+//                .execute(new StringCallback() {
+//                    @Override
+//                    public void onError(Call call, Exception e, int id) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onResponse(String response, int id) {
+//                        AddressGsonBean addressGsonBean = gson.fromJson(response, AddressGsonBean.class);
+//                        List<AddressGsonBean.DataBean> data = addressGsonBean.getData();
+//
+//                        if (!data.isEmpty()) {
+//                            tvAdd.setVisibility(View.VISIBLE);
+//                        } else {
+//                            tvAdd.setVisibility(View.GONE);
+//                        }
+//
+//                        addressAdapter.setNewData(data);
+//                    }
+//                });
 
 
     }

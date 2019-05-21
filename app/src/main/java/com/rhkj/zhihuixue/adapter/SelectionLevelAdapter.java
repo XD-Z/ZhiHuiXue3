@@ -24,16 +24,16 @@ public class SelectionLevelAdapter extends BaseQuickAdapter<SelectionLeveGsonBea
 
     @Override
     protected void convert(BaseViewHolder helper, SelectionLeveGsonBean.DataBean item) {
-        String name = item.getName();
-
-        helper.setText(R.id.tv_level, name);
-
-
-        String img = item.getImg();
-
-        if (img != null) {
-            Glide.with(mContext).load(img).into((ImageView) helper.getView(R.id.iv_img));
-        }
+//        String name = item.getName();
+//
+//        helper.setText(R.id.tv_level, name);
+//
+//
+//        String img = item.getImg();
+//
+//        if (img != null) {
+//            Glide.with(mContext).load(img).into((ImageView) helper.getView(R.id.iv_img));
+//        }
 
 
     }
