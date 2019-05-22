@@ -64,7 +64,6 @@ dependencies {
     implementation 'com.github.zcweng:switch-button:0.0.3@aar'
     //七牛云播放器 https://developer.qiniu.com/pili/sdk/1210/the-android-client-sdk?ref=www.qiniu.com
     implementation files('libs/pldroid-player-2.1.7.jar')
-
     //三级联动 https://github.com/Bigkoo/Android-PickerView
     implementation 'com.contrarywind:Android-PickerView:4.1.8'
 

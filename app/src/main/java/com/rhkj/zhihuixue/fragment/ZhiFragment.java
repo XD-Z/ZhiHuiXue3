@@ -14,6 +14,7 @@ import com.rhkj.zhihuixue.R;
 import com.rhkj.zhihuixue.activity.ScheduleGrammarActivity;
 import com.rhkj.zhihuixue.activity.ScheduleMouthActivity;
 import com.rhkj.zhihuixue.activity.ScheduleStraightActivity;
+import com.rhkj.zhihuixue.activity.SkipvidioActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,6 +38,7 @@ public class ZhiFragment extends Fragment {
     @BindView(R.id.img_zhi_grammar)
     ImageView imgZhiGrammar;
     Unbinder unbinder;
+    private Intent intent;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,6 +48,7 @@ public class ZhiFragment extends Fragment {
         unbinder = ButterKnife.bind(this, view);
         ivBack.setVisibility(View.GONE);
         tvTitle.setText("智能学习系统");
+        intent = new Intent();
 
         return view;
     }
@@ -62,13 +65,19 @@ public class ZhiFragment extends Fragment {
             case R.id.tv_title:
                 break;
             case R.id.img_zhi_direct_writing:
-                startActivity(new Intent(getActivity(), ScheduleStraightActivity.class));
+                intent.putExtra("zhi_type", "1" + "");
+                intent.setClass(getActivity(), SkipvidioActivity.class);
+                startActivity(intent);
                 break;
             case R.id.img_zhi_spoken_language:
-                startActivity(new Intent(getActivity(), ScheduleMouthActivity.class));
+                intent.putExtra("zhi_type", "2" + "");
+                intent.setClass(getActivity(), SkipvidioActivity.class);
+                startActivity(intent);
                 break;
             case R.id.img_zhi_grammar:
-                startActivity(new Intent(getActivity(), ScheduleGrammarActivity.class));
+                intent.putExtra("zhi_type", "3" + "");
+                intent.setClass(getActivity(), SkipvidioActivity.class);
+                startActivity(intent);
                 break;
         }
     }

@@ -1,18 +1,17 @@
 package com.rhkj.zhihuixue.activity;
 
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+
+import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
+import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.rhkj.zhihuixue.R;
-import com.rhkj.zhihuixue.adapter.ScheduleStraightAdapter;
 import com.rhkj.zhihuixue.base.BaseActivity;
-import com.rhkj.zhihuixue.bean.ScheduleStraightBean;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * 口语训练平台
@@ -22,36 +21,38 @@ import java.util.Collections;
 
 public class ScheduleMouthActivity extends BaseActivity {
 
-    private ScheduleStraightAdapter scheduleStraightAdapter;
+
+    @BindView(R.id.skip_video_title)
+    TextView skipVideoTitle;
+    @BindView(R.id.skip_video_skip)
+    TextView skipVideoSkip;
 
     @Override
     protected void initLayout() {
-        super.initLayout();
-        setContentView(R.layout.ac_schedule_straight);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,//去掉状态栏
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_schedulemouth);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
     }
 
     @Override
     protected void initViews() {
-        tvTitle.setText("口语训练平台");
-
-        RecyclerView recyclerView = findViewById(R.id.rv);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 5));
-
-
-        scheduleStraightAdapter = new ScheduleStraightAdapter();
-        recyclerView.setAdapter(scheduleStraightAdapter);
-
-
-        ArrayList<ScheduleStraightBean> scheduleStraightBeans = new ArrayList<>();
-        for (int i = 0; i < 16; i++) {
-            ScheduleStraightBean scheduleStraightBean = new ScheduleStraightBean();
-            scheduleStraightBean.setNum("1-" + i);
-            scheduleStraightBean.setIsAdopt(ScheduleStraightBean.ADOPT);
-            scheduleStraightBean.setDateState(ScheduleStraightBean.DATA_AVAILABLE);
-            scheduleStraightBeans.add(scheduleStraightBean);
-        }
-        scheduleStraightAdapter.setDateList(scheduleStraightBeans);
+        skipVideoTitle.setText("选择语法");
+        skipVideoSkip.setText("我的证书");
 
     }
 
+
+    @OnClick({R.id.skip_video_back, R.id.skip_video_skip})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.skip_video_back:
+                finish();
+                break;
+            case R.id.skip_video_skip:
+
+                break;
+        }
+    }
 }

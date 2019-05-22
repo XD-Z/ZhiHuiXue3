@@ -89,7 +89,7 @@ public class WelcomeActivity extends Activity {
                         if (data.length() != 0) {
                             JSONObject o = (JSONObject) data.get(0);
                             String desc = o.getString("desc");
-                            Glide.with(WelcomeActivity.this).load(desc).into(imageView);
+//                            Glide.with(WelcomeActivity.this).load(desc).into(imageView);
                         }
                     }
                 } catch (JSONException e) {

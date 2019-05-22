@@ -14,56 +14,46 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
+        android:name=".MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/icon_logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/icon_logo"
-        android:name=".MyApp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MessagedetailsActivity"/>
+        <activity
+            android:name=".activity.SkipvidioActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".activity.SecondsrememberthewordsActivity" /> <!-- 秒记单词 -->
+        <activity android:name=".activity.MessagedetailsActivity" />
         <activity android:name=".activity.login_register.LogoutActivity" />
         <activity android:name=".activity.ChangePhoneActivity" />
         <activity android:name=".activity.login_register.LoginActivity" />
         <activity android:name=".activity.login_register.RegisterActivity" />
         <activity android:name=".activity.login_register.AmendPasswordActivity" />
         <activity android:name=".activity.login_register.ForgetPasswordActivity" />
-        <activity android:name=".activity.mine.SettingActivity" />
-
-        <!--收货地址-->
-        <activity android:name=".activity.mine.AddressActivity" />
-        <!--添加收货地址-->
-        <activity android:name=".activity.AddaddressActivity"/>
-        <!-- 常见问题 -->
+        <activity android:name=".activity.mine.SettingActivity" /> <!-- 收货地址 -->
+        <activity android:name=".activity.mine.AddressActivity" /> <!-- 添加收货地址 -->
+        <activity android:name=".activity.AddaddressActivity" /> <!-- 常见问题 -->
         <activity android:name=".activity.mine.QuestionActivity" />
-        <activity android:name=".activity.mine.MessageActivity" />
-        <!-- 面对面分享 -->
-        <activity android:name=".activity.mine.ShareActivity" />
-        <!-- 动态学习计划表 -->
-        <activity android:name=".activity.mine.ScheduleActivity" />
-        <!-- 薄弱节点视频 -->
-        <activity android:name=".activity.mine.WeakvideoActivity" />
-        <!-- 我要续费 -->
-        <activity android:name=".activity.mine.RenewalsActivity" />
-        <!-- 我的订单 -->
-        <activity android:name=".activity.mine.MyorderActivity" />
-        <!-- 我的课程 -->
-        <activity android:name=".activity.mine.MycourseActivity" />
-        <!--&lt;!&ndash; 今日头条适配 &ndash;&gt;-->
-
+        <activity android:name=".activity.mine.MessageActivity" /> <!-- 面对面分享 -->
+        <activity android:name=".activity.mine.ShareActivity" /> <!-- 动态学习计划表 -->
+        <activity android:name=".activity.mine.ScheduleActivity" /> <!-- 薄弱节点视频 -->
+        <activity android:name=".activity.mine.WeakvideoActivity" /> <!-- 我要续费 -->
+        <activity android:name=".activity.mine.RenewalsActivity" /> <!-- 我的订单 -->
+        <activity android:name=".activity.mine.MyorderActivity" /> <!-- 我的课程 -->
+        <activity android:name=".activity.mine.MycourseActivity" /> <!-- &lt;!&ndash; 今日头条适配 &ndash;&gt; -->
         <!-- 适配华为（huawei）刘海屏 -->
         <meta-data
             android:name="android.notch_support"
-            android:value="true" />
-        <!-- 适配小米（xiaomi）刘海屏 -->
+            android:value="true" /> <!-- 适配小米（xiaomi）刘海屏 -->
         <meta-data
             android:name="notch.config"
             android:value="portrait|landscape" />
@@ -75,38 +65,23 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!--登陆-->
+        </activity> <!-- 登陆 -->
         <!-- 服务介绍 -->
-        <activity android:name=".activity.FuwuIntroduceActivity" />
-        <!-- 智能英语介绍 -->
-        <activity android:name=".activity.FuwuEnglishActivity" />
-        <!-- 商品详情 -->
-        <activity android:name=".activity.CommodityDetailsActivity" />
-        <!--订单详情/取消订单-->
-        <activity android:name=".activity.OrderCancelActivity" />
-        <!--直记直译-->
-        <activity android:name=".activity.ScheduleStraightActivity" />
-        <!--口语训练平台-->
-        <activity android:name=".activity.ScheduleMouthActivity" />
-        <!--语法易点通-->
-        <activity android:name=".activity.ScheduleGrammarActivity" />
-        <!--我的优惠券-->
-        <activity android:name=".activity.MyCouponActivity" />
-        <!--语音评测选择级别-->
-        <activity android:name=".activity.SelectionLevelActivity" />
-        <!--语音评测-->
-        <activity android:name=".activity.SpeechAssessmentActivity" />
-        <!--为我加油-->
-        <activity android:name=".activity.ComeonActivity" />
-        <!--确认订单-->
-        <activity android:name=".activity.OrderConfirmActivity" />
-        <!--支付-->
-        <activity android:name=".activity.PaymentActivity"/>
-        <!--个人信息-->
-        <activity android:name=".activity.InformationActivity"/>
-
-
+        <activity android:name=".activity.FuwuIntroduceActivity" /><!-- 服务平台 -->
+        <activity android:name=".activity.FuwuEnglishActivity" /> <!-- 智能英语介绍 -->
+        <activity android:name=".activity.CommodityDetailsActivity" /> <!-- 商品详情 -->
+        <activity android:name=".activity.OrderCancelActivity" /> <!-- 订单详情/取消订单 -->
+        <activity android:name=".activity.ScheduleStraightActivity" /> <!-- 直记直译 -->
+        <activity android:name=".activity.ScheduleMouthActivity"
+            android:screenOrientation="landscape" /> <!-- 口语训练平台 -->
+        <activity android:name=".activity.ScheduleGrammarActivity" /> <!-- 语法易点通 -->
+        <activity android:name=".activity.MyCouponActivity" /> <!-- 我的优惠券 -->
+        <activity android:name=".activity.SelectionLevelActivity" /> <!-- 语音评测选择级别 -->
+        <activity android:name=".activity.SpeechAssessmentActivity" /> <!-- 语音评测 -->
+        <activity android:name=".activity.ComeonActivity" /> <!-- 为我加油 -->
+        <activity android:name=".activity.OrderConfirmActivity" /> <!-- 确认订单 -->
+        <activity android:name=".activity.PaymentActivity" /> <!-- 支付 -->
+        <activity android:name=".activity.InformationActivity" /><!-- 个人信息 -->
     </application>
 
 </manifest>

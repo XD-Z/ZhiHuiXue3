@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.SecondsrememberthewordsActivity">
+
+    <com.rhkj.zhihuixue.view.ListenNestScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/include_title" />
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="0dip"
+                android:focusableInTouchMode="true" />
+
+            <!--搜索框-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="34dip"
+                android:layout_marginLeft="21dip"
+                android:layout_marginRight="18dip"
+                android:background="@drawable/bg_linearlayout_search">
+
+                <ImageView
+                    android:layout_width="21dip"
+                    android:layout_height="21dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dip"
+                    android:src="@mipmap/icon_search" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="7dip"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:hint="请输入当天评测过得单词"
+                    android:maxLength="30"
+                    android:maxLines="1"
+                    android:phoneNumber="true"
+                    android:textColor="@color/colorGrey999"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/re_second_words"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="15dip"
+                android:layout_marginTop="5dip"
+                android:overScrollMode="never" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/re_second_word_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:scrollbars="none" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="177dip"
+                android:layout_margin="20dip"
+                android:scaleType="fitXY"
+                android:src="@mipmap/img_ad2" />
+
+            <TextView
+                android:id="@+id/btn_to_evaluation"
+                android:layout_width="match_parent"
+                android:layout_height="34dip"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:layout_marginBottom="30dip"
+                android:background="@drawable/btn_bg_detalis_radius5"
+                android:gravity="center"
+                android:text="语音测评"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+    </com.rhkj.zhihuixue.view.ListenNestScrollView>
+</RelativeLayout>
