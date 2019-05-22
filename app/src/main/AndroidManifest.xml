@@ -21,11 +21,11 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
-        android:name=".MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/icon_logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/icon_logo"
+        android:name=".MyApp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -53,7 +53,8 @@
         <!-- 适配华为（huawei）刘海屏 -->
         <meta-data
             android:name="android.notch_support"
-            android:value="true" /> <!-- 适配小米（xiaomi）刘海屏 -->
+            android:value="true" />
+        <!-- 适配小米（xiaomi）刘海屏 -->
         <meta-data
             android:name="notch.config"
             android:value="portrait|landscape" />
@@ -65,23 +66,42 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 登陆 -->
+        </activity>
+        <!--登陆-->
         <!-- 服务介绍 -->
-        <activity android:name=".activity.FuwuIntroduceActivity" /><!-- 服务平台 -->
-        <activity android:name=".activity.FuwuEnglishActivity" /> <!-- 智能英语介绍 -->
-        <activity android:name=".activity.CommodityDetailsActivity" /> <!-- 商品详情 -->
-        <activity android:name=".activity.OrderCancelActivity" /> <!-- 订单详情/取消订单 -->
-        <activity android:name=".activity.ScheduleStraightActivity" /> <!-- 直记直译 -->
-        <activity android:name=".activity.ScheduleMouthActivity"
-            android:screenOrientation="landscape" /> <!-- 口语训练平台 -->
-        <activity android:name=".activity.ScheduleGrammarActivity" /> <!-- 语法易点通 -->
-        <activity android:name=".activity.MyCouponActivity" /> <!-- 我的优惠券 -->
-        <activity android:name=".activity.SelectionLevelActivity" /> <!-- 语音评测选择级别 -->
-        <activity android:name=".activity.SpeechAssessmentActivity" /> <!-- 语音评测 -->
-        <activity android:name=".activity.ComeonActivity" /> <!-- 为我加油 -->
-        <activity android:name=".activity.OrderConfirmActivity" /> <!-- 确认订单 -->
-        <activity android:name=".activity.PaymentActivity" /> <!-- 支付 -->
-        <activity android:name=".activity.InformationActivity" /><!-- 个人信息 -->
+        <activity android:name=".activity.FuwuIntroduceActivity" />
+        <!-- 智能英语介绍 -->
+        <activity android:name=".activity.FuwuEnglishActivity" />
+        <!-- 商品详情 -->
+        <activity android:name=".activity.CommodityDetailsActivity" />
+        <!--订单详情/取消订单-->
+        <activity android:name=".activity.OrderCancelActivity" />
+        <!--直记直译-->
+        <activity android:name=".activity.ScheduleStraightActivity" />
+        <!--口语训练平台-->
+        <activity android:name=".activity.ScheduleMouthActivity" />
+        <!--语法易点通-->
+        <activity android:name=".activity.ScheduleGrammarActivity" />
+        <!--我的优惠券-->
+        <activity android:name=".activity.MyCouponActivity" />
+        <!--语音评测选择级别-->
+        <activity android:name=".activity.SelectionLevelActivity" />
+        <!--语音评测-->
+        <activity android:name=".activity.SpeechAssessmentActivity" />
+        <!--为我加油-->
+        <activity android:name=".activity.ComeonActivity" />
+        <!--确认订单-->
+        <activity android:name=".activity.OrderConfirmActivity" />
+        <!--支付-->
+        <activity android:name=".activity.PaymentActivity"/>
+        <!--个人信息-->
+        <activity android:name=".activity.InformationActivity"/>
+        <!--直记直译视频引导页-->
+        <activity android:name=".activity.GuideVideoActivity"/>
+        <!--口语训练-->
+        <activity android:name=".activity.MouthActivity" android:screenOrientation="landscape"/>
+
+
     </application>
 
 </manifest>

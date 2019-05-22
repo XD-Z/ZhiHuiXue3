@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:paddingRight="12pt"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70pt"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_curriculum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingBottom="14pt"
+            android:paddingTop="14pt"
+            android:text="第一讲"
+            android:textColor="#666666"
+            android:textSize="14pt" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4pt"
+        android:layout_marginLeft="70pt"
+        android:background="#f8f8f8" />
+
+
+</LinearLayout>

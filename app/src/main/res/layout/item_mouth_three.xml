@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#fff"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:paddingLeft="112pt"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_classhour"
+            android:layout_weight="1"
+            android:paddingTop="14pt"
+            android:paddingBottom="14pt"
+            android:textColor="#999999"
+            android:textSize="12pt"
+            android:text="第一小时"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.willy.ratingbar.ScaleRatingBar
+            app:srb_numStars="3"
+            app:srb_rating="2"
+            app:srb_starWidth="16pt"
+            app:srb_starHeight="16pt"
+            app:srb_starPadding="6pt"
+            android:layout_marginRight="13pt"
+            app:srb_drawableEmpty="@mipmap/icon_stars_f"
+            app:srb_drawableFilled="@mipmap/icon_stars_t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </com.willy.ratingbar.ScaleRatingBar>
+
+
+    </LinearLayout>
+    <View
+        android:layout_marginLeft="112pt"
+        android:background="#f8f8f8"
+        android:layout_width="match_parent"
+        android:layout_height="4pt"/>
+
+</LinearLayout>

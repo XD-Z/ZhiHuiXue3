@@ -69,4 +69,8 @@ dependencies {
 
     //图片选择 https://github.com/LuckSiege/PictureSelector
     implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+    //三级列表 https://github.com/TellH/RecyclerTreeView?tdsourcetag=s_pcqq_aiomsg
+    implementation 'com.github.TellH:RecyclerTreeView:1.2.0'
+    //星星选择控件 https://github.com/ome450901/SimpleRatingBar
+    implementation 'com.github.ome450901:SimpleRatingBar:1.4.3'
 }

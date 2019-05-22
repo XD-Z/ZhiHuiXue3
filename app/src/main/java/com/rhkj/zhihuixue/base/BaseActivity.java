@@ -21,6 +21,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     private Toast toast; // 公共的。。。。 Toast
     public static int screenW, screenH; // 全屏 宽高
     public TextView tvTitle;
+    public TextView tvRight;
 
     @Override
     protected void onCreate(Bundle arg0) {
@@ -39,10 +40,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
 
-
     private void initTitle() {
         tvTitle = findViewById(R.id.tv_title);
         ImageView ivBack = findViewById(R.id.iv_back);
+        tvRight = findViewById(R.id.tv_right);
 
         if (ivBack != null) {
             ivBack.setOnClickListener(new View.OnClickListener() {
@@ -187,6 +188,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onDestroy();
         ImmersionBar.with(this).destroy();
     }
+
     @Override
     public Resources getResources() {
         return AdaptScreenUtils.adaptHeight(super.getResources(), 667);
